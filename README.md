@@ -20,9 +20,10 @@ OCR（Optical Character Recognition）即光学字符识别的缩写，可应用
 * 文字存在局部一致性，文本行的一小部分，也可视为是独立的文本；
 
 # 一、中文文本检测
+DBNet针对基于分割的方法需要使用阈值进行二值化处理而导致后处理耗时的问题，提出了可学习阈值并巧妙地设计了一个近似于阶跃函数的二值化函数，使得分割网络在训练的时候能端对端的学习文本分割的阈值。自动调节阈值不仅带来精度的提升，同时简化了后处理，提高了文本检测的性能。
+![](https://ai-studio-static-online.cdn.bcebos.com/0d6423e3c79448f8b09090cf2dcf9d0c7baa0f6856c645808502678ae88d2917)
 
-
-
+Jupyter Notebook编译环境，详情查看[Detection](./det_mv3_db/Detection.md)
 
 # 二、中文文本识别
 
