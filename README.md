@@ -1,4 +1,4 @@
-# PaddleOCR-for-Chinese-Text-Detection
+# PaddleOCR-for-Chinese-Text
 【精品】飞桨深度学习云训练平台一键fork：https://aistudio.baidu.com/aistudio/projectdetail/3360668
 # 前言
 文本在日常生活中无处不在，其携带着丰富且精确的信息，文本检测任务是找出图像或视频中的文字位置，根据语义背景不同可以分为自然场景文本检测和电子文档文本检测，如今已广泛应用于自动驾驶、网络安全、地理定位等领域。
