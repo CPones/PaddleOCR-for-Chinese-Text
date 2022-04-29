@@ -1,0 +1,1168 @@
+[2021/12/27 08:46:02] root INFO: Architecture : 
+[2021/12/27 08:46:02] root INFO:     Backbone : 
+[2021/12/27 08:46:02] root INFO:         model_name : large
+[2021/12/27 08:46:02] root INFO:         name : MobileNetV3
+[2021/12/27 08:46:02] root INFO:         scale : 1
+[2021/12/27 08:46:02] root INFO:         small_stride : [1, 2, 2, 2]
+[2021/12/27 08:46:02] root INFO:     Head : 
+[2021/12/27 08:46:02] root INFO:         fc_decay : 0
+[2021/12/27 08:46:02] root INFO:         name : CTCHead
+[2021/12/27 08:46:02] root INFO:     Neck : 
+[2021/12/27 08:46:02] root INFO:         encoder_type : rnn
+[2021/12/27 08:46:02] root INFO:         hidden_size : 96
+[2021/12/27 08:46:02] root INFO:         name : SequenceEncoder
+[2021/12/27 08:46:02] root INFO:     Transform : None
+[2021/12/27 08:46:02] root INFO:     algorithm : CRNN
+[2021/12/27 08:46:02] root INFO:     model_type : rec
+[2021/12/27 08:46:02] root INFO: Eval : 
+[2021/12/27 08:46:02] root INFO:     dataset : 
+[2021/12/27 08:46:02] root INFO:         data_dir : ./train_data/rec_data_lesson_demo/
+[2021/12/27 08:46:02] root INFO:         label_file_list : ['./train_data/rec_data_lesson_demo/val.txt']
+[2021/12/27 08:46:02] root INFO:         name : SimpleDataSet
+[2021/12/27 08:46:02] root INFO:         transforms : 
+[2021/12/27 08:46:02] root INFO:             DecodeImage : 
+[2021/12/27 08:46:02] root INFO:                 channel_first : False
+[2021/12/27 08:46:02] root INFO:                 img_mode : BGR
+[2021/12/27 08:46:02] root INFO:             CTCLabelEncode : None
+[2021/12/27 08:46:02] root INFO:             RecResizeImg : 
+[2021/12/27 08:46:02] root INFO:                 image_shape : [3, 32, 100]
+[2021/12/27 08:46:02] root INFO:             KeepKeys : 
+[2021/12/27 08:46:02] root INFO:                 keep_keys : ['image', 'label', 'length']
+[2021/12/27 08:46:02] root INFO:     loader : 
+[2021/12/27 08:46:02] root INFO:         batch_size_per_card : 512
+[2021/12/27 08:46:02] root INFO:         drop_last : False
+[2021/12/27 08:46:02] root INFO:         num_workers : 4
+[2021/12/27 08:46:02] root INFO:         shuffle : False
+[2021/12/27 08:46:02] root INFO:         use_shared_memory : False
+[2021/12/27 08:46:02] root INFO: Global : 
+[2021/12/27 08:46:02] root INFO:     cal_metric_during_train : True
+[2021/12/27 08:46:02] root INFO:     character_dict_path : ppocr/utils/ppocr_keys_v1.txt
+[2021/12/27 08:46:02] root INFO:     checkpoints : None
+[2021/12/27 08:46:02] root INFO:     debug : False
+[2021/12/27 08:46:02] root INFO:     distributed : False
+[2021/12/27 08:46:02] root INFO:     epoch_num : 500
+[2021/12/27 08:46:02] root INFO:     eval_batch_step : [0, 1000]
+[2021/12/27 08:46:02] root INFO:     infer_img : doc/imgs_words_en/word_10.png
+[2021/12/27 08:46:02] root INFO:     infer_mode : False
+[2021/12/27 08:46:02] root INFO:     log_smooth_window : 20
+[2021/12/27 08:46:02] root INFO:     max_text_length : 25
+[2021/12/27 08:46:02] root INFO:     pretrained_model : pretrain_models/ch_ppocr_server_v2.0_rec_pre/best_accuracy
+[2021/12/27 08:46:02] root INFO:     print_batch_step : 50
+[2021/12/27 08:46:02] root INFO:     save_epoch_step : 10
+[2021/12/27 08:46:02] root INFO:     save_inference_dir : ./
+[2021/12/27 08:46:02] root INFO:     save_model_dir : ./output/rec/class_demo/
+[2021/12/27 08:46:02] root INFO:     save_res_path : ./output/rec/predicts_ic15.txt
+[2021/12/27 08:46:02] root INFO:     use_gpu : True
+[2021/12/27 08:46:02] root INFO:     use_space_char : False
+[2021/12/27 08:46:02] root INFO:     use_visualdl : True
+[2021/12/27 08:46:02] root INFO: Loss : 
+[2021/12/27 08:46:02] root INFO:     name : CTCLoss
+[2021/12/27 08:46:02] root INFO: Metric : 
+[2021/12/27 08:46:02] root INFO:     main_indicator : acc
+[2021/12/27 08:46:02] root INFO:     name : RecMetric
+[2021/12/27 08:46:02] root INFO: Optimizer : 
+[2021/12/27 08:46:02] root INFO:     beta1 : 0.9
+[2021/12/27 08:46:02] root INFO:     beta2 : 0.999
+[2021/12/27 08:46:02] root INFO:     lr : 
+[2021/12/27 08:46:02] root INFO:         learning_rate : 0.001
+[2021/12/27 08:46:02] root INFO:         name : Cosine
+[2021/12/27 08:46:02] root INFO:         warmup_epoch : 1
+[2021/12/27 08:46:02] root INFO:     name : Adam
+[2021/12/27 08:46:02] root INFO:     regularizer : 
+[2021/12/27 08:46:02] root INFO:         factor : 1e-05
+[2021/12/27 08:46:02] root INFO:         name : L2
+[2021/12/27 08:46:02] root INFO: PostProcess : 
+[2021/12/27 08:46:02] root INFO:     name : CTCLabelDecode
+[2021/12/27 08:46:02] root INFO: Train : 
+[2021/12/27 08:46:02] root INFO:     dataset : 
+[2021/12/27 08:46:02] root INFO:         data_dir : ./train_data/rec_data_lesson_demo/
+[2021/12/27 08:46:02] root INFO:         label_file_list : ['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 08:46:02] root INFO:         name : SimpleDataSet
+[2021/12/27 08:46:02] root INFO:         transforms : 
+[2021/12/27 08:46:02] root INFO:             DecodeImage : 
+[2021/12/27 08:46:02] root INFO:                 channel_first : False
+[2021/12/27 08:46:02] root INFO:                 img_mode : BGR
+[2021/12/27 08:46:02] root INFO:             RecAug : None
+[2021/12/27 08:46:02] root INFO:             CTCLabelEncode : None
+[2021/12/27 08:46:02] root INFO:             RecResizeImg : 
+[2021/12/27 08:46:02] root INFO:                 image_shape : [3, 32, 100]
+[2021/12/27 08:46:02] root INFO:             KeepKeys : 
+[2021/12/27 08:46:02] root INFO:                 keep_keys : ['image', 'label', 'length']
+[2021/12/27 08:46:02] root INFO:     loader : 
+[2021/12/27 08:46:02] root INFO:         batch_size_per_card : 512
+[2021/12/27 08:46:02] root INFO:         drop_last : True
+[2021/12/27 08:46:02] root INFO:         num_workers : 8
+[2021/12/27 08:46:02] root INFO:         shuffle : True
+[2021/12/27 08:46:02] root INFO:         use_shared_memory : False
+[2021/12/27 08:46:02] root INFO: profiler_options : None
+[2021/12/27 08:46:02] root INFO: train with paddle 2.2.1 and device CUDAPlace(0)
+[2021/12/27 08:46:02] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 08:46:03] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/val.txt']
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.conv1.conv.weight [16, 3, 3, 3] not matched with loaded params backbone.conv1_1._conv.weight [32, 3, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.conv1.bn.weight [16] not matched with loaded params backbone.conv1_1._batch_norm.weight [32] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.conv1.bn.bias [16] not matched with loaded params backbone.conv1_1._batch_norm.bias [32] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.conv1.bn._mean [16] not matched with loaded params backbone.conv1_1._batch_norm._mean [32] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.conv1.bn._variance [16] not matched with loaded params backbone.conv1_1._batch_norm._variance [32] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.0.expand_conv.conv.weight [16, 16, 1, 1] not matched with loaded params backbone.conv1_2._conv.weight [32, 32, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.0.expand_conv.bn.weight [16] not matched with loaded params backbone.conv1_2._batch_norm.weight [32] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.0.expand_conv.bn.bias [16] not matched with loaded params backbone.conv1_2._batch_norm.bias [32] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.0.expand_conv.bn._mean [16] not matched with loaded params backbone.conv1_2._batch_norm._mean [32] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.0.expand_conv.bn._variance [16] not matched with loaded params backbone.conv1_2._batch_norm._variance [32] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.0.bottleneck_conv.conv.weight [16, 1, 3, 3] not matched with loaded params backbone.conv1_3._conv.weight [64, 32, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.0.bottleneck_conv.bn.weight [16] not matched with loaded params backbone.conv1_3._batch_norm.weight [64] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.0.bottleneck_conv.bn.bias [16] not matched with loaded params backbone.conv1_3._batch_norm.bias [64] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.0.bottleneck_conv.bn._mean [16] not matched with loaded params backbone.conv1_3._batch_norm._mean [64] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.0.bottleneck_conv.bn._variance [16] not matched with loaded params backbone.conv1_3._batch_norm._variance [64] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.0.linear_conv.conv.weight [16, 16, 1, 1] not matched with loaded params backbone.bb_0_0.conv0._conv.weight [64, 64, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.0.linear_conv.bn.weight [16] not matched with loaded params backbone.bb_0_0.conv0._batch_norm.weight [64] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.0.linear_conv.bn.bias [16] not matched with loaded params backbone.bb_0_0.conv0._batch_norm.bias [64] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.0.linear_conv.bn._mean [16] not matched with loaded params backbone.bb_0_0.conv0._batch_norm._mean [64] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.0.linear_conv.bn._variance [16] not matched with loaded params backbone.bb_0_0.conv0._batch_norm._variance [64] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.1.expand_conv.conv.weight [64, 16, 1, 1] not matched with loaded params backbone.bb_0_0.conv1._conv.weight [64, 64, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.1.bottleneck_conv.conv.weight [64, 1, 3, 3] not matched with loaded params backbone.bb_0_0.short._conv.weight [64, 64, 1, 1] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.1.linear_conv.conv.weight [24, 64, 1, 1] not matched with loaded params backbone.bb_0_1.conv0._conv.weight [64, 64, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.1.linear_conv.bn.weight [24] not matched with loaded params backbone.bb_0_1.conv0._batch_norm.weight [64] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.1.linear_conv.bn.bias [24] not matched with loaded params backbone.bb_0_1.conv0._batch_norm.bias [64] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.1.linear_conv.bn._mean [24] not matched with loaded params backbone.bb_0_1.conv0._batch_norm._mean [64] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.1.linear_conv.bn._variance [24] not matched with loaded params backbone.bb_0_1.conv0._batch_norm._variance [64] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.2.expand_conv.conv.weight [72, 24, 1, 1] not matched with loaded params backbone.bb_0_1.conv1._conv.weight [64, 64, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.2.expand_conv.bn.weight [72] not matched with loaded params backbone.bb_0_1.conv1._batch_norm.weight [64] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.2.expand_conv.bn.bias [72] not matched with loaded params backbone.bb_0_1.conv1._batch_norm.bias [64] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.2.expand_conv.bn._mean [72] not matched with loaded params backbone.bb_0_1.conv1._batch_norm._mean [64] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.2.expand_conv.bn._variance [72] not matched with loaded params backbone.bb_0_1.conv1._batch_norm._variance [64] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.2.bottleneck_conv.conv.weight [72, 1, 3, 3] not matched with loaded params backbone.bb_0_2.conv0._conv.weight [64, 64, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.2.bottleneck_conv.bn.weight [72] not matched with loaded params backbone.bb_0_2.conv0._batch_norm.weight [64] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.2.bottleneck_conv.bn.bias [72] not matched with loaded params backbone.bb_0_2.conv0._batch_norm.bias [64] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.2.bottleneck_conv.bn._mean [72] not matched with loaded params backbone.bb_0_2.conv0._batch_norm._mean [64] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.2.bottleneck_conv.bn._variance [72] not matched with loaded params backbone.bb_0_2.conv0._batch_norm._variance [64] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.2.linear_conv.conv.weight [24, 72, 1, 1] not matched with loaded params backbone.bb_0_2.conv1._conv.weight [64, 64, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.2.linear_conv.bn.weight [24] not matched with loaded params backbone.bb_0_2.conv1._batch_norm.weight [64] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.2.linear_conv.bn.bias [24] not matched with loaded params backbone.bb_0_2.conv1._batch_norm.bias [64] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.2.linear_conv.bn._mean [24] not matched with loaded params backbone.bb_0_2.conv1._batch_norm._mean [64] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.2.linear_conv.bn._variance [24] not matched with loaded params backbone.bb_0_2.conv1._batch_norm._variance [64] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.3.expand_conv.conv.weight [72, 24, 1, 1] not matched with loaded params backbone.bb_1_0.conv0._conv.weight [128, 64, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.3.expand_conv.bn.weight [72] not matched with loaded params backbone.bb_1_0.conv0._batch_norm.weight [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.3.expand_conv.bn.bias [72] not matched with loaded params backbone.bb_1_0.conv0._batch_norm.bias [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.3.expand_conv.bn._mean [72] not matched with loaded params backbone.bb_1_0.conv0._batch_norm._mean [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.3.expand_conv.bn._variance [72] not matched with loaded params backbone.bb_1_0.conv0._batch_norm._variance [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.3.bottleneck_conv.conv.weight [72, 1, 5, 5] not matched with loaded params backbone.bb_1_0.conv1._conv.weight [128, 128, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.3.bottleneck_conv.bn.weight [72] not matched with loaded params backbone.bb_1_0.conv1._batch_norm.weight [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.3.bottleneck_conv.bn.bias [72] not matched with loaded params backbone.bb_1_0.conv1._batch_norm.bias [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.3.bottleneck_conv.bn._mean [72] not matched with loaded params backbone.bb_1_0.conv1._batch_norm._mean [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.3.bottleneck_conv.bn._variance [72] not matched with loaded params backbone.bb_1_0.conv1._batch_norm._variance [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.3.mid_se.conv1.weight [18, 72, 1, 1] not matched with loaded params backbone.bb_1_0.short._conv.weight [128, 64, 1, 1] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.3.mid_se.conv1.bias [18] not matched with loaded params backbone.bb_1_0.short._batch_norm.weight [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.3.mid_se.conv2.weight [72, 18, 1, 1] not matched with loaded params backbone.bb_1_0.short._batch_norm.bias [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.3.mid_se.conv2.bias [72] not matched with loaded params backbone.bb_1_0.short._batch_norm._mean [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.3.linear_conv.conv.weight [40, 72, 1, 1] not matched with loaded params backbone.bb_1_0.short._batch_norm._variance [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.3.linear_conv.bn.weight [40] not matched with loaded params backbone.bb_1_1.conv0._conv.weight [128, 128, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.3.linear_conv.bn.bias [40] not matched with loaded params backbone.bb_1_1.conv0._batch_norm.weight [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.3.linear_conv.bn._mean [40] not matched with loaded params backbone.bb_1_1.conv0._batch_norm.bias [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.3.linear_conv.bn._variance [40] not matched with loaded params backbone.bb_1_1.conv0._batch_norm._mean [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.4.expand_conv.conv.weight [120, 40, 1, 1] not matched with loaded params backbone.bb_1_1.conv0._batch_norm._variance [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.4.expand_conv.bn.weight [120] not matched with loaded params backbone.bb_1_1.conv1._conv.weight [128, 128, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.4.expand_conv.bn.bias [120] not matched with loaded params backbone.bb_1_1.conv1._batch_norm.weight [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.4.expand_conv.bn._mean [120] not matched with loaded params backbone.bb_1_1.conv1._batch_norm.bias [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.4.expand_conv.bn._variance [120] not matched with loaded params backbone.bb_1_1.conv1._batch_norm._mean [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.4.bottleneck_conv.conv.weight [120, 1, 5, 5] not matched with loaded params backbone.bb_1_1.conv1._batch_norm._variance [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.4.bottleneck_conv.bn.weight [120] not matched with loaded params backbone.bb_1_2.conv0._conv.weight [128, 128, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.4.bottleneck_conv.bn.bias [120] not matched with loaded params backbone.bb_1_2.conv0._batch_norm.weight [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.4.bottleneck_conv.bn._mean [120] not matched with loaded params backbone.bb_1_2.conv0._batch_norm.bias [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.4.bottleneck_conv.bn._variance [120] not matched with loaded params backbone.bb_1_2.conv0._batch_norm._mean [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.4.mid_se.conv1.weight [30, 120, 1, 1] not matched with loaded params backbone.bb_1_2.conv0._batch_norm._variance [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.4.mid_se.conv1.bias [30] not matched with loaded params backbone.bb_1_2.conv1._conv.weight [128, 128, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.4.mid_se.conv2.weight [120, 30, 1, 1] not matched with loaded params backbone.bb_1_2.conv1._batch_norm.weight [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.4.mid_se.conv2.bias [120] not matched with loaded params backbone.bb_1_2.conv1._batch_norm.bias [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.4.linear_conv.conv.weight [40, 120, 1, 1] not matched with loaded params backbone.bb_1_2.conv1._batch_norm._mean [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.4.linear_conv.bn.weight [40] not matched with loaded params backbone.bb_1_2.conv1._batch_norm._variance [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.4.linear_conv.bn.bias [40] not matched with loaded params backbone.bb_1_3.conv0._conv.weight [128, 128, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.4.linear_conv.bn._mean [40] not matched with loaded params backbone.bb_1_3.conv0._batch_norm.weight [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.4.linear_conv.bn._variance [40] not matched with loaded params backbone.bb_1_3.conv0._batch_norm.bias [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.5.expand_conv.conv.weight [120, 40, 1, 1] not matched with loaded params backbone.bb_1_3.conv0._batch_norm._mean [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.5.expand_conv.bn.weight [120] not matched with loaded params backbone.bb_1_3.conv0._batch_norm._variance [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.5.expand_conv.bn.bias [120] not matched with loaded params backbone.bb_1_3.conv1._conv.weight [128, 128, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.5.expand_conv.bn._mean [120] not matched with loaded params backbone.bb_1_3.conv1._batch_norm.weight [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.5.expand_conv.bn._variance [120] not matched with loaded params backbone.bb_1_3.conv1._batch_norm.bias [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.5.bottleneck_conv.conv.weight [120, 1, 5, 5] not matched with loaded params backbone.bb_1_3.conv1._batch_norm._mean [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.5.bottleneck_conv.bn.weight [120] not matched with loaded params backbone.bb_1_3.conv1._batch_norm._variance [128] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.5.bottleneck_conv.bn.bias [120] not matched with loaded params backbone.bb_2_0.conv0._conv.weight [256, 128, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.5.bottleneck_conv.bn._mean [120] not matched with loaded params backbone.bb_2_0.conv0._batch_norm.weight [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.5.bottleneck_conv.bn._variance [120] not matched with loaded params backbone.bb_2_0.conv0._batch_norm.bias [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.5.mid_se.conv1.weight [30, 120, 1, 1] not matched with loaded params backbone.bb_2_0.conv0._batch_norm._mean [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.5.mid_se.conv1.bias [30] not matched with loaded params backbone.bb_2_0.conv0._batch_norm._variance [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.5.mid_se.conv2.weight [120, 30, 1, 1] not matched with loaded params backbone.bb_2_0.conv1._conv.weight [256, 256, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.5.mid_se.conv2.bias [120] not matched with loaded params backbone.bb_2_0.conv1._batch_norm.weight [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.5.linear_conv.conv.weight [40, 120, 1, 1] not matched with loaded params backbone.bb_2_0.conv1._batch_norm.bias [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.5.linear_conv.bn.weight [40] not matched with loaded params backbone.bb_2_0.conv1._batch_norm._mean [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.5.linear_conv.bn.bias [40] not matched with loaded params backbone.bb_2_0.conv1._batch_norm._variance [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.5.linear_conv.bn._mean [40] not matched with loaded params backbone.bb_2_0.short._conv.weight [256, 128, 1, 1] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.5.linear_conv.bn._variance [40] not matched with loaded params backbone.bb_2_0.short._batch_norm.weight [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.6.expand_conv.conv.weight [240, 40, 1, 1] not matched with loaded params backbone.bb_2_0.short._batch_norm.bias [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.6.expand_conv.bn.weight [240] not matched with loaded params backbone.bb_2_0.short._batch_norm._mean [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.6.expand_conv.bn.bias [240] not matched with loaded params backbone.bb_2_0.short._batch_norm._variance [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.6.expand_conv.bn._mean [240] not matched with loaded params backbone.bb_2_1.conv0._conv.weight [256, 256, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.6.expand_conv.bn._variance [240] not matched with loaded params backbone.bb_2_1.conv0._batch_norm.weight [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.6.bottleneck_conv.conv.weight [240, 1, 3, 3] not matched with loaded params backbone.bb_2_1.conv0._batch_norm.bias [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.6.bottleneck_conv.bn.weight [240] not matched with loaded params backbone.bb_2_1.conv0._batch_norm._mean [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.6.bottleneck_conv.bn.bias [240] not matched with loaded params backbone.bb_2_1.conv0._batch_norm._variance [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.6.bottleneck_conv.bn._mean [240] not matched with loaded params backbone.bb_2_1.conv1._conv.weight [256, 256, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.6.bottleneck_conv.bn._variance [240] not matched with loaded params backbone.bb_2_1.conv1._batch_norm.weight [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.6.linear_conv.conv.weight [80, 240, 1, 1] not matched with loaded params backbone.bb_2_1.conv1._batch_norm.bias [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.6.linear_conv.bn.weight [80] not matched with loaded params backbone.bb_2_1.conv1._batch_norm._mean [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.6.linear_conv.bn.bias [80] not matched with loaded params backbone.bb_2_1.conv1._batch_norm._variance [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.6.linear_conv.bn._mean [80] not matched with loaded params backbone.bb_2_2.conv0._conv.weight [256, 256, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.6.linear_conv.bn._variance [80] not matched with loaded params backbone.bb_2_2.conv0._batch_norm.weight [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.7.expand_conv.conv.weight [200, 80, 1, 1] not matched with loaded params backbone.bb_2_2.conv0._batch_norm.bias [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.7.expand_conv.bn.weight [200] not matched with loaded params backbone.bb_2_2.conv0._batch_norm._mean [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.7.expand_conv.bn.bias [200] not matched with loaded params backbone.bb_2_2.conv0._batch_norm._variance [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.7.expand_conv.bn._mean [200] not matched with loaded params backbone.bb_2_2.conv1._conv.weight [256, 256, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.7.expand_conv.bn._variance [200] not matched with loaded params backbone.bb_2_2.conv1._batch_norm.weight [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.7.bottleneck_conv.conv.weight [200, 1, 3, 3] not matched with loaded params backbone.bb_2_2.conv1._batch_norm.bias [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.7.bottleneck_conv.bn.weight [200] not matched with loaded params backbone.bb_2_2.conv1._batch_norm._mean [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.7.bottleneck_conv.bn.bias [200] not matched with loaded params backbone.bb_2_2.conv1._batch_norm._variance [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.7.bottleneck_conv.bn._mean [200] not matched with loaded params backbone.bb_2_3.conv0._conv.weight [256, 256, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.7.bottleneck_conv.bn._variance [200] not matched with loaded params backbone.bb_2_3.conv0._batch_norm.weight [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.7.linear_conv.conv.weight [80, 200, 1, 1] not matched with loaded params backbone.bb_2_3.conv0._batch_norm.bias [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.7.linear_conv.bn.weight [80] not matched with loaded params backbone.bb_2_3.conv0._batch_norm._mean [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.7.linear_conv.bn.bias [80] not matched with loaded params backbone.bb_2_3.conv0._batch_norm._variance [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.7.linear_conv.bn._mean [80] not matched with loaded params backbone.bb_2_3.conv1._conv.weight [256, 256, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.7.linear_conv.bn._variance [80] not matched with loaded params backbone.bb_2_3.conv1._batch_norm.weight [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.8.expand_conv.conv.weight [184, 80, 1, 1] not matched with loaded params backbone.bb_2_3.conv1._batch_norm.bias [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.8.expand_conv.bn.weight [184] not matched with loaded params backbone.bb_2_3.conv1._batch_norm._mean [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.8.expand_conv.bn.bias [184] not matched with loaded params backbone.bb_2_3.conv1._batch_norm._variance [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.8.expand_conv.bn._mean [184] not matched with loaded params backbone.bb_2_4.conv0._conv.weight [256, 256, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.8.expand_conv.bn._variance [184] not matched with loaded params backbone.bb_2_4.conv0._batch_norm.weight [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.8.bottleneck_conv.conv.weight [184, 1, 3, 3] not matched with loaded params backbone.bb_2_4.conv0._batch_norm.bias [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.8.bottleneck_conv.bn.weight [184] not matched with loaded params backbone.bb_2_4.conv0._batch_norm._mean [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.8.bottleneck_conv.bn.bias [184] not matched with loaded params backbone.bb_2_4.conv0._batch_norm._variance [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.8.bottleneck_conv.bn._mean [184] not matched with loaded params backbone.bb_2_4.conv1._conv.weight [256, 256, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.8.bottleneck_conv.bn._variance [184] not matched with loaded params backbone.bb_2_4.conv1._batch_norm.weight [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.8.linear_conv.conv.weight [80, 184, 1, 1] not matched with loaded params backbone.bb_2_4.conv1._batch_norm.bias [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.8.linear_conv.bn.weight [80] not matched with loaded params backbone.bb_2_4.conv1._batch_norm._mean [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.8.linear_conv.bn.bias [80] not matched with loaded params backbone.bb_2_4.conv1._batch_norm._variance [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.8.linear_conv.bn._mean [80] not matched with loaded params backbone.bb_2_5.conv0._conv.weight [256, 256, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.8.linear_conv.bn._variance [80] not matched with loaded params backbone.bb_2_5.conv0._batch_norm.weight [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.9.expand_conv.conv.weight [184, 80, 1, 1] not matched with loaded params backbone.bb_2_5.conv0._batch_norm.bias [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.9.expand_conv.bn.weight [184] not matched with loaded params backbone.bb_2_5.conv0._batch_norm._mean [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.9.expand_conv.bn.bias [184] not matched with loaded params backbone.bb_2_5.conv0._batch_norm._variance [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.9.expand_conv.bn._mean [184] not matched with loaded params backbone.bb_2_5.conv1._conv.weight [256, 256, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.9.expand_conv.bn._variance [184] not matched with loaded params backbone.bb_2_5.conv1._batch_norm.weight [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.9.bottleneck_conv.conv.weight [184, 1, 3, 3] not matched with loaded params backbone.bb_2_5.conv1._batch_norm.bias [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.9.bottleneck_conv.bn.weight [184] not matched with loaded params backbone.bb_2_5.conv1._batch_norm._mean [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.9.bottleneck_conv.bn.bias [184] not matched with loaded params backbone.bb_2_5.conv1._batch_norm._variance [256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.9.bottleneck_conv.bn._mean [184] not matched with loaded params backbone.bb_3_0.conv0._conv.weight [512, 256, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.9.bottleneck_conv.bn._variance [184] not matched with loaded params backbone.bb_3_0.conv0._batch_norm.weight [512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.9.linear_conv.conv.weight [80, 184, 1, 1] not matched with loaded params backbone.bb_3_0.conv0._batch_norm.bias [512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.9.linear_conv.bn.weight [80] not matched with loaded params backbone.bb_3_0.conv0._batch_norm._mean [512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.9.linear_conv.bn.bias [80] not matched with loaded params backbone.bb_3_0.conv0._batch_norm._variance [512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.9.linear_conv.bn._mean [80] not matched with loaded params backbone.bb_3_0.conv1._conv.weight [512, 512, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.9.linear_conv.bn._variance [80] not matched with loaded params backbone.bb_3_0.conv1._batch_norm.weight [512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.10.expand_conv.conv.weight [480, 80, 1, 1] not matched with loaded params backbone.bb_3_0.conv1._batch_norm.bias [512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.10.expand_conv.bn.weight [480] not matched with loaded params backbone.bb_3_0.conv1._batch_norm._mean [512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.10.expand_conv.bn.bias [480] not matched with loaded params backbone.bb_3_0.conv1._batch_norm._variance [512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.10.expand_conv.bn._mean [480] not matched with loaded params backbone.bb_3_0.short._conv.weight [512, 256, 1, 1] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.10.expand_conv.bn._variance [480] not matched with loaded params backbone.bb_3_0.short._batch_norm.weight [512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.10.bottleneck_conv.conv.weight [480, 1, 3, 3] not matched with loaded params backbone.bb_3_0.short._batch_norm.bias [512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.10.bottleneck_conv.bn.weight [480] not matched with loaded params backbone.bb_3_0.short._batch_norm._mean [512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.10.bottleneck_conv.bn.bias [480] not matched with loaded params backbone.bb_3_0.short._batch_norm._variance [512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.10.bottleneck_conv.bn._mean [480] not matched with loaded params backbone.bb_3_1.conv0._conv.weight [512, 512, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.10.bottleneck_conv.bn._variance [480] not matched with loaded params backbone.bb_3_1.conv0._batch_norm.weight [512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.10.mid_se.conv1.weight [120, 480, 1, 1] not matched with loaded params backbone.bb_3_1.conv0._batch_norm.bias [512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.10.mid_se.conv1.bias [120] not matched with loaded params backbone.bb_3_1.conv0._batch_norm._mean [512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.10.mid_se.conv2.weight [480, 120, 1, 1] not matched with loaded params backbone.bb_3_1.conv0._batch_norm._variance [512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.10.mid_se.conv2.bias [480] not matched with loaded params backbone.bb_3_1.conv1._conv.weight [512, 512, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.10.linear_conv.conv.weight [112, 480, 1, 1] not matched with loaded params backbone.bb_3_1.conv1._batch_norm.weight [512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.10.linear_conv.bn.weight [112] not matched with loaded params backbone.bb_3_1.conv1._batch_norm.bias [512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.10.linear_conv.bn.bias [112] not matched with loaded params backbone.bb_3_1.conv1._batch_norm._mean [512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.10.linear_conv.bn._mean [112] not matched with loaded params backbone.bb_3_1.conv1._batch_norm._variance [512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.10.linear_conv.bn._variance [112] not matched with loaded params backbone.bb_3_2.conv0._conv.weight [512, 512, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.11.expand_conv.conv.weight [672, 112, 1, 1] not matched with loaded params backbone.bb_3_2.conv0._batch_norm.weight [512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.11.expand_conv.bn.weight [672] not matched with loaded params backbone.bb_3_2.conv0._batch_norm.bias [512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.11.expand_conv.bn.bias [672] not matched with loaded params backbone.bb_3_2.conv0._batch_norm._mean [512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.11.expand_conv.bn._mean [672] not matched with loaded params backbone.bb_3_2.conv0._batch_norm._variance [512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.11.expand_conv.bn._variance [672] not matched with loaded params backbone.bb_3_2.conv1._conv.weight [512, 512, 3, 3] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.11.bottleneck_conv.conv.weight [672, 1, 3, 3] not matched with loaded params backbone.bb_3_2.conv1._batch_norm.weight [512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.11.bottleneck_conv.bn.weight [672] not matched with loaded params backbone.bb_3_2.conv1._batch_norm.bias [512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.11.bottleneck_conv.bn.bias [672] not matched with loaded params backbone.bb_3_2.conv1._batch_norm._mean [512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.11.bottleneck_conv.bn._mean [672] not matched with loaded params backbone.bb_3_2.conv1._batch_norm._variance [512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.11.bottleneck_conv.bn._variance [672] not matched with loaded params neck.encoder.lstm.weight_ih_l0 [1024, 512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.11.mid_se.conv1.weight [168, 672, 1, 1] not matched with loaded params neck.encoder.lstm.weight_hh_l0 [1024, 256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.11.mid_se.conv1.bias [168] not matched with loaded params neck.encoder.lstm.bias_ih_l0 [1024] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.11.mid_se.conv2.weight [672, 168, 1, 1] not matched with loaded params neck.encoder.lstm.bias_hh_l0 [1024] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.11.mid_se.conv2.bias [672] not matched with loaded params neck.encoder.lstm.weight_ih_l0_reverse [1024, 512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.11.linear_conv.conv.weight [112, 672, 1, 1] not matched with loaded params neck.encoder.lstm.weight_hh_l0_reverse [1024, 256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.11.linear_conv.bn.weight [112] not matched with loaded params neck.encoder.lstm.bias_ih_l0_reverse [1024] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.11.linear_conv.bn.bias [112] not matched with loaded params neck.encoder.lstm.bias_hh_l0_reverse [1024] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.11.linear_conv.bn._mean [112] not matched with loaded params neck.encoder.lstm.weight_ih_l1 [1024, 512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.11.linear_conv.bn._variance [112] not matched with loaded params neck.encoder.lstm.weight_hh_l1 [1024, 256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.12.expand_conv.conv.weight [672, 112, 1, 1] not matched with loaded params neck.encoder.lstm.bias_ih_l1 [1024] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.12.expand_conv.bn.weight [672] not matched with loaded params neck.encoder.lstm.bias_hh_l1 [1024] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.12.expand_conv.bn.bias [672] not matched with loaded params neck.encoder.lstm.weight_ih_l1_reverse [1024, 512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.12.expand_conv.bn._mean [672] not matched with loaded params neck.encoder.lstm.weight_hh_l1_reverse [1024, 256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.12.expand_conv.bn._variance [672] not matched with loaded params neck.encoder.lstm.bias_ih_l1_reverse [1024] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.12.bottleneck_conv.conv.weight [672, 1, 5, 5] not matched with loaded params neck.encoder.lstm.bias_hh_l1_reverse [1024] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.12.bottleneck_conv.bn.weight [672] not matched with loaded params neck.encoder.lstm.0.cell_fw.weight_ih [1024, 512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.12.bottleneck_conv.bn.bias [672] not matched with loaded params neck.encoder.lstm.0.cell_fw.weight_hh [1024, 256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.12.bottleneck_conv.bn._mean [672] not matched with loaded params neck.encoder.lstm.0.cell_fw.bias_ih [1024] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.12.bottleneck_conv.bn._variance [672] not matched with loaded params neck.encoder.lstm.0.cell_fw.bias_hh [1024] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.12.mid_se.conv1.weight [168, 672, 1, 1] not matched with loaded params neck.encoder.lstm.0.cell_bw.weight_ih [1024, 512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.12.mid_se.conv1.bias [168] not matched with loaded params neck.encoder.lstm.0.cell_bw.weight_hh [1024, 256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.12.mid_se.conv2.weight [672, 168, 1, 1] not matched with loaded params neck.encoder.lstm.0.cell_bw.bias_ih [1024] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.12.mid_se.conv2.bias [672] not matched with loaded params neck.encoder.lstm.0.cell_bw.bias_hh [1024] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.12.linear_conv.conv.weight [160, 672, 1, 1] not matched with loaded params neck.encoder.lstm.1.cell_fw.weight_ih [1024, 512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.12.linear_conv.bn.weight [160] not matched with loaded params neck.encoder.lstm.1.cell_fw.weight_hh [1024, 256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.12.linear_conv.bn.bias [160] not matched with loaded params neck.encoder.lstm.1.cell_fw.bias_ih [1024] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.12.linear_conv.bn._mean [160] not matched with loaded params neck.encoder.lstm.1.cell_fw.bias_hh [1024] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.12.linear_conv.bn._variance [160] not matched with loaded params neck.encoder.lstm.1.cell_bw.weight_ih [1024, 512] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.13.expand_conv.conv.weight [960, 160, 1, 1] not matched with loaded params neck.encoder.lstm.1.cell_bw.weight_hh [1024, 256] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.13.expand_conv.bn.weight [960] not matched with loaded params neck.encoder.lstm.1.cell_bw.bias_ih [1024] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.13.expand_conv.bn.bias [960] not matched with loaded params neck.encoder.lstm.1.cell_bw.bias_hh [1024] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.13.expand_conv.bn._mean [960] not matched with loaded params head.fc.weight [512, 6625] !
+[2021/12/27 08:46:08] root WARNING: The shape of model params backbone.blocks.13.expand_conv.bn._variance [960] not matched with loaded params head.fc.bias [6625] !
+[2021/12/27 08:46:08] root INFO: load pretrain successful from pretrain_models/ch_ppocr_server_v2.0_rec_pre/best_accuracy
+[2021/12/27 08:46:08] root INFO: train dataloader has 195 iters
+[2021/12/27 08:46:08] root INFO: valid dataloader has 6 iters
+[2021/12/27 08:46:08] root INFO: During the training process, after the 0th iteration, an evaluation is run every 1000 iterations
+[2021/12/27 08:46:08] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 08:47:59] root INFO: epoch: [1/500], iter: 50, lr: 0.000208, loss: 128.955582, acc: 0.000000, norm_edit_dis: 0.000002, reader_cost: 0.32457 s, batch_cost: 0.73837 s, samples: 26112, ips: 707.28639
+[2021/12/27 08:49:28] root INFO: epoch: [1/500], iter: 100, lr: 0.000464, loss: 38.402908, acc: 0.000000, norm_edit_dis: 0.000002, reader_cost: 0.00187 s, batch_cost: 0.37730 s, samples: 25600, ips: 1357.02064
+[2021/12/27 08:50:59] root INFO: epoch: [1/500], iter: 150, lr: 0.000721, loss: 37.065063, acc: 0.000000, norm_edit_dis: 0.000002, reader_cost: 0.00397 s, batch_cost: 0.38385 s, samples: 25600, ips: 1333.84142
+[2021/12/27 08:52:06] root INFO: epoch: [1/500], iter: 194, lr: 0.000946, loss: 36.620323, acc: 0.000000, norm_edit_dis: 0.000002, reader_cost: 0.00051 s, batch_cost: 0.32367 s, samples: 22528, ips: 1392.05148
+[2021/12/27 08:52:07] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 08:52:07] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 08:52:31] root INFO: epoch: [2/500], iter: 200, lr: 0.000977, loss: 36.737579, acc: 0.000000, norm_edit_dis: 0.000002, reader_cost: 0.26345 s, batch_cost: 0.32037 s, samples: 3072, ips: 191.77893
+[2021/12/27 08:54:03] root INFO: epoch: [2/500], iter: 250, lr: 0.001000, loss: 35.639614, acc: 0.000000, norm_edit_dis: 0.000002, reader_cost: 0.05809 s, batch_cost: 0.44009 s, samples: 25600, ips: 1163.39739
+[2021/12/27 08:55:29] root INFO: epoch: [2/500], iter: 300, lr: 0.001000, loss: 35.344753, acc: 0.000000, norm_edit_dis: 0.000002, reader_cost: 0.00408 s, batch_cost: 0.38338 s, samples: 25600, ips: 1335.49377
+[2021/12/27 08:56:56] root INFO: epoch: [2/500], iter: 350, lr: 0.001000, loss: 34.629959, acc: 0.000000, norm_edit_dis: 0.000002, reader_cost: 0.00290 s, batch_cost: 0.39121 s, samples: 25600, ips: 1308.76835
+[2021/12/27 08:57:53] root INFO: epoch: [2/500], iter: 389, lr: 0.001000, loss: 34.930428, acc: 0.000000, norm_edit_dis: 0.000002, reader_cost: 0.00057 s, batch_cost: 0.28962 s, samples: 19968, ips: 1378.89180
+[2021/12/27 08:57:53] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 08:57:53] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 08:58:27] root INFO: epoch: [3/500], iter: 400, lr: 0.001000, loss: 34.334137, acc: 0.000000, norm_edit_dis: 0.000002, reader_cost: 0.23130 s, batch_cost: 0.32969 s, samples: 5632, ips: 341.65023
+[2021/12/27 08:59:56] root INFO: epoch: [3/500], iter: 450, lr: 0.001000, loss: 34.853222, acc: 0.000000, norm_edit_dis: 0.000002, reader_cost: 0.01498 s, batch_cost: 0.39715 s, samples: 25600, ips: 1289.17431
+[2021/12/27 09:01:22] root INFO: epoch: [3/500], iter: 500, lr: 0.001000, loss: 33.886681, acc: 0.000000, norm_edit_dis: 0.000002, reader_cost: 0.00430 s, batch_cost: 0.39085 s, samples: 25600, ips: 1309.95355
+[2021/12/27 09:02:51] root INFO: epoch: [3/500], iter: 550, lr: 0.001000, loss: 33.258999, acc: 0.000000, norm_edit_dis: 0.000002, reader_cost: 0.00533 s, batch_cost: 0.39696 s, samples: 25600, ips: 1289.81432
+[2021/12/27 09:03:37] root INFO: epoch: [3/500], iter: 584, lr: 0.001000, loss: 33.267006, acc: 0.000000, norm_edit_dis: 0.000002, reader_cost: 0.00089 s, batch_cost: 0.24160 s, samples: 17408, ips: 1441.04838
+[2021/12/27 09:03:37] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 09:03:37] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 09:04:22] root INFO: epoch: [4/500], iter: 600, lr: 0.001000, loss: 33.166843, acc: 0.000000, norm_edit_dis: 0.000117, reader_cost: 0.28915 s, batch_cost: 0.42835 s, samples: 8192, ips: 382.49244
+[2021/12/27 09:05:50] root INFO: epoch: [4/500], iter: 650, lr: 0.001000, loss: 32.676735, acc: 0.000000, norm_edit_dis: 0.000097, reader_cost: 0.00204 s, batch_cost: 0.39464 s, samples: 25600, ips: 1297.39371
+[2021/12/27 09:07:14] root INFO: epoch: [4/500], iter: 700, lr: 0.001000, loss: 33.033840, acc: 0.000000, norm_edit_dis: 0.000821, reader_cost: 0.00074 s, batch_cost: 0.38657 s, samples: 25600, ips: 1324.45400
+[2021/12/27 09:08:39] root INFO: epoch: [4/500], iter: 750, lr: 0.001000, loss: 32.793655, acc: 0.000000, norm_edit_dis: 0.000781, reader_cost: 0.00635 s, batch_cost: 0.39528 s, samples: 25600, ips: 1295.29202
+[2021/12/27 09:09:16] root INFO: epoch: [4/500], iter: 779, lr: 0.001000, loss: 32.248535, acc: 0.000000, norm_edit_dis: 0.000943, reader_cost: 0.00152 s, batch_cost: 0.20585 s, samples: 14848, ips: 1442.58128
+[2021/12/27 09:09:16] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 09:09:16] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 09:10:07] root INFO: epoch: [5/500], iter: 800, lr: 0.001000, loss: 32.338799, acc: 0.000000, norm_edit_dis: 0.001287, reader_cost: 0.25958 s, batch_cost: 0.42683 s, samples: 10752, ips: 503.80974
+[2021/12/27 09:11:37] root INFO: epoch: [5/500], iter: 850, lr: 0.001000, loss: 32.049309, acc: 0.000000, norm_edit_dis: 0.001627, reader_cost: 0.00305 s, batch_cost: 0.39723 s, samples: 25600, ips: 1288.92643
+[2021/12/27 09:13:03] root INFO: epoch: [5/500], iter: 900, lr: 0.001000, loss: 31.276978, acc: 0.000000, norm_edit_dis: 0.002613, reader_cost: 0.00745 s, batch_cost: 0.39171 s, samples: 25600, ips: 1307.08173
+[2021/12/27 09:14:29] root INFO: epoch: [5/500], iter: 950, lr: 0.001000, loss: 31.477909, acc: 0.000000, norm_edit_dis: 0.004243, reader_cost: 0.00276 s, batch_cost: 0.39476 s, samples: 25600, ips: 1296.97604
+[2021/12/27 09:14:59] root INFO: epoch: [5/500], iter: 974, lr: 0.001000, loss: 31.623165, acc: 0.001953, norm_edit_dis: 0.005995, reader_cost: 0.00046 s, batch_cost: 0.16546 s, samples: 12288, ips: 1485.31928
+[2021/12/27 09:14:59] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 09:14:59] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 09:16:04] root INFO: epoch: [6/500], iter: 1000, lr: 0.001000, loss: 31.494034, acc: 0.000977, norm_edit_dis: 0.007882, reader_cost: 0.31243 s, batch_cost: 0.53673 s, samples: 13312, ips: 496.04503
+[2021/12/27 09:16:12] root INFO: cur metric, acc: 0.0033333322222225924, norm_edit_dis: 0.013402758442471963, fps: 4359.039362577404
+[2021/12/27 09:16:13] root INFO: save best model is to ./output/rec/class_demo/best_accuracy
+[2021/12/27 09:16:13] root INFO: best metric, acc: 0.0033333322222225924, norm_edit_dis: 0.013402758442471963, fps: 4359.039362577404, best_epoch: 6
+[2021/12/27 09:17:34] root INFO: epoch: [6/500], iter: 1050, lr: 0.001000, loss: 30.739510, acc: 0.004883, norm_edit_dis: 0.014969, reader_cost: 0.00393 s, batch_cost: 0.37886 s, samples: 25600, ips: 1351.41687
+[2021/12/27 09:19:00] root INFO: epoch: [6/500], iter: 1100, lr: 0.001000, loss: 31.053886, acc: 0.007812, norm_edit_dis: 0.021222, reader_cost: 0.00297 s, batch_cost: 0.37764 s, samples: 25600, ips: 1355.79641
+[2021/12/27 09:20:24] root INFO: epoch: [6/500], iter: 1150, lr: 0.001000, loss: 30.880875, acc: 0.007812, norm_edit_dis: 0.022875, reader_cost: 0.00400 s, batch_cost: 0.38377 s, samples: 25600, ips: 1334.14519
+[2021/12/27 09:20:45] root INFO: epoch: [6/500], iter: 1169, lr: 0.001000, loss: 30.727268, acc: 0.006836, norm_edit_dis: 0.023261, reader_cost: 0.00134 s, batch_cost: 0.13054 s, samples: 9728, ips: 1490.43246
+[2021/12/27 09:20:45] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 09:20:45] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 09:21:57] root INFO: epoch: [7/500], iter: 1200, lr: 0.001000, loss: 29.990135, acc: 0.007812, norm_edit_dis: 0.027328, reader_cost: 0.27244 s, batch_cost: 0.52657 s, samples: 15872, ips: 602.84945
+[2021/12/27 09:23:25] root INFO: epoch: [7/500], iter: 1250, lr: 0.001000, loss: 29.781498, acc: 0.007812, norm_edit_dis: 0.035501, reader_cost: 0.00177 s, batch_cost: 0.40512 s, samples: 25600, ips: 1263.83599
+[2021/12/27 09:24:51] root INFO: epoch: [7/500], iter: 1300, lr: 0.001000, loss: 29.205809, acc: 0.009766, norm_edit_dis: 0.045964, reader_cost: 0.00163 s, batch_cost: 0.39169 s, samples: 25600, ips: 1307.14816
+[2021/12/27 09:26:14] root INFO: epoch: [7/500], iter: 1350, lr: 0.001000, loss: 28.961121, acc: 0.015625, norm_edit_dis: 0.057132, reader_cost: 0.00210 s, batch_cost: 0.39524 s, samples: 25600, ips: 1295.42549
+[2021/12/27 09:26:26] root INFO: epoch: [7/500], iter: 1364, lr: 0.001000, loss: 28.874807, acc: 0.015625, norm_edit_dis: 0.059120, reader_cost: 0.00007 s, batch_cost: 0.08840 s, samples: 7168, ips: 1621.68286
+[2021/12/27 09:26:27] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 09:26:27] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 09:27:47] root INFO: epoch: [8/500], iter: 1400, lr: 0.001000, loss: 27.905441, acc: 0.017578, norm_edit_dis: 0.068965, reader_cost: 0.29473 s, batch_cost: 0.59020 s, samples: 18432, ips: 624.60293
+[2021/12/27 09:29:11] root INFO: epoch: [8/500], iter: 1450, lr: 0.001000, loss: 27.839235, acc: 0.018555, norm_edit_dis: 0.081129, reader_cost: 0.00163 s, batch_cost: 0.38569 s, samples: 25600, ips: 1327.50661
+[2021/12/27 09:30:35] root INFO: epoch: [8/500], iter: 1500, lr: 0.001000, loss: 27.198383, acc: 0.019531, norm_edit_dis: 0.094981, reader_cost: 0.00177 s, batch_cost: 0.39941 s, samples: 25600, ips: 1281.88871
+[2021/12/27 09:31:58] root INFO: epoch: [8/500], iter: 1550, lr: 0.001000, loss: 27.088310, acc: 0.025391, norm_edit_dis: 0.118497, reader_cost: 0.00305 s, batch_cost: 0.39178 s, samples: 25600, ips: 1306.84304
+[2021/12/27 09:32:06] root INFO: epoch: [8/500], iter: 1559, lr: 0.001000, loss: 27.045395, acc: 0.025391, norm_edit_dis: 0.120598, reader_cost: 0.00005 s, batch_cost: 0.05675 s, samples: 4608, ips: 1623.96156
+[2021/12/27 09:32:07] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 09:32:07] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 09:33:37] root INFO: epoch: [9/500], iter: 1600, lr: 0.000999, loss: 25.896967, acc: 0.029297, norm_edit_dis: 0.133304, reader_cost: 0.27236 s, batch_cost: 0.60478 s, samples: 20992, ips: 694.20667
+[2021/12/27 09:35:03] root INFO: epoch: [9/500], iter: 1650, lr: 0.000999, loss: 25.854214, acc: 0.032226, norm_edit_dis: 0.146421, reader_cost: 0.00305 s, batch_cost: 0.39301 s, samples: 25600, ips: 1302.76875
+[2021/12/27 09:36:31] root INFO: epoch: [9/500], iter: 1700, lr: 0.000999, loss: 24.984200, acc: 0.036133, norm_edit_dis: 0.160599, reader_cost: 0.00319 s, batch_cost: 0.39217 s, samples: 25600, ips: 1305.54188
+[2021/12/27 09:37:49] root INFO: epoch: [9/500], iter: 1750, lr: 0.000999, loss: 24.665148, acc: 0.043945, norm_edit_dis: 0.177761, reader_cost: 0.00069 s, batch_cost: 0.37064 s, samples: 25600, ips: 1381.39484
+[2021/12/27 09:37:52] root INFO: epoch: [9/500], iter: 1754, lr: 0.000999, loss: 24.685558, acc: 0.043945, norm_edit_dis: 0.180501, reader_cost: 0.00002 s, batch_cost: 0.02515 s, samples: 2048, ips: 1628.65580
+[2021/12/27 09:37:53] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 09:37:53] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 09:39:30] root INFO: epoch: [10/500], iter: 1800, lr: 0.000999, loss: 23.903641, acc: 0.049805, norm_edit_dis: 0.194956, reader_cost: 0.31022 s, batch_cost: 0.66411 s, samples: 23552, ips: 709.28075
+[2021/12/27 09:40:58] root INFO: epoch: [10/500], iter: 1850, lr: 0.000999, loss: 23.382420, acc: 0.053711, norm_edit_dis: 0.214231, reader_cost: 0.00307 s, batch_cost: 0.38861 s, samples: 25600, ips: 1317.50027
+[2021/12/27 09:42:25] root INFO: epoch: [10/500], iter: 1900, lr: 0.000999, loss: 22.838020, acc: 0.060547, norm_edit_dis: 0.229304, reader_cost: 0.00181 s, batch_cost: 0.39682 s, samples: 25600, ips: 1290.26574
+[2021/12/27 09:43:39] root INFO: epoch: [10/500], iter: 1949, lr: 0.000999, loss: 21.817719, acc: 0.066406, norm_edit_dis: 0.248824, reader_cost: 0.00293 s, batch_cost: 0.36544 s, samples: 25088, ips: 1373.02334
+[2021/12/27 09:43:39] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 09:43:40] root INFO: save model in ./output/rec/class_demo/iter_epoch_10
+[2021/12/27 09:43:40] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 09:43:54] root INFO: epoch: [11/500], iter: 1950, lr: 0.000999, loss: 21.817719, acc: 0.066406, norm_edit_dis: 0.248824, reader_cost: 0.23958 s, batch_cost: 0.24747 s, samples: 512, ips: 41.37889
+[2021/12/27 09:45:25] root INFO: epoch: [11/500], iter: 2000, lr: 0.000999, loss: 21.380695, acc: 0.076172, norm_edit_dis: 0.264378, reader_cost: 0.05631 s, batch_cost: 0.45393 s, samples: 25600, ips: 1127.92199
+[2021/12/27 09:45:35] root INFO: cur metric, acc: 0.08433330522223159, norm_edit_dis: 0.3036390671876552, fps: 3846.5678549647605
+[2021/12/27 09:45:35] root INFO: save best model is to ./output/rec/class_demo/best_accuracy
+[2021/12/27 09:45:35] root INFO: best metric, acc: 0.08433330522223159, norm_edit_dis: 0.3036390671876552, fps: 3846.5678549647605, best_epoch: 11
+[2021/12/27 09:46:55] root INFO: epoch: [11/500], iter: 2050, lr: 0.000999, loss: 20.950388, acc: 0.083984, norm_edit_dis: 0.280781, reader_cost: 0.00189 s, batch_cost: 0.37902 s, samples: 25600, ips: 1350.85149
+[2021/12/27 09:48:21] root INFO: epoch: [11/500], iter: 2100, lr: 0.000999, loss: 20.982346, acc: 0.089844, norm_edit_dis: 0.291707, reader_cost: 0.00299 s, batch_cost: 0.39065 s, samples: 25600, ips: 1310.63794
+[2021/12/27 09:49:26] root INFO: epoch: [11/500], iter: 2144, lr: 0.000999, loss: 20.190447, acc: 0.101562, norm_edit_dis: 0.307695, reader_cost: 0.00267 s, batch_cost: 0.33242 s, samples: 22528, ips: 1355.37414
+[2021/12/27 09:49:27] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 09:49:27] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 09:49:52] root INFO: epoch: [12/500], iter: 2150, lr: 0.000999, loss: 20.031525, acc: 0.100586, norm_edit_dis: 0.310356, reader_cost: 0.25532 s, batch_cost: 0.31289 s, samples: 3072, ips: 196.36232
+[2021/12/27 09:51:22] root INFO: epoch: [12/500], iter: 2200, lr: 0.000999, loss: 19.331169, acc: 0.097656, norm_edit_dis: 0.316011, reader_cost: 0.00586 s, batch_cost: 0.39200 s, samples: 25600, ips: 1306.13339
+[2021/12/27 09:52:47] root INFO: epoch: [12/500], iter: 2250, lr: 0.000999, loss: 19.045559, acc: 0.113281, norm_edit_dis: 0.343067, reader_cost: 0.00394 s, batch_cost: 0.38648 s, samples: 25600, ips: 1324.76573
+[2021/12/27 09:54:13] root INFO: epoch: [12/500], iter: 2300, lr: 0.000999, loss: 18.595863, acc: 0.115234, norm_edit_dis: 0.342484, reader_cost: 0.00159 s, batch_cost: 0.38460 s, samples: 25600, ips: 1331.26919
+[2021/12/27 09:55:09] root INFO: epoch: [12/500], iter: 2339, lr: 0.000999, loss: 18.358883, acc: 0.127929, norm_edit_dis: 0.361808, reader_cost: 0.00143 s, batch_cost: 0.29185 s, samples: 19968, ips: 1368.36941
+[2021/12/27 09:55:10] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 09:55:10] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 09:55:47] root INFO: epoch: [13/500], iter: 2350, lr: 0.000999, loss: 17.748934, acc: 0.129883, norm_edit_dis: 0.365633, reader_cost: 0.30252 s, batch_cost: 0.39608 s, samples: 5632, ips: 284.38761
+[2021/12/27 09:57:16] root INFO: epoch: [13/500], iter: 2400, lr: 0.000999, loss: 17.269794, acc: 0.136718, norm_edit_dis: 0.375566, reader_cost: 0.00524 s, batch_cost: 0.40442 s, samples: 25600, ips: 1266.01729
+[2021/12/27 09:58:44] root INFO: epoch: [13/500], iter: 2450, lr: 0.000999, loss: 17.584148, acc: 0.142578, norm_edit_dis: 0.386481, reader_cost: 0.00190 s, batch_cost: 0.39392 s, samples: 25600, ips: 1299.76093
+[2021/12/27 10:00:11] root INFO: epoch: [13/500], iter: 2500, lr: 0.000999, loss: 17.371990, acc: 0.149414, norm_edit_dis: 0.406413, reader_cost: 0.00195 s, batch_cost: 0.40059 s, samples: 25600, ips: 1278.10862
+[2021/12/27 10:00:58] root INFO: epoch: [13/500], iter: 2534, lr: 0.000999, loss: 16.952614, acc: 0.163086, norm_edit_dis: 0.404142, reader_cost: 0.00038 s, batch_cost: 0.24473 s, samples: 17408, ips: 1422.60781
+[2021/12/27 10:00:58] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 10:00:58] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 10:01:42] root INFO: epoch: [14/500], iter: 2550, lr: 0.000999, loss: 16.401123, acc: 0.166015, norm_edit_dis: 0.416922, reader_cost: 0.28841 s, batch_cost: 0.41903 s, samples: 8192, ips: 391.00289
+[2021/12/27 10:03:11] root INFO: epoch: [14/500], iter: 2600, lr: 0.000999, loss: 16.409651, acc: 0.172851, norm_edit_dis: 0.426250, reader_cost: 0.00326 s, batch_cost: 0.40759 s, samples: 25600, ips: 1256.15929
+[2021/12/27 10:04:38] root INFO: epoch: [14/500], iter: 2650, lr: 0.000998, loss: 16.050188, acc: 0.176757, norm_edit_dis: 0.436579, reader_cost: 0.00410 s, batch_cost: 0.39941 s, samples: 25600, ips: 1281.87553
+[2021/12/27 10:06:02] root INFO: epoch: [14/500], iter: 2700, lr: 0.000998, loss: 16.041891, acc: 0.177734, norm_edit_dis: 0.440594, reader_cost: 0.00077 s, batch_cost: 0.39765 s, samples: 25600, ips: 1287.55974
+[2021/12/27 10:06:42] root INFO: epoch: [14/500], iter: 2729, lr: 0.000998, loss: 14.817688, acc: 0.195312, norm_edit_dis: 0.455378, reader_cost: 0.00282 s, batch_cost: 0.20982 s, samples: 14848, ips: 1415.30512
+[2021/12/27 10:06:43] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 10:06:43] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 10:07:37] root INFO: epoch: [15/500], iter: 2750, lr: 0.000998, loss: 14.873816, acc: 0.196289, norm_edit_dis: 0.461370, reader_cost: 0.29888 s, batch_cost: 0.47009 s, samples: 10752, ips: 457.44142
+[2021/12/27 10:09:02] root INFO: epoch: [15/500], iter: 2800, lr: 0.000998, loss: 14.791033, acc: 0.197265, norm_edit_dis: 0.464111, reader_cost: 0.00304 s, batch_cost: 0.40339 s, samples: 25600, ips: 1269.25025
+[2021/12/27 10:10:28] root INFO: epoch: [15/500], iter: 2850, lr: 0.000998, loss: 14.766188, acc: 0.207031, norm_edit_dis: 0.484114, reader_cost: 0.00062 s, batch_cost: 0.39321 s, samples: 25600, ips: 1302.09006
+[2021/12/27 10:11:54] root INFO: epoch: [15/500], iter: 2900, lr: 0.000998, loss: 14.478943, acc: 0.216796, norm_edit_dis: 0.480963, reader_cost: 0.00074 s, batch_cost: 0.39225 s, samples: 25600, ips: 1305.28941
+[2021/12/27 10:12:25] root INFO: epoch: [15/500], iter: 2924, lr: 0.000998, loss: 14.642817, acc: 0.222656, norm_edit_dis: 0.493874, reader_cost: 0.00025 s, batch_cost: 0.17005 s, samples: 12288, ips: 1445.25501
+[2021/12/27 10:12:25] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 10:12:25] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 10:13:26] root INFO: epoch: [16/500], iter: 2950, lr: 0.000998, loss: 14.015335, acc: 0.226562, norm_edit_dis: 0.502503, reader_cost: 0.25809 s, batch_cost: 0.47205 s, samples: 13312, ips: 564.00953
+[2021/12/27 10:14:51] root INFO: epoch: [16/500], iter: 3000, lr: 0.000998, loss: 13.677801, acc: 0.239257, norm_edit_dis: 0.509577, reader_cost: 0.00542 s, batch_cost: 0.38759 s, samples: 25600, ips: 1320.99504
+[2021/12/27 10:15:01] root INFO: cur metric, acc: 0.29633323455558847, norm_edit_dis: 0.586875852509194, fps: 3272.7201792973187
+[2021/12/27 10:15:01] root INFO: save best model is to ./output/rec/class_demo/best_accuracy
+[2021/12/27 10:15:01] root INFO: best metric, acc: 0.29633323455558847, norm_edit_dis: 0.586875852509194, fps: 3272.7201792973187, best_epoch: 16
+[2021/12/27 10:16:22] root INFO: epoch: [16/500], iter: 3050, lr: 0.000998, loss: 13.770267, acc: 0.245117, norm_edit_dis: 0.515368, reader_cost: 0.00374 s, batch_cost: 0.37633 s, samples: 25600, ips: 1360.52179
+[2021/12/27 10:17:48] root INFO: epoch: [16/500], iter: 3100, lr: 0.000998, loss: 13.226650, acc: 0.251953, norm_edit_dis: 0.534261, reader_cost: 0.00663 s, batch_cost: 0.39375 s, samples: 25600, ips: 1300.32294
+[2021/12/27 10:18:09] root INFO: epoch: [16/500], iter: 3119, lr: 0.000998, loss: 13.083690, acc: 0.264648, norm_edit_dis: 0.543734, reader_cost: 0.00021 s, batch_cost: 0.12702 s, samples: 9728, ips: 1531.76292
+[2021/12/27 10:18:10] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 10:18:10] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 10:19:22] root INFO: epoch: [17/500], iter: 3150, lr: 0.000998, loss: 12.880337, acc: 0.264648, norm_edit_dis: 0.528459, reader_cost: 0.29310 s, batch_cost: 0.54549 s, samples: 15872, ips: 581.93422
+[2021/12/27 10:20:51] root INFO: epoch: [17/500], iter: 3200, lr: 0.000998, loss: 12.928740, acc: 0.261718, norm_edit_dis: 0.536775, reader_cost: 0.00158 s, batch_cost: 0.39850 s, samples: 25600, ips: 1284.81381
+[2021/12/27 10:22:18] root INFO: epoch: [17/500], iter: 3250, lr: 0.000998, loss: 12.605703, acc: 0.270507, norm_edit_dis: 0.546400, reader_cost: 0.00269 s, batch_cost: 0.39637 s, samples: 25600, ips: 1291.71520
+[2021/12/27 10:23:44] root INFO: epoch: [17/500], iter: 3300, lr: 0.000998, loss: 12.731299, acc: 0.274414, norm_edit_dis: 0.546478, reader_cost: 0.00622 s, batch_cost: 0.38553 s, samples: 25600, ips: 1328.04616
+[2021/12/27 10:23:58] root INFO: epoch: [17/500], iter: 3314, lr: 0.000997, loss: 12.544033, acc: 0.281249, norm_edit_dis: 0.554618, reader_cost: 0.00007 s, batch_cost: 0.08823 s, samples: 7168, ips: 1624.78762
+[2021/12/27 10:23:58] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 10:23:58] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 10:25:19] root INFO: epoch: [18/500], iter: 3350, lr: 0.000997, loss: 12.124662, acc: 0.297851, norm_edit_dis: 0.564841, reader_cost: 0.27559 s, batch_cost: 0.57168 s, samples: 18432, ips: 644.84051
+[2021/12/27 10:26:48] root INFO: epoch: [18/500], iter: 3400, lr: 0.000997, loss: 12.362875, acc: 0.299804, norm_edit_dis: 0.565441, reader_cost: 0.00547 s, batch_cost: 0.39115 s, samples: 25600, ips: 1308.95690
+[2021/12/27 10:28:15] root INFO: epoch: [18/500], iter: 3450, lr: 0.000997, loss: 11.877682, acc: 0.292968, norm_edit_dis: 0.563505, reader_cost: 0.00251 s, batch_cost: 0.38365 s, samples: 25600, ips: 1334.56681
+[2021/12/27 10:29:38] root INFO: epoch: [18/500], iter: 3500, lr: 0.000997, loss: 11.395731, acc: 0.305663, norm_edit_dis: 0.586858, reader_cost: 0.00525 s, batch_cost: 0.39178 s, samples: 25600, ips: 1306.86050
+[2021/12/27 10:29:46] root INFO: epoch: [18/500], iter: 3509, lr: 0.000997, loss: 11.763190, acc: 0.304687, norm_edit_dis: 0.577592, reader_cost: 0.00004 s, batch_cost: 0.05655 s, samples: 4608, ips: 1629.66213
+[2021/12/27 10:29:46] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 10:29:46] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 10:31:15] root INFO: epoch: [19/500], iter: 3550, lr: 0.000997, loss: 11.748081, acc: 0.316406, norm_edit_dis: 0.583542, reader_cost: 0.29146 s, batch_cost: 0.61850 s, samples: 20992, ips: 678.80438
+[2021/12/27 10:32:45] root INFO: epoch: [19/500], iter: 3600, lr: 0.000997, loss: 11.464491, acc: 0.323242, norm_edit_dis: 0.595535, reader_cost: 0.00727 s, batch_cost: 0.39128 s, samples: 25600, ips: 1308.51090
+[2021/12/27 10:34:12] root INFO: epoch: [19/500], iter: 3650, lr: 0.000997, loss: 11.113584, acc: 0.335937, norm_edit_dis: 0.598681, reader_cost: 0.00174 s, batch_cost: 0.38775 s, samples: 25600, ips: 1320.44445
+[2021/12/27 10:35:29] root INFO: epoch: [19/500], iter: 3700, lr: 0.000997, loss: 11.166561, acc: 0.325195, norm_edit_dis: 0.594864, reader_cost: 0.00076 s, batch_cost: 0.38393 s, samples: 25600, ips: 1333.56341
+[2021/12/27 10:35:33] root INFO: epoch: [19/500], iter: 3704, lr: 0.000997, loss: 10.943075, acc: 0.328124, norm_edit_dis: 0.597601, reader_cost: 0.00002 s, batch_cost: 0.02511 s, samples: 2048, ips: 1631.33714
+[2021/12/27 10:35:33] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 10:35:33] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 10:37:12] root INFO: epoch: [20/500], iter: 3750, lr: 0.000997, loss: 11.010099, acc: 0.336913, norm_edit_dis: 0.607855, reader_cost: 0.28618 s, batch_cost: 0.65222 s, samples: 23552, ips: 722.20559
+[2021/12/27 10:38:40] root INFO: epoch: [20/500], iter: 3800, lr: 0.000997, loss: 10.721889, acc: 0.337890, norm_edit_dis: 0.604699, reader_cost: 0.00516 s, batch_cost: 0.38832 s, samples: 25600, ips: 1318.48844
+[2021/12/27 10:40:06] root INFO: epoch: [20/500], iter: 3850, lr: 0.000997, loss: 10.443482, acc: 0.342773, norm_edit_dis: 0.614364, reader_cost: 0.00541 s, batch_cost: 0.39016 s, samples: 25600, ips: 1312.28277
+[2021/12/27 10:41:19] root INFO: epoch: [20/500], iter: 3899, lr: 0.000996, loss: 10.563380, acc: 0.366210, norm_edit_dis: 0.625067, reader_cost: 0.00167 s, batch_cost: 0.36171 s, samples: 25088, ips: 1387.19712
+[2021/12/27 10:41:20] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 10:41:20] root INFO: save model in ./output/rec/class_demo/iter_epoch_20
+[2021/12/27 10:41:20] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 10:41:37] root INFO: epoch: [21/500], iter: 3900, lr: 0.000996, loss: 10.449745, acc: 0.366210, norm_edit_dis: 0.625067, reader_cost: 0.29519 s, batch_cost: 0.30445 s, samples: 512, ips: 33.63488
+[2021/12/27 10:43:07] root INFO: epoch: [21/500], iter: 3950, lr: 0.000996, loss: 10.069468, acc: 0.372070, norm_edit_dis: 0.637593, reader_cost: 0.08336 s, batch_cost: 0.47469 s, samples: 25600, ips: 1078.59627
+[2021/12/27 10:44:33] root INFO: epoch: [21/500], iter: 4000, lr: 0.000996, loss: 10.474318, acc: 0.375976, norm_edit_dis: 0.628556, reader_cost: 0.00312 s, batch_cost: 0.40506 s, samples: 25600, ips: 1264.01985
+[2021/12/27 10:44:42] root INFO: cur metric, acc: 0.4266665244444918, norm_edit_dis: 0.6885263509177695, fps: 3983.7255930594106
+[2021/12/27 10:44:42] root INFO: save best model is to ./output/rec/class_demo/best_accuracy
+[2021/12/27 10:44:42] root INFO: best metric, acc: 0.4266665244444918, norm_edit_dis: 0.6885263509177695, fps: 3983.7255930594106, best_epoch: 21
+[2021/12/27 10:46:03] root INFO: epoch: [21/500], iter: 4050, lr: 0.000996, loss: 10.390903, acc: 0.363281, norm_edit_dis: 0.629423, reader_cost: 0.00160 s, batch_cost: 0.38978 s, samples: 25600, ips: 1313.56716
+[2021/12/27 10:47:09] root INFO: epoch: [21/500], iter: 4094, lr: 0.000996, loss: 10.195183, acc: 0.374999, norm_edit_dis: 0.637450, reader_cost: 0.00283 s, batch_cost: 0.33171 s, samples: 22528, ips: 1358.28166
+[2021/12/27 10:47:09] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 10:47:09] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 10:47:34] root INFO: epoch: [22/500], iter: 4100, lr: 0.000996, loss: 10.048318, acc: 0.362304, norm_edit_dis: 0.631149, reader_cost: 0.25193 s, batch_cost: 0.30580 s, samples: 3072, ips: 200.91463
+[2021/12/27 10:49:06] root INFO: epoch: [22/500], iter: 4150, lr: 0.000996, loss: 10.159678, acc: 0.381835, norm_edit_dis: 0.640247, reader_cost: 0.00302 s, batch_cost: 0.41250 s, samples: 25600, ips: 1241.22142
+[2021/12/27 10:50:34] root INFO: epoch: [22/500], iter: 4200, lr: 0.000996, loss: 9.668846, acc: 0.394530, norm_edit_dis: 0.654884, reader_cost: 0.00268 s, batch_cost: 0.40104 s, samples: 25600, ips: 1276.66888
+[2021/12/27 10:52:01] root INFO: epoch: [22/500], iter: 4250, lr: 0.000996, loss: 9.718491, acc: 0.392577, norm_edit_dis: 0.654658, reader_cost: 0.00857 s, batch_cost: 0.40512 s, samples: 25600, ips: 1263.81384
+[2021/12/27 10:52:57] root INFO: epoch: [22/500], iter: 4289, lr: 0.000996, loss: 9.550253, acc: 0.398437, norm_edit_dis: 0.655882, reader_cost: 0.00166 s, batch_cost: 0.29186 s, samples: 19968, ips: 1368.34861
+[2021/12/27 10:52:58] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 10:52:58] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 10:53:35] root INFO: epoch: [23/500], iter: 4300, lr: 0.000996, loss: 9.607639, acc: 0.405273, norm_edit_dis: 0.665717, reader_cost: 0.28991 s, batch_cost: 0.39597 s, samples: 5632, ips: 284.46364
+[2021/12/27 10:55:02] root INFO: epoch: [23/500], iter: 4350, lr: 0.000996, loss: 9.259462, acc: 0.412109, norm_edit_dis: 0.660589, reader_cost: 0.00075 s, batch_cost: 0.41013 s, samples: 25600, ips: 1248.38544
+[2021/12/27 10:56:28] root INFO: epoch: [23/500], iter: 4400, lr: 0.000995, loss: 9.578529, acc: 0.400390, norm_edit_dis: 0.656270, reader_cost: 0.00187 s, batch_cost: 0.40167 s, samples: 25600, ips: 1274.67910
+[2021/12/27 10:57:57] root INFO: epoch: [23/500], iter: 4450, lr: 0.000995, loss: 9.313055, acc: 0.407226, norm_edit_dis: 0.660034, reader_cost: 0.00191 s, batch_cost: 0.40302 s, samples: 25600, ips: 1270.42295
+[2021/12/27 10:58:43] root INFO: epoch: [23/500], iter: 4484, lr: 0.000995, loss: 9.292974, acc: 0.409179, norm_edit_dis: 0.669217, reader_cost: 0.00270 s, batch_cost: 0.24461 s, samples: 17408, ips: 1423.33936
+[2021/12/27 10:58:43] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 10:58:43] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 10:59:26] root INFO: epoch: [24/500], iter: 4500, lr: 0.000995, loss: 9.017838, acc: 0.418944, norm_edit_dis: 0.667955, reader_cost: 0.29157 s, batch_cost: 0.41954 s, samples: 8192, ips: 390.52674
+[2021/12/27 11:00:55] root INFO: epoch: [24/500], iter: 4550, lr: 0.000995, loss: 8.881033, acc: 0.416991, norm_edit_dis: 0.676530, reader_cost: 0.03104 s, batch_cost: 0.43888 s, samples: 25600, ips: 1166.60772
+[2021/12/27 11:02:26] root INFO: epoch: [24/500], iter: 4600, lr: 0.000995, loss: 8.851377, acc: 0.417968, norm_edit_dis: 0.673943, reader_cost: 0.00459 s, batch_cost: 0.40312 s, samples: 25600, ips: 1270.08592
+[2021/12/27 11:03:52] root INFO: epoch: [24/500], iter: 4650, lr: 0.000995, loss: 8.867914, acc: 0.428710, norm_edit_dis: 0.683519, reader_cost: 0.00295 s, batch_cost: 0.39207 s, samples: 25600, ips: 1305.87338
+[2021/12/27 11:04:30] root INFO: epoch: [24/500], iter: 4679, lr: 0.000995, loss: 8.979374, acc: 0.412109, norm_edit_dis: 0.677556, reader_cost: 0.00032 s, batch_cost: 0.20088 s, samples: 14848, ips: 1478.30632
+[2021/12/27 11:04:30] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 11:04:30] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 11:05:24] root INFO: epoch: [25/500], iter: 4700, lr: 0.000995, loss: 8.837563, acc: 0.424804, norm_edit_dis: 0.681386, reader_cost: 0.32536 s, batch_cost: 0.49486 s, samples: 10752, ips: 434.54886
+[2021/12/27 11:06:54] root INFO: epoch: [25/500], iter: 4750, lr: 0.000995, loss: 8.843618, acc: 0.432616, norm_edit_dis: 0.684401, reader_cost: 0.08975 s, batch_cost: 0.48517 s, samples: 25600, ips: 1055.28993
+[2021/12/27 11:08:21] root INFO: epoch: [25/500], iter: 4800, lr: 0.000995, loss: 8.517933, acc: 0.442382, norm_edit_dis: 0.692170, reader_cost: 0.00290 s, batch_cost: 0.40401 s, samples: 25600, ips: 1267.30248
+[2021/12/27 11:09:47] root INFO: epoch: [25/500], iter: 4850, lr: 0.000994, loss: 8.336166, acc: 0.449218, norm_edit_dis: 0.684595, reader_cost: 0.01751 s, batch_cost: 0.41640 s, samples: 25600, ips: 1229.57384
+[2021/12/27 11:10:17] root INFO: epoch: [25/500], iter: 4874, lr: 0.000994, loss: 8.680078, acc: 0.429687, norm_edit_dis: 0.685985, reader_cost: 0.00038 s, batch_cost: 0.17080 s, samples: 12288, ips: 1438.83724
+[2021/12/27 11:10:17] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 11:10:17] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 11:11:20] root INFO: epoch: [26/500], iter: 4900, lr: 0.000994, loss: 8.396070, acc: 0.445312, norm_edit_dis: 0.694620, reader_cost: 0.28202 s, batch_cost: 0.49228 s, samples: 13312, ips: 540.83060
+[2021/12/27 11:12:48] root INFO: epoch: [26/500], iter: 4950, lr: 0.000994, loss: 8.308878, acc: 0.453124, norm_edit_dis: 0.693483, reader_cost: 0.00335 s, batch_cost: 0.39054 s, samples: 25600, ips: 1311.01197
+[2021/12/27 11:14:17] root INFO: epoch: [26/500], iter: 5000, lr: 0.000994, loss: 8.538721, acc: 0.455077, norm_edit_dis: 0.694770, reader_cost: 0.02088 s, batch_cost: 0.42292 s, samples: 25600, ips: 1210.63630
+[2021/12/27 11:14:26] root INFO: cur metric, acc: 0.5186664937778354, norm_edit_dis: 0.7462714195820415, fps: 3818.581079030584
+[2021/12/27 11:14:26] root INFO: save best model is to ./output/rec/class_demo/best_accuracy
+[2021/12/27 11:14:26] root INFO: best metric, acc: 0.5186664937778354, norm_edit_dis: 0.7462714195820415, fps: 3818.581079030584, best_epoch: 26
+[2021/12/27 11:15:46] root INFO: epoch: [26/500], iter: 5050, lr: 0.000994, loss: 8.477945, acc: 0.454101, norm_edit_dis: 0.696673, reader_cost: 0.00275 s, batch_cost: 0.38213 s, samples: 25600, ips: 1339.86606
+[2021/12/27 11:16:08] root INFO: epoch: [26/500], iter: 5069, lr: 0.000994, loss: 8.442275, acc: 0.446288, norm_edit_dis: 0.695303, reader_cost: 0.00121 s, batch_cost: 0.12824 s, samples: 9728, ips: 1517.20070
+[2021/12/27 11:16:08] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 11:16:08] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 11:17:20] root INFO: epoch: [27/500], iter: 5100, lr: 0.000994, loss: 7.867644, acc: 0.465819, norm_edit_dis: 0.710114, reader_cost: 0.27491 s, batch_cost: 0.52953 s, samples: 15872, ips: 599.47918
+[2021/12/27 11:18:51] root INFO: epoch: [27/500], iter: 5150, lr: 0.000994, loss: 7.968364, acc: 0.465819, norm_edit_dis: 0.707111, reader_cost: 0.00308 s, batch_cost: 0.39271 s, samples: 25600, ips: 1303.75350
+[2021/12/27 11:20:16] root INFO: epoch: [27/500], iter: 5200, lr: 0.000994, loss: 7.957613, acc: 0.457030, norm_edit_dis: 0.704036, reader_cost: 0.00316 s, batch_cost: 0.38312 s, samples: 25600, ips: 1336.38530
+[2021/12/27 11:21:42] root INFO: epoch: [27/500], iter: 5250, lr: 0.000993, loss: 8.248577, acc: 0.468749, norm_edit_dis: 0.708251, reader_cost: 0.00644 s, batch_cost: 0.39298 s, samples: 25600, ips: 1302.85734
+[2021/12/27 11:21:55] root INFO: epoch: [27/500], iter: 5264, lr: 0.000993, loss: 8.333393, acc: 0.468749, norm_edit_dis: 0.710697, reader_cost: 0.00007 s, batch_cost: 0.09082 s, samples: 7168, ips: 1578.52330
+[2021/12/27 11:21:55] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 11:21:55] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 11:23:17] root INFO: epoch: [28/500], iter: 5300, lr: 0.000993, loss: 7.698656, acc: 0.479491, norm_edit_dis: 0.715302, reader_cost: 0.35468 s, batch_cost: 0.64039 s, samples: 18432, ips: 575.64953
+[2021/12/27 11:24:45] root INFO: epoch: [28/500], iter: 5350, lr: 0.000993, loss: 7.795504, acc: 0.482421, norm_edit_dis: 0.724356, reader_cost: 0.00180 s, batch_cost: 0.39776 s, samples: 25600, ips: 1287.21979
+[2021/12/27 11:26:14] root INFO: epoch: [28/500], iter: 5400, lr: 0.000993, loss: 8.098970, acc: 0.474608, norm_edit_dis: 0.713373, reader_cost: 0.00764 s, batch_cost: 0.40232 s, samples: 25600, ips: 1272.62372
+[2021/12/27 11:27:39] root INFO: epoch: [28/500], iter: 5450, lr: 0.000993, loss: 7.534214, acc: 0.480468, norm_edit_dis: 0.722982, reader_cost: 0.00623 s, batch_cost: 0.39594 s, samples: 25600, ips: 1293.12393
+[2021/12/27 11:27:47] root INFO: epoch: [28/500], iter: 5459, lr: 0.000993, loss: 7.654816, acc: 0.483397, norm_edit_dis: 0.722041, reader_cost: 0.00004 s, batch_cost: 0.05658 s, samples: 4608, ips: 1628.93143
+[2021/12/27 11:27:47] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 11:27:47] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 11:29:16] root INFO: epoch: [29/500], iter: 5500, lr: 0.000993, loss: 7.632346, acc: 0.485351, norm_edit_dis: 0.722111, reader_cost: 0.26526 s, batch_cost: 0.61014 s, samples: 20992, ips: 688.09927
+[2021/12/27 11:30:44] root INFO: epoch: [29/500], iter: 5550, lr: 0.000993, loss: 7.883698, acc: 0.475585, norm_edit_dis: 0.713324, reader_cost: 0.00179 s, batch_cost: 0.38835 s, samples: 25600, ips: 1318.40376
+[2021/12/27 11:32:12] root INFO: epoch: [29/500], iter: 5600, lr: 0.000992, loss: 7.400797, acc: 0.489257, norm_edit_dis: 0.729619, reader_cost: 0.00293 s, batch_cost: 0.39214 s, samples: 25600, ips: 1305.65466
+[2021/12/27 11:33:29] root INFO: epoch: [29/500], iter: 5650, lr: 0.000992, loss: 7.629987, acc: 0.499999, norm_edit_dis: 0.728736, reader_cost: 0.00384 s, batch_cost: 0.37986 s, samples: 25600, ips: 1347.85916
+[2021/12/27 11:33:32] root INFO: epoch: [29/500], iter: 5654, lr: 0.000992, loss: 7.509017, acc: 0.498046, norm_edit_dis: 0.730638, reader_cost: 0.00002 s, batch_cost: 0.02511 s, samples: 2048, ips: 1631.05681
+[2021/12/27 11:33:33] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 11:33:33] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 11:35:14] root INFO: epoch: [30/500], iter: 5700, lr: 0.000992, loss: 7.360742, acc: 0.504882, norm_edit_dis: 0.732080, reader_cost: 0.25788 s, batch_cost: 0.62933 s, samples: 23552, ips: 748.47334
+[2021/12/27 11:36:39] root INFO: epoch: [30/500], iter: 5750, lr: 0.000992, loss: 7.651544, acc: 0.492187, norm_edit_dis: 0.728625, reader_cost: 0.00275 s, batch_cost: 0.39442 s, samples: 25600, ips: 1298.11071
+[2021/12/27 11:38:04] root INFO: epoch: [30/500], iter: 5800, lr: 0.000992, loss: 7.388372, acc: 0.492187, norm_edit_dis: 0.727425, reader_cost: 0.00281 s, batch_cost: 0.38875 s, samples: 25600, ips: 1317.04682
+[2021/12/27 11:39:17] root INFO: epoch: [30/500], iter: 5849, lr: 0.000992, loss: 7.462147, acc: 0.488280, norm_edit_dis: 0.726632, reader_cost: 0.00342 s, batch_cost: 0.36683 s, samples: 25088, ips: 1367.82757
+[2021/12/27 11:39:18] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 11:39:18] root INFO: save model in ./output/rec/class_demo/iter_epoch_30
+[2021/12/27 11:39:18] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 11:39:35] root INFO: epoch: [31/500], iter: 5850, lr: 0.000992, loss: 7.418448, acc: 0.490233, norm_edit_dis: 0.726709, reader_cost: 0.28956 s, batch_cost: 0.30892 s, samples: 512, ips: 33.14806
+[2021/12/27 11:41:06] root INFO: epoch: [31/500], iter: 5900, lr: 0.000992, loss: 6.919996, acc: 0.512694, norm_edit_dis: 0.742345, reader_cost: 0.06563 s, batch_cost: 0.46074 s, samples: 25600, ips: 1111.25699
+[2021/12/27 11:42:32] root INFO: epoch: [31/500], iter: 5950, lr: 0.000991, loss: 7.028434, acc: 0.512694, norm_edit_dis: 0.744584, reader_cost: 0.00324 s, batch_cost: 0.39537 s, samples: 25600, ips: 1294.99668
+[2021/12/27 11:44:01] root INFO: epoch: [31/500], iter: 6000, lr: 0.000991, loss: 7.085268, acc: 0.510741, norm_edit_dis: 0.737350, reader_cost: 0.00192 s, batch_cost: 0.39233 s, samples: 25600, ips: 1305.03275
+[2021/12/27 11:44:11] root INFO: cur metric, acc: 0.5486664837778387, norm_edit_dis: 0.7694211930455308, fps: 2597.926599337166
+[2021/12/27 11:44:11] root INFO: save best model is to ./output/rec/class_demo/best_accuracy
+[2021/12/27 11:44:11] root INFO: best metric, acc: 0.5486664837778387, norm_edit_dis: 0.7694211930455308, fps: 2597.926599337166, best_epoch: 31
+[2021/12/27 11:45:11] root INFO: epoch: [31/500], iter: 6044, lr: 0.000991, loss: 7.313230, acc: 0.493163, norm_edit_dis: 0.739147, reader_cost: 0.00068 s, batch_cost: 0.32128 s, samples: 22528, ips: 1402.39180
+[2021/12/27 11:45:12] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 11:45:12] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 11:45:37] root INFO: epoch: [32/500], iter: 6050, lr: 0.000991, loss: 7.307923, acc: 0.499999, norm_edit_dis: 0.739335, reader_cost: 0.25950 s, batch_cost: 0.31059 s, samples: 3072, ips: 197.81409
+[2021/12/27 11:47:11] root INFO: epoch: [32/500], iter: 6100, lr: 0.000991, loss: 7.221708, acc: 0.512694, norm_edit_dis: 0.744461, reader_cost: 0.00196 s, batch_cost: 0.39902 s, samples: 25600, ips: 1283.13049
+[2021/12/27 11:48:37] root INFO: epoch: [32/500], iter: 6150, lr: 0.000991, loss: 6.958205, acc: 0.511718, norm_edit_dis: 0.740842, reader_cost: 0.00283 s, batch_cost: 0.38248 s, samples: 25600, ips: 1338.62364
+[2021/12/27 11:50:04] root INFO: epoch: [32/500], iter: 6200, lr: 0.000991, loss: 7.240926, acc: 0.508788, norm_edit_dis: 0.745756, reader_cost: 0.00643 s, batch_cost: 0.39264 s, samples: 25600, ips: 1303.98270
+[2021/12/27 11:51:00] root INFO: epoch: [32/500], iter: 6239, lr: 0.000991, loss: 6.728440, acc: 0.523436, norm_edit_dis: 0.745638, reader_cost: 0.00068 s, batch_cost: 0.28591 s, samples: 19968, ips: 1396.80284
+[2021/12/27 11:51:00] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 11:51:00] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 11:51:37] root INFO: epoch: [33/500], iter: 6250, lr: 0.000991, loss: 6.701001, acc: 0.523436, norm_edit_dis: 0.750492, reader_cost: 0.29473 s, batch_cost: 0.38417 s, samples: 5632, ips: 293.20285
+[2021/12/27 11:53:06] root INFO: epoch: [33/500], iter: 6300, lr: 0.000990, loss: 6.661647, acc: 0.535155, norm_edit_dis: 0.757743, reader_cost: 0.00391 s, batch_cost: 0.39329 s, samples: 25600, ips: 1301.83903
+[2021/12/27 11:54:33] root INFO: epoch: [33/500], iter: 6350, lr: 0.000990, loss: 6.936360, acc: 0.519530, norm_edit_dis: 0.749921, reader_cost: 0.00319 s, batch_cost: 0.39809 s, samples: 25600, ips: 1286.13304
+[2021/12/27 11:56:00] root INFO: epoch: [33/500], iter: 6400, lr: 0.000990, loss: 6.692216, acc: 0.517577, norm_edit_dis: 0.751333, reader_cost: 0.00256 s, batch_cost: 0.39012 s, samples: 25600, ips: 1312.41661
+[2021/12/27 11:56:47] root INFO: epoch: [33/500], iter: 6434, lr: 0.000990, loss: 6.581670, acc: 0.522460, norm_edit_dis: 0.747752, reader_cost: 0.00057 s, batch_cost: 0.23700 s, samples: 17408, ips: 1469.00460
+[2021/12/27 11:56:47] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 11:56:47] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 11:57:32] root INFO: epoch: [34/500], iter: 6450, lr: 0.000990, loss: 7.002774, acc: 0.534179, norm_edit_dis: 0.756398, reader_cost: 0.31133 s, batch_cost: 0.44842 s, samples: 8192, ips: 365.37088
+[2021/12/27 11:59:01] root INFO: epoch: [34/500], iter: 6500, lr: 0.000990, loss: 6.554764, acc: 0.521483, norm_edit_dis: 0.749929, reader_cost: 0.00769 s, batch_cost: 0.39104 s, samples: 25600, ips: 1309.34136
+[2021/12/27 12:00:29] root INFO: epoch: [34/500], iter: 6550, lr: 0.000990, loss: 7.042846, acc: 0.529296, norm_edit_dis: 0.747576, reader_cost: 0.00283 s, batch_cost: 0.39040 s, samples: 25600, ips: 1311.48483
+[2021/12/27 12:01:56] root INFO: epoch: [34/500], iter: 6600, lr: 0.000989, loss: 6.789387, acc: 0.538085, norm_edit_dis: 0.758448, reader_cost: 0.00078 s, batch_cost: 0.40307 s, samples: 25600, ips: 1270.24150
+[2021/12/27 12:02:34] root INFO: epoch: [34/500], iter: 6629, lr: 0.000989, loss: 6.649754, acc: 0.537108, norm_edit_dis: 0.756305, reader_cost: 0.00268 s, batch_cost: 0.20818 s, samples: 14848, ips: 1426.42881
+[2021/12/27 12:02:35] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 12:02:35] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 12:03:29] root INFO: epoch: [35/500], iter: 6650, lr: 0.000989, loss: 6.436090, acc: 0.541015, norm_edit_dis: 0.764397, reader_cost: 0.29279 s, batch_cost: 0.46128 s, samples: 10752, ips: 466.18381
+[2021/12/27 12:04:57] root INFO: epoch: [35/500], iter: 6700, lr: 0.000989, loss: 7.091305, acc: 0.477538, norm_edit_dis: 0.717706, reader_cost: 0.00179 s, batch_cost: 0.39254 s, samples: 25600, ips: 1304.33540
+[2021/12/27 12:06:23] root INFO: epoch: [35/500], iter: 6750, lr: 0.000989, loss: 6.965734, acc: 0.525390, norm_edit_dis: 0.751143, reader_cost: 0.00370 s, batch_cost: 0.38508 s, samples: 25600, ips: 1329.58136
+[2021/12/27 12:07:51] root INFO: epoch: [35/500], iter: 6800, lr: 0.000989, loss: 6.368474, acc: 0.535155, norm_edit_dis: 0.757308, reader_cost: 0.00393 s, batch_cost: 0.40010 s, samples: 25600, ips: 1279.69294
+[2021/12/27 12:08:21] root INFO: epoch: [35/500], iter: 6824, lr: 0.000989, loss: 6.664939, acc: 0.529296, norm_edit_dis: 0.757676, reader_cost: 0.00025 s, batch_cost: 0.16350 s, samples: 12288, ips: 1503.11673
+[2021/12/27 12:08:22] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 12:08:22] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 12:09:23] root INFO: epoch: [36/500], iter: 6850, lr: 0.000989, loss: 6.122465, acc: 0.552733, norm_edit_dis: 0.769426, reader_cost: 0.27392 s, batch_cost: 0.48122 s, samples: 13312, ips: 553.26425
+[2021/12/27 12:10:53] root INFO: epoch: [36/500], iter: 6900, lr: 0.000988, loss: 6.344550, acc: 0.549804, norm_edit_dis: 0.772279, reader_cost: 0.05883 s, batch_cost: 0.45861 s, samples: 25600, ips: 1116.40773
+[2021/12/27 12:12:22] root INFO: epoch: [36/500], iter: 6950, lr: 0.000988, loss: 6.640848, acc: 0.547850, norm_edit_dis: 0.759250, reader_cost: 0.00069 s, batch_cost: 0.39058 s, samples: 25600, ips: 1310.86960
+[2021/12/27 12:13:50] root INFO: epoch: [36/500], iter: 7000, lr: 0.000988, loss: 6.534800, acc: 0.535155, norm_edit_dis: 0.759240, reader_cost: 0.00532 s, batch_cost: 0.40205 s, samples: 25600, ips: 1273.47513
+[2021/12/27 12:13:58] root INFO: cur metric, acc: 0.5803331398889533, norm_edit_dis: 0.7902644539157441, fps: 4356.8598949678835
+[2021/12/27 12:13:59] root INFO: save best model is to ./output/rec/class_demo/best_accuracy
+[2021/12/27 12:13:59] root INFO: best metric, acc: 0.5803331398889533, norm_edit_dis: 0.7902644539157441, fps: 4356.8598949678835, best_epoch: 36
+[2021/12/27 12:14:16] root INFO: epoch: [36/500], iter: 7019, lr: 0.000988, loss: 6.382324, acc: 0.549804, norm_edit_dis: 0.765594, reader_cost: 0.00021 s, batch_cost: 0.11967 s, samples: 9728, ips: 1625.84958
+[2021/12/27 12:14:16] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 12:14:16] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 12:15:28] root INFO: epoch: [37/500], iter: 7050, lr: 0.000988, loss: 6.455850, acc: 0.550780, norm_edit_dis: 0.769018, reader_cost: 0.27763 s, batch_cost: 0.53787 s, samples: 15872, ips: 590.18405
+[2021/12/27 12:16:56] root INFO: epoch: [37/500], iter: 7100, lr: 0.000988, loss: 6.106106, acc: 0.558593, norm_edit_dis: 0.778824, reader_cost: 0.03546 s, batch_cost: 0.42111 s, samples: 25600, ips: 1215.82865
+[2021/12/27 12:18:23] root INFO: epoch: [37/500], iter: 7150, lr: 0.000988, loss: 6.289982, acc: 0.557616, norm_edit_dis: 0.768260, reader_cost: 0.00383 s, batch_cost: 0.39420 s, samples: 25600, ips: 1298.81814
+[2021/12/27 12:19:49] root INFO: epoch: [37/500], iter: 7200, lr: 0.000987, loss: 6.271847, acc: 0.551757, norm_edit_dis: 0.769997, reader_cost: 0.00702 s, batch_cost: 0.39939 s, samples: 25600, ips: 1281.95845
+[2021/12/27 12:20:02] root INFO: epoch: [37/500], iter: 7214, lr: 0.000987, loss: 6.608042, acc: 0.542968, norm_edit_dis: 0.764651, reader_cost: 0.00057 s, batch_cost: 0.08949 s, samples: 7168, ips: 1601.92293
+[2021/12/27 12:20:02] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 12:20:02] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 12:21:22] root INFO: epoch: [38/500], iter: 7250, lr: 0.000987, loss: 6.201556, acc: 0.542968, norm_edit_dis: 0.765491, reader_cost: 0.32342 s, batch_cost: 0.62075 s, samples: 18432, ips: 593.86017
+[2021/12/27 12:22:48] root INFO: epoch: [38/500], iter: 7300, lr: 0.000987, loss: 6.165065, acc: 0.545897, norm_edit_dis: 0.769906, reader_cost: 0.00433 s, batch_cost: 0.39311 s, samples: 25600, ips: 1302.44559
+[2021/12/27 12:24:13] root INFO: epoch: [38/500], iter: 7350, lr: 0.000987, loss: 6.425596, acc: 0.557616, norm_edit_dis: 0.770932, reader_cost: 0.00189 s, batch_cost: 0.38488 s, samples: 25600, ips: 1330.27765
+[2021/12/27 12:25:36] root INFO: epoch: [38/500], iter: 7400, lr: 0.000987, loss: 6.306917, acc: 0.552733, norm_edit_dis: 0.765547, reader_cost: 0.02657 s, batch_cost: 0.41611 s, samples: 25600, ips: 1230.44355
+[2021/12/27 12:25:44] root INFO: epoch: [38/500], iter: 7409, lr: 0.000987, loss: 6.414332, acc: 0.545897, norm_edit_dis: 0.764812, reader_cost: 0.00005 s, batch_cost: 0.05721 s, samples: 4608, ips: 1610.92499
+[2021/12/27 12:25:44] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 12:25:44] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 12:27:14] root INFO: epoch: [39/500], iter: 7450, lr: 0.000986, loss: 5.841067, acc: 0.560546, norm_edit_dis: 0.776819, reader_cost: 0.33872 s, batch_cost: 0.66389 s, samples: 20992, ips: 632.39261
+[2021/12/27 12:28:40] root INFO: epoch: [39/500], iter: 7500, lr: 0.000986, loss: 5.856398, acc: 0.575194, norm_edit_dis: 0.776310, reader_cost: 0.00275 s, batch_cost: 0.39044 s, samples: 25600, ips: 1311.32628
+[2021/12/27 12:30:07] root INFO: epoch: [39/500], iter: 7550, lr: 0.000986, loss: 5.994118, acc: 0.568358, norm_edit_dis: 0.781899, reader_cost: 0.00533 s, batch_cost: 0.39736 s, samples: 25600, ips: 1288.50139
+[2021/12/27 12:31:26] root INFO: epoch: [39/500], iter: 7600, lr: 0.000986, loss: 5.953763, acc: 0.558593, norm_edit_dis: 0.776093, reader_cost: 0.01309 s, batch_cost: 0.39009 s, samples: 25600, ips: 1312.52798
+[2021/12/27 12:31:29] root INFO: epoch: [39/500], iter: 7604, lr: 0.000986, loss: 5.971868, acc: 0.558593, norm_edit_dis: 0.776093, reader_cost: 0.00002 s, batch_cost: 0.02511 s, samples: 2048, ips: 1631.27952
+[2021/12/27 12:31:30] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 12:31:30] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 12:33:05] root INFO: epoch: [40/500], iter: 7650, lr: 0.000986, loss: 5.628376, acc: 0.577147, norm_edit_dis: 0.791235, reader_cost: 0.25526 s, batch_cost: 0.62329 s, samples: 23552, ips: 755.72977
+[2021/12/27 12:34:31] root INFO: epoch: [40/500], iter: 7700, lr: 0.000985, loss: 6.085096, acc: 0.555663, norm_edit_dis: 0.767797, reader_cost: 0.00311 s, batch_cost: 0.39798 s, samples: 25600, ips: 1286.48336
+[2021/12/27 12:35:59] root INFO: epoch: [40/500], iter: 7750, lr: 0.000985, loss: 5.849909, acc: 0.568358, norm_edit_dis: 0.781766, reader_cost: 0.00440 s, batch_cost: 0.41607 s, samples: 25600, ips: 1230.56307
+[2021/12/27 12:37:13] root INFO: epoch: [40/500], iter: 7799, lr: 0.000985, loss: 5.958902, acc: 0.566405, norm_edit_dis: 0.781328, reader_cost: 0.00192 s, batch_cost: 0.37622 s, samples: 25088, ips: 1333.67356
+[2021/12/27 12:37:13] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 12:37:13] root INFO: save model in ./output/rec/class_demo/iter_epoch_40
+[2021/12/27 12:37:13] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 12:37:27] root INFO: epoch: [41/500], iter: 7800, lr: 0.000985, loss: 5.958902, acc: 0.566405, norm_edit_dis: 0.781328, reader_cost: 0.24005 s, batch_cost: 0.24788 s, samples: 512, ips: 41.30995
+[2021/12/27 12:38:58] root INFO: epoch: [41/500], iter: 7850, lr: 0.000985, loss: 5.611338, acc: 0.584960, norm_edit_dis: 0.790871, reader_cost: 0.06139 s, batch_cost: 0.45793 s, samples: 25600, ips: 1118.07782
+[2021/12/27 12:40:26] root INFO: epoch: [41/500], iter: 7900, lr: 0.000985, loss: 6.040968, acc: 0.578124, norm_edit_dis: 0.787174, reader_cost: 0.00177 s, batch_cost: 0.41089 s, samples: 25600, ips: 1246.08075
+[2021/12/27 12:41:52] root INFO: epoch: [41/500], iter: 7950, lr: 0.000985, loss: 5.756816, acc: 0.579100, norm_edit_dis: 0.787769, reader_cost: 0.00404 s, batch_cost: 0.39307 s, samples: 25600, ips: 1302.57773
+[2021/12/27 12:42:57] root INFO: epoch: [41/500], iter: 7994, lr: 0.000984, loss: 5.861120, acc: 0.573241, norm_edit_dis: 0.785551, reader_cost: 0.00070 s, batch_cost: 0.33417 s, samples: 22528, ips: 1348.30327
+[2021/12/27 12:42:57] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 12:42:57] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 12:43:26] root INFO: epoch: [42/500], iter: 8000, lr: 0.000984, loss: 5.659108, acc: 0.586913, norm_edit_dis: 0.790016, reader_cost: 0.35269 s, batch_cost: 0.40991 s, samples: 3072, ips: 149.88729
+[2021/12/27 12:43:37] root INFO: cur metric, acc: 0.5776664741111752, norm_edit_dis: 0.778668431286628, fps: 3848.3301408964167
+[2021/12/27 12:43:37] root INFO: best metric, acc: 0.5803331398889533, norm_edit_dis: 0.7902644539157441, fps: 4356.8598949678835, best_epoch: 36
+[2021/12/27 12:44:57] root INFO: epoch: [42/500], iter: 8050, lr: 0.000984, loss: 5.421576, acc: 0.594725, norm_edit_dis: 0.800213, reader_cost: 0.00212 s, batch_cost: 0.37553 s, samples: 25600, ips: 1363.39633
+[2021/12/27 12:46:24] root INFO: epoch: [42/500], iter: 8100, lr: 0.000984, loss: 5.444616, acc: 0.591796, norm_edit_dis: 0.796916, reader_cost: 0.00060 s, batch_cost: 0.39643 s, samples: 25600, ips: 1291.52501
+[2021/12/27 12:47:50] root INFO: epoch: [42/500], iter: 8150, lr: 0.000984, loss: 5.686639, acc: 0.582030, norm_edit_dis: 0.789061, reader_cost: 0.00395 s, batch_cost: 0.38855 s, samples: 25600, ips: 1317.71209
+[2021/12/27 12:48:45] root INFO: epoch: [42/500], iter: 8189, lr: 0.000984, loss: 5.640874, acc: 0.585936, norm_edit_dis: 0.791469, reader_cost: 0.00149 s, batch_cost: 0.28190 s, samples: 19968, ips: 1416.67885
+[2021/12/27 12:48:45] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 12:48:45] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 12:49:19] root INFO: epoch: [43/500], iter: 8200, lr: 0.000983, loss: 5.696993, acc: 0.598632, norm_edit_dis: 0.794752, reader_cost: 0.25798 s, batch_cost: 0.34847 s, samples: 5632, ips: 323.24223
+[2021/12/27 12:50:52] root INFO: epoch: [43/500], iter: 8250, lr: 0.000983, loss: 5.415660, acc: 0.594725, norm_edit_dis: 0.803018, reader_cost: 0.09368 s, batch_cost: 0.49551 s, samples: 25600, ips: 1033.28794
+[2021/12/27 12:52:18] root INFO: epoch: [43/500], iter: 8300, lr: 0.000983, loss: 5.873668, acc: 0.593749, norm_edit_dis: 0.798551, reader_cost: 0.00539 s, batch_cost: 0.40160 s, samples: 25600, ips: 1274.91079
+[2021/12/27 12:53:45] root INFO: epoch: [43/500], iter: 8350, lr: 0.000983, loss: 5.528639, acc: 0.594725, norm_edit_dis: 0.802042, reader_cost: 0.00174 s, batch_cost: 0.39120 s, samples: 25600, ips: 1308.80496
+[2021/12/27 12:54:33] root INFO: epoch: [43/500], iter: 8384, lr: 0.000983, loss: 6.040776, acc: 0.541015, norm_edit_dis: 0.769306, reader_cost: 0.00176 s, batch_cost: 0.25340 s, samples: 17408, ips: 1373.93821
+[2021/12/27 12:54:33] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 12:54:33] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 12:55:18] root INFO: epoch: [44/500], iter: 8400, lr: 0.000983, loss: 5.783084, acc: 0.577147, norm_edit_dis: 0.790862, reader_cost: 0.26297 s, batch_cost: 0.40277 s, samples: 8192, ips: 406.78624
+[2021/12/27 12:56:44] root INFO: epoch: [44/500], iter: 8450, lr: 0.000982, loss: 5.496816, acc: 0.589843, norm_edit_dis: 0.796992, reader_cost: 0.00070 s, batch_cost: 0.40189 s, samples: 25600, ips: 1273.96668
+[2021/12/27 12:58:11] root INFO: epoch: [44/500], iter: 8500, lr: 0.000982, loss: 5.513448, acc: 0.598632, norm_edit_dis: 0.800803, reader_cost: 0.00530 s, batch_cost: 0.39722 s, samples: 25600, ips: 1288.97266
+[2021/12/27 12:59:36] root INFO: epoch: [44/500], iter: 8550, lr: 0.000982, loss: 5.502794, acc: 0.579100, norm_edit_dis: 0.797602, reader_cost: 0.00064 s, batch_cost: 0.39217 s, samples: 25600, ips: 1305.54801
+[2021/12/27 13:00:15] root INFO: epoch: [44/500], iter: 8579, lr: 0.000982, loss: 5.430586, acc: 0.585936, norm_edit_dis: 0.796500, reader_cost: 0.00150 s, batch_cost: 0.20826 s, samples: 14848, ips: 1425.90586
+[2021/12/27 13:00:16] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 13:00:16] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 13:01:08] root INFO: epoch: [45/500], iter: 8600, lr: 0.000982, loss: 5.261026, acc: 0.593749, norm_edit_dis: 0.800336, reader_cost: 0.28673 s, batch_cost: 0.45393 s, samples: 10752, ips: 473.73225
+[2021/12/27 13:02:36] root INFO: epoch: [45/500], iter: 8650, lr: 0.000982, loss: 5.207980, acc: 0.607421, norm_edit_dis: 0.805308, reader_cost: 0.00068 s, batch_cost: 0.40237 s, samples: 25600, ips: 1272.45639
+[2021/12/27 13:04:03] root INFO: epoch: [45/500], iter: 8700, lr: 0.000981, loss: 5.417300, acc: 0.595702, norm_edit_dis: 0.800508, reader_cost: 0.00062 s, batch_cost: 0.40844 s, samples: 25600, ips: 1253.55118
+[2021/12/27 13:05:28] root INFO: epoch: [45/500], iter: 8750, lr: 0.000981, loss: 5.428986, acc: 0.582030, norm_edit_dis: 0.791716, reader_cost: 0.00626 s, batch_cost: 0.39098 s, samples: 25600, ips: 1309.51589
+[2021/12/27 13:05:59] root INFO: epoch: [45/500], iter: 8774, lr: 0.000981, loss: 5.426420, acc: 0.598632, norm_edit_dis: 0.800327, reader_cost: 0.00027 s, batch_cost: 0.17012 s, samples: 12288, ips: 1444.60589
+[2021/12/27 13:05:59] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 13:05:59] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 13:07:01] root INFO: epoch: [46/500], iter: 8800, lr: 0.000981, loss: 5.343882, acc: 0.611327, norm_edit_dis: 0.805238, reader_cost: 0.30240 s, batch_cost: 0.52264 s, samples: 13312, ips: 509.40965
+[2021/12/27 13:08:30] root INFO: epoch: [46/500], iter: 8850, lr: 0.000981, loss: 5.411651, acc: 0.583007, norm_edit_dis: 0.797400, reader_cost: 0.00367 s, batch_cost: 0.41052 s, samples: 25600, ips: 1247.19595
+[2021/12/27 13:09:55] root INFO: epoch: [46/500], iter: 8900, lr: 0.000981, loss: 5.231334, acc: 0.619139, norm_edit_dis: 0.814514, reader_cost: 0.00196 s, batch_cost: 0.39989 s, samples: 25600, ips: 1280.34024
+[2021/12/27 13:11:22] root INFO: epoch: [46/500], iter: 8950, lr: 0.000980, loss: 5.397768, acc: 0.600585, norm_edit_dis: 0.801038, reader_cost: 0.00409 s, batch_cost: 0.40161 s, samples: 25600, ips: 1274.85295
+[2021/12/27 13:11:44] root INFO: epoch: [46/500], iter: 8969, lr: 0.000980, loss: 5.157184, acc: 0.612303, norm_edit_dis: 0.806992, reader_cost: 0.00021 s, batch_cost: 0.13300 s, samples: 9728, ips: 1462.83237
+[2021/12/27 13:11:45] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 13:11:45] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 13:12:57] root INFO: epoch: [47/500], iter: 9000, lr: 0.000980, loss: 4.823801, acc: 0.614257, norm_edit_dis: 0.815436, reader_cost: 0.26190 s, batch_cost: 0.53273 s, samples: 15872, ips: 595.87117
+[2021/12/27 13:13:07] root INFO: cur metric, acc: 0.6023331325556225, norm_edit_dis: 0.8051524567662327, fps: 4117.477362387663
+[2021/12/27 13:13:07] root INFO: save best model is to ./output/rec/class_demo/best_accuracy
+[2021/12/27 13:13:07] root INFO: best metric, acc: 0.6023331325556225, norm_edit_dis: 0.8051524567662327, fps: 4117.477362387663, best_epoch: 47
+[2021/12/27 13:14:29] root INFO: epoch: [47/500], iter: 9050, lr: 0.000980, loss: 5.035458, acc: 0.601561, norm_edit_dis: 0.807541, reader_cost: 0.00183 s, batch_cost: 0.37485 s, samples: 25600, ips: 1365.86684
+[2021/12/27 13:15:54] root INFO: epoch: [47/500], iter: 9100, lr: 0.000980, loss: 5.156581, acc: 0.601561, norm_edit_dis: 0.811429, reader_cost: 0.00186 s, batch_cost: 0.40171 s, samples: 25600, ips: 1274.55229
+[2021/12/27 13:17:18] root INFO: epoch: [47/500], iter: 9150, lr: 0.000979, loss: 5.116656, acc: 0.614257, norm_edit_dis: 0.812614, reader_cost: 0.00189 s, batch_cost: 0.39754 s, samples: 25600, ips: 1287.90809
+[2021/12/27 13:17:31] root INFO: epoch: [47/500], iter: 9164, lr: 0.000979, loss: 5.030008, acc: 0.620116, norm_edit_dis: 0.812025, reader_cost: 0.00007 s, batch_cost: 0.08882 s, samples: 7168, ips: 1614.11181
+[2021/12/27 13:17:32] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 13:17:32] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 13:18:50] root INFO: epoch: [48/500], iter: 9200, lr: 0.000979, loss: 4.797976, acc: 0.621093, norm_edit_dis: 0.812750, reader_cost: 0.26549 s, batch_cost: 0.55189 s, samples: 18432, ips: 667.96431
+[2021/12/27 13:20:16] root INFO: epoch: [48/500], iter: 9250, lr: 0.000979, loss: 5.130138, acc: 0.600585, norm_edit_dis: 0.802655, reader_cost: 0.00491 s, batch_cost: 0.39752 s, samples: 25600, ips: 1287.99494
+[2021/12/27 13:21:43] root INFO: epoch: [48/500], iter: 9300, lr: 0.000979, loss: 5.120207, acc: 0.607421, norm_edit_dis: 0.812023, reader_cost: 0.03057 s, batch_cost: 0.42919 s, samples: 25600, ips: 1192.95164
+[2021/12/27 13:23:05] root INFO: epoch: [48/500], iter: 9350, lr: 0.000978, loss: 5.064660, acc: 0.610350, norm_edit_dis: 0.806290, reader_cost: 0.00305 s, batch_cost: 0.38515 s, samples: 25600, ips: 1329.33830
+[2021/12/27 13:23:12] root INFO: epoch: [48/500], iter: 9359, lr: 0.000978, loss: 4.954614, acc: 0.613280, norm_edit_dis: 0.808195, reader_cost: 0.00004 s, batch_cost: 0.05656 s, samples: 4608, ips: 1629.50687
+[2021/12/27 13:23:13] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 13:23:13] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 13:24:42] root INFO: epoch: [49/500], iter: 9400, lr: 0.000978, loss: 5.019996, acc: 0.622069, norm_edit_dis: 0.817669, reader_cost: 0.26955 s, batch_cost: 0.58930 s, samples: 20992, ips: 712.43985
+[2021/12/27 13:26:11] root INFO: epoch: [49/500], iter: 9450, lr: 0.000978, loss: 5.286998, acc: 0.613280, norm_edit_dis: 0.810765, reader_cost: 0.00191 s, batch_cost: 0.39133 s, samples: 25600, ips: 1308.35442
+[2021/12/27 13:27:38] root INFO: epoch: [49/500], iter: 9500, lr: 0.000978, loss: 5.145916, acc: 0.612303, norm_edit_dis: 0.809580, reader_cost: 0.00155 s, batch_cost: 0.39737 s, samples: 25600, ips: 1288.48019
+[2021/12/27 13:28:55] root INFO: epoch: [49/500], iter: 9550, lr: 0.000978, loss: 5.284998, acc: 0.598632, norm_edit_dis: 0.802155, reader_cost: 0.00184 s, batch_cost: 0.37081 s, samples: 25600, ips: 1380.77665
+[2021/12/27 13:28:59] root INFO: epoch: [49/500], iter: 9554, lr: 0.000977, loss: 5.176254, acc: 0.609374, norm_edit_dis: 0.802557, reader_cost: 0.00002 s, batch_cost: 0.02510 s, samples: 2048, ips: 1631.71365
+[2021/12/27 13:28:59] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 13:28:59] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 13:30:38] root INFO: epoch: [50/500], iter: 9600, lr: 0.000977, loss: 4.912451, acc: 0.617186, norm_edit_dis: 0.816006, reader_cost: 0.32304 s, batch_cost: 0.70290 s, samples: 23552, ips: 670.14095
+[2021/12/27 13:32:06] root INFO: epoch: [50/500], iter: 9650, lr: 0.000977, loss: 4.950840, acc: 0.621093, norm_edit_dis: 0.820555, reader_cost: 0.00341 s, batch_cost: 0.40824 s, samples: 25600, ips: 1254.16673
+[2021/12/27 13:33:35] root INFO: epoch: [50/500], iter: 9700, lr: 0.000977, loss: 5.273980, acc: 0.586913, norm_edit_dis: 0.798525, reader_cost: 0.00174 s, batch_cost: 0.39803 s, samples: 25600, ips: 1286.34152
+[2021/12/27 13:34:50] root INFO: epoch: [50/500], iter: 9749, lr: 0.000977, loss: 5.231556, acc: 0.619139, norm_edit_dis: 0.811520, reader_cost: 0.00532 s, batch_cost: 0.37554 s, samples: 25088, ips: 1336.09661
+[2021/12/27 13:34:51] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 13:34:51] root INFO: save model in ./output/rec/class_demo/iter_epoch_50
+[2021/12/27 13:34:51] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 13:35:09] root INFO: epoch: [51/500], iter: 9750, lr: 0.000977, loss: 5.231556, acc: 0.619139, norm_edit_dis: 0.808120, reader_cost: 0.30443 s, batch_cost: 0.31382 s, samples: 512, ips: 32.63047
+[2021/12/27 13:36:41] root INFO: epoch: [51/500], iter: 9800, lr: 0.000976, loss: 5.026274, acc: 0.610350, norm_edit_dis: 0.812966, reader_cost: 0.03198 s, batch_cost: 0.43049 s, samples: 25600, ips: 1189.33046
+[2021/12/27 13:38:10] root INFO: epoch: [51/500], iter: 9850, lr: 0.000976, loss: 4.997556, acc: 0.618163, norm_edit_dis: 0.814624, reader_cost: 0.00453 s, batch_cost: 0.41546 s, samples: 25600, ips: 1232.37443
+[2021/12/27 13:39:39] root INFO: epoch: [51/500], iter: 9900, lr: 0.000976, loss: 4.975142, acc: 0.610350, norm_edit_dis: 0.808023, reader_cost: 0.00085 s, batch_cost: 0.40474 s, samples: 25600, ips: 1265.02250
+[2021/12/27 13:40:42] root INFO: epoch: [51/500], iter: 9944, lr: 0.000976, loss: 5.117874, acc: 0.626952, norm_edit_dis: 0.817176, reader_cost: 0.00281 s, batch_cost: 0.32840 s, samples: 22528, ips: 1371.99984
+[2021/12/27 13:40:42] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 13:40:42] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 13:41:09] root INFO: epoch: [52/500], iter: 9950, lr: 0.000976, loss: 5.028286, acc: 0.631835, norm_edit_dis: 0.821276, reader_cost: 0.31760 s, batch_cost: 0.37590 s, samples: 3072, ips: 163.44985
+[2021/12/27 13:42:37] root INFO: epoch: [52/500], iter: 10000, lr: 0.000975, loss: 4.549258, acc: 0.623046, norm_edit_dis: 0.818467, reader_cost: 0.00503 s, batch_cost: 0.39561 s, samples: 25600, ips: 1294.21692
+[2021/12/27 13:42:47] root INFO: cur metric, acc: 0.6033331322222892, norm_edit_dis: 0.8033880743677416, fps: 2909.189779315731
+[2021/12/27 13:42:47] root INFO: save best model is to ./output/rec/class_demo/best_accuracy
+[2021/12/27 13:42:47] root INFO: best metric, acc: 0.6033331322222892, norm_edit_dis: 0.8033880743677416, fps: 2909.189779315731, best_epoch: 52
+[2021/12/27 13:44:07] root INFO: epoch: [52/500], iter: 10050, lr: 0.000975, loss: 4.780720, acc: 0.635741, norm_edit_dis: 0.824384, reader_cost: 0.00361 s, batch_cost: 0.37898 s, samples: 25600, ips: 1351.00537
+[2021/12/27 13:45:36] root INFO: epoch: [52/500], iter: 10100, lr: 0.000975, loss: 5.105950, acc: 0.624022, norm_edit_dis: 0.824238, reader_cost: 0.00065 s, batch_cost: 0.40705 s, samples: 25600, ips: 1257.81955
+[2021/12/27 13:46:32] root INFO: epoch: [52/500], iter: 10139, lr: 0.000975, loss: 4.902543, acc: 0.624022, norm_edit_dis: 0.817815, reader_cost: 0.00061 s, batch_cost: 0.28552 s, samples: 19968, ips: 1398.70129
+[2021/12/27 13:46:33] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 13:46:33] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 13:47:07] root INFO: epoch: [53/500], iter: 10150, lr: 0.000975, loss: 4.562390, acc: 0.650389, norm_edit_dis: 0.834226, reader_cost: 0.26102 s, batch_cost: 0.35230 s, samples: 5632, ips: 319.73185
+[2021/12/27 13:48:38] root INFO: epoch: [53/500], iter: 10200, lr: 0.000974, loss: 4.686522, acc: 0.620116, norm_edit_dis: 0.816702, reader_cost: 0.00187 s, batch_cost: 0.39589 s, samples: 25600, ips: 1293.29979
+[2021/12/27 13:50:04] root INFO: epoch: [53/500], iter: 10250, lr: 0.000974, loss: 4.619854, acc: 0.632811, norm_edit_dis: 0.823576, reader_cost: 0.00163 s, batch_cost: 0.40089 s, samples: 25600, ips: 1277.16252
+[2021/12/27 13:51:30] root INFO: epoch: [53/500], iter: 10300, lr: 0.000974, loss: 4.608856, acc: 0.638671, norm_edit_dis: 0.827212, reader_cost: 0.00321 s, batch_cost: 0.39557 s, samples: 25600, ips: 1294.33325
+[2021/12/27 13:52:16] root INFO: epoch: [53/500], iter: 10334, lr: 0.000974, loss: 5.052375, acc: 0.616210, norm_edit_dis: 0.815087, reader_cost: 0.00150 s, batch_cost: 0.25206 s, samples: 17408, ips: 1381.28428
+[2021/12/27 13:52:17] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 13:52:17] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 13:52:59] root INFO: epoch: [54/500], iter: 10350, lr: 0.000974, loss: 4.827574, acc: 0.635741, norm_edit_dis: 0.830095, reader_cost: 0.26655 s, batch_cost: 0.39156 s, samples: 8192, ips: 418.42656
+[2021/12/27 13:54:29] root INFO: epoch: [54/500], iter: 10400, lr: 0.000973, loss: 4.729923, acc: 0.634764, norm_edit_dis: 0.834872, reader_cost: 0.01281 s, batch_cost: 0.39978 s, samples: 25600, ips: 1280.72007
+[2021/12/27 13:55:57] root INFO: epoch: [54/500], iter: 10450, lr: 0.000973, loss: 4.553966, acc: 0.645507, norm_edit_dis: 0.832042, reader_cost: 0.00422 s, batch_cost: 0.39801 s, samples: 25600, ips: 1286.40665
+[2021/12/27 13:57:24] root INFO: epoch: [54/500], iter: 10500, lr: 0.000973, loss: 4.507119, acc: 0.634764, norm_edit_dis: 0.827520, reader_cost: 0.00098 s, batch_cost: 0.38772 s, samples: 25600, ips: 1320.54164
+[2021/12/27 13:58:01] root INFO: epoch: [54/500], iter: 10529, lr: 0.000973, loss: 4.415926, acc: 0.649413, norm_edit_dis: 0.834477, reader_cost: 0.00031 s, batch_cost: 0.20368 s, samples: 14848, ips: 1458.00251
+[2021/12/27 13:58:02] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 13:58:02] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 13:58:57] root INFO: epoch: [55/500], iter: 10550, lr: 0.000972, loss: 4.313434, acc: 0.648436, norm_edit_dis: 0.836462, reader_cost: 0.36944 s, batch_cost: 0.54555 s, samples: 10752, ips: 394.16997
+[2021/12/27 14:00:24] root INFO: epoch: [55/500], iter: 10600, lr: 0.000972, loss: 4.256104, acc: 0.642577, norm_edit_dis: 0.838747, reader_cost: 0.00176 s, batch_cost: 0.39088 s, samples: 25600, ips: 1309.85237
+[2021/12/27 14:01:53] root INFO: epoch: [55/500], iter: 10650, lr: 0.000972, loss: 4.489669, acc: 0.636718, norm_edit_dis: 0.830606, reader_cost: 0.00188 s, batch_cost: 0.40055 s, samples: 25600, ips: 1278.25046
+[2021/12/27 14:03:20] root INFO: epoch: [55/500], iter: 10700, lr: 0.000972, loss: 4.662916, acc: 0.624999, norm_edit_dis: 0.821023, reader_cost: 0.00187 s, batch_cost: 0.40416 s, samples: 25600, ips: 1266.81697
+[2021/12/27 14:03:49] root INFO: epoch: [55/500], iter: 10724, lr: 0.000972, loss: 4.297775, acc: 0.643553, norm_edit_dis: 0.828591, reader_cost: 0.00037 s, batch_cost: 0.16829 s, samples: 12288, ips: 1460.33198
+[2021/12/27 14:03:50] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 14:03:50] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 14:04:53] root INFO: epoch: [56/500], iter: 10750, lr: 0.000971, loss: 4.760573, acc: 0.619139, norm_edit_dis: 0.810873, reader_cost: 0.26357 s, batch_cost: 0.47545 s, samples: 13312, ips: 559.97042
+[2021/12/27 14:06:23] root INFO: epoch: [56/500], iter: 10800, lr: 0.000971, loss: 4.653435, acc: 0.638671, norm_edit_dis: 0.831630, reader_cost: 0.00316 s, batch_cost: 0.39428 s, samples: 25600, ips: 1298.57617
+[2021/12/27 14:07:50] root INFO: epoch: [56/500], iter: 10850, lr: 0.000971, loss: 4.505644, acc: 0.629882, norm_edit_dis: 0.825163, reader_cost: 0.00066 s, batch_cost: 0.39618 s, samples: 25600, ips: 1292.34340
+[2021/12/27 14:09:15] root INFO: epoch: [56/500], iter: 10900, lr: 0.000971, loss: 4.749800, acc: 0.632811, norm_edit_dis: 0.824790, reader_cost: 0.00279 s, batch_cost: 0.39630 s, samples: 25600, ips: 1291.94625
+[2021/12/27 14:09:36] root INFO: epoch: [56/500], iter: 10919, lr: 0.000970, loss: 4.935842, acc: 0.632811, norm_edit_dis: 0.826781, reader_cost: 0.00123 s, batch_cost: 0.12841 s, samples: 9728, ips: 1515.13362
+[2021/12/27 14:09:37] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 14:09:37] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 14:10:50] root INFO: epoch: [57/500], iter: 10950, lr: 0.000970, loss: 4.650784, acc: 0.653319, norm_edit_dis: 0.837227, reader_cost: 0.27733 s, batch_cost: 0.53046 s, samples: 15872, ips: 598.42849
+[2021/12/27 14:12:18] root INFO: epoch: [57/500], iter: 11000, lr: 0.000970, loss: 4.415418, acc: 0.653319, norm_edit_dis: 0.841098, reader_cost: 0.00063 s, batch_cost: 0.39960 s, samples: 25600, ips: 1281.27867
+[2021/12/27 14:12:27] root INFO: cur metric, acc: 0.6136664621111793, norm_edit_dis: 0.8088730860737406, fps: 5176.723628989691
+[2021/12/27 14:12:27] root INFO: save best model is to ./output/rec/class_demo/best_accuracy
+[2021/12/27 14:12:27] root INFO: best metric, acc: 0.6136664621111793, norm_edit_dis: 0.8088730860737406, fps: 5176.723628989691, best_epoch: 57
+[2021/12/27 14:13:49] root INFO: epoch: [57/500], iter: 11050, lr: 0.000970, loss: 4.488797, acc: 0.648436, norm_edit_dis: 0.829161, reader_cost: 0.00383 s, batch_cost: 0.39227 s, samples: 25600, ips: 1305.20793
+[2021/12/27 14:15:16] root INFO: epoch: [57/500], iter: 11100, lr: 0.000970, loss: 4.927580, acc: 0.590819, norm_edit_dis: 0.799590, reader_cost: 0.00419 s, batch_cost: 0.39208 s, samples: 25600, ips: 1305.86090
+[2021/12/27 14:15:29] root INFO: epoch: [57/500], iter: 11114, lr: 0.000969, loss: 5.068409, acc: 0.605468, norm_edit_dis: 0.809380, reader_cost: 0.00007 s, batch_cost: 0.09061 s, samples: 7168, ips: 1582.11972
+[2021/12/27 14:15:29] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 14:15:29] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 14:16:50] root INFO: epoch: [58/500], iter: 11150, lr: 0.000969, loss: 4.421060, acc: 0.643553, norm_edit_dis: 0.827530, reader_cost: 0.28140 s, batch_cost: 0.56845 s, samples: 18432, ips: 648.49769
+[2021/12/27 14:18:18] root INFO: epoch: [58/500], iter: 11200, lr: 0.000969, loss: 4.411762, acc: 0.654296, norm_edit_dis: 0.831419, reader_cost: 0.00408 s, batch_cost: 0.40790 s, samples: 25600, ips: 1255.19448
+[2021/12/27 14:19:44] root INFO: epoch: [58/500], iter: 11250, lr: 0.000969, loss: 4.438794, acc: 0.642577, norm_edit_dis: 0.835311, reader_cost: 0.00439 s, batch_cost: 0.39286 s, samples: 25600, ips: 1303.27767
+[2021/12/27 14:21:08] root INFO: epoch: [58/500], iter: 11300, lr: 0.000968, loss: 4.550904, acc: 0.633788, norm_edit_dis: 0.829106, reader_cost: 0.00428 s, batch_cost: 0.38917 s, samples: 25600, ips: 1315.62265
+[2021/12/27 14:21:16] root INFO: epoch: [58/500], iter: 11309, lr: 0.000968, loss: 4.512570, acc: 0.637694, norm_edit_dis: 0.828760, reader_cost: 0.00004 s, batch_cost: 0.05649 s, samples: 4608, ips: 1631.52508
+[2021/12/27 14:21:16] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 14:21:16] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 14:22:46] root INFO: epoch: [59/500], iter: 11350, lr: 0.000968, loss: 4.392280, acc: 0.643553, norm_edit_dis: 0.832148, reader_cost: 0.28743 s, batch_cost: 0.62217 s, samples: 20992, ips: 674.79733
+[2021/12/27 14:24:14] root INFO: epoch: [59/500], iter: 11400, lr: 0.000968, loss: 4.308954, acc: 0.652342, norm_edit_dis: 0.835728, reader_cost: 0.00298 s, batch_cost: 0.39225 s, samples: 25600, ips: 1305.27519
+[2021/12/27 14:25:39] root INFO: epoch: [59/500], iter: 11450, lr: 0.000968, loss: 4.624352, acc: 0.642577, norm_edit_dis: 0.830344, reader_cost: 0.00277 s, batch_cost: 0.39746 s, samples: 25600, ips: 1288.16779
+[2021/12/27 14:26:59] root INFO: epoch: [59/500], iter: 11500, lr: 0.000967, loss: 4.442522, acc: 0.645507, norm_edit_dis: 0.837416, reader_cost: 0.00430 s, batch_cost: 0.38667 s, samples: 25600, ips: 1324.10997
+[2021/12/27 14:27:02] root INFO: epoch: [59/500], iter: 11504, lr: 0.000967, loss: 4.416490, acc: 0.649413, norm_edit_dis: 0.839735, reader_cost: 0.00002 s, batch_cost: 0.02511 s, samples: 2048, ips: 1631.36936
+[2021/12/27 14:27:03] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 14:27:03] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 14:28:41] root INFO: epoch: [60/500], iter: 11550, lr: 0.000967, loss: 4.197128, acc: 0.664061, norm_edit_dis: 0.846697, reader_cost: 0.27351 s, batch_cost: 0.65386 s, samples: 23552, ips: 720.40011
+[2021/12/27 14:30:09] root INFO: epoch: [60/500], iter: 11600, lr: 0.000967, loss: 4.379649, acc: 0.646483, norm_edit_dis: 0.831370, reader_cost: 0.00429 s, batch_cost: 0.40376 s, samples: 25600, ips: 1268.07890
+[2021/12/27 14:31:38] root INFO: epoch: [60/500], iter: 11650, lr: 0.000966, loss: 4.305658, acc: 0.644530, norm_edit_dis: 0.833673, reader_cost: 0.00290 s, batch_cost: 0.41178 s, samples: 25600, ips: 1243.37448
+[2021/12/27 14:32:51] root INFO: epoch: [60/500], iter: 11699, lr: 0.000966, loss: 4.534398, acc: 0.658202, norm_edit_dis: 0.837043, reader_cost: 0.00424 s, batch_cost: 0.36522 s, samples: 25088, ips: 1373.87040
+[2021/12/27 14:32:52] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 14:32:52] root INFO: save model in ./output/rec/class_demo/iter_epoch_60
+[2021/12/27 14:32:52] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 14:33:10] root INFO: epoch: [61/500], iter: 11700, lr: 0.000966, loss: 4.534398, acc: 0.661132, norm_edit_dis: 0.837043, reader_cost: 0.31018 s, batch_cost: 0.32475 s, samples: 512, ips: 31.53192
+[2021/12/27 14:34:36] root INFO: epoch: [61/500], iter: 11750, lr: 0.000966, loss: 4.256836, acc: 0.654296, norm_edit_dis: 0.842010, reader_cost: 0.00073 s, batch_cost: 0.39881 s, samples: 25600, ips: 1283.83069
+[2021/12/27 14:36:03] root INFO: epoch: [61/500], iter: 11800, lr: 0.000966, loss: 4.327728, acc: 0.661132, norm_edit_dis: 0.843801, reader_cost: 0.00569 s, batch_cost: 0.40519 s, samples: 25600, ips: 1263.61842
+[2021/12/27 14:37:33] root INFO: epoch: [61/500], iter: 11850, lr: 0.000965, loss: 4.296386, acc: 0.656249, norm_edit_dis: 0.844244, reader_cost: 0.01559 s, batch_cost: 0.40957 s, samples: 25600, ips: 1250.07879
+[2021/12/27 14:38:37] root INFO: epoch: [61/500], iter: 11894, lr: 0.000965, loss: 4.427086, acc: 0.650389, norm_edit_dis: 0.844172, reader_cost: 0.00181 s, batch_cost: 0.32576 s, samples: 22528, ips: 1383.10343
+[2021/12/27 14:38:38] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 14:38:38] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 14:39:04] root INFO: epoch: [62/500], iter: 11900, lr: 0.000965, loss: 4.236442, acc: 0.662108, norm_edit_dis: 0.846513, reader_cost: 0.30439 s, batch_cost: 0.35820 s, samples: 3072, ips: 171.52296
+[2021/12/27 14:40:33] root INFO: epoch: [62/500], iter: 11950, lr: 0.000965, loss: 4.044034, acc: 0.667967, norm_edit_dis: 0.846763, reader_cost: 0.00781 s, batch_cost: 0.40011 s, samples: 25600, ips: 1279.65875
+[2021/12/27 14:42:02] root INFO: epoch: [62/500], iter: 12000, lr: 0.000964, loss: 4.136320, acc: 0.664061, norm_edit_dis: 0.851995, reader_cost: 0.00305 s, batch_cost: 0.40731 s, samples: 25600, ips: 1257.01750
+[2021/12/27 14:42:11] root INFO: cur metric, acc: 0.6233331255556248, norm_edit_dis: 0.8154213457892596, fps: 3127.5149168815406
+[2021/12/27 14:42:11] root INFO: save best model is to ./output/rec/class_demo/best_accuracy
+[2021/12/27 14:42:11] root INFO: best metric, acc: 0.6233331255556248, norm_edit_dis: 0.8154213457892596, fps: 3127.5149168815406, best_epoch: 62
+[2021/12/27 14:43:31] root INFO: epoch: [62/500], iter: 12050, lr: 0.000964, loss: 4.238088, acc: 0.652342, norm_edit_dis: 0.831172, reader_cost: 0.00207 s, batch_cost: 0.38524 s, samples: 25600, ips: 1329.03985
+[2021/12/27 14:44:27] root INFO: epoch: [62/500], iter: 12089, lr: 0.000964, loss: 4.174901, acc: 0.665038, norm_edit_dis: 0.846391, reader_cost: 0.00066 s, batch_cost: 0.29838 s, samples: 19968, ips: 1338.43314
+[2021/12/27 14:44:28] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 14:44:28] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 14:45:03] root INFO: epoch: [63/500], iter: 12100, lr: 0.000964, loss: 3.879890, acc: 0.678710, norm_edit_dis: 0.855269, reader_cost: 0.29288 s, batch_cost: 0.38403 s, samples: 5632, ips: 293.31410
+[2021/12/27 14:46:34] root INFO: epoch: [63/500], iter: 12150, lr: 0.000963, loss: 4.024916, acc: 0.675780, norm_edit_dis: 0.846944, reader_cost: 0.00163 s, batch_cost: 0.38939 s, samples: 25600, ips: 1314.89030
+[2021/12/27 14:48:03] root INFO: epoch: [63/500], iter: 12200, lr: 0.000963, loss: 3.846818, acc: 0.669921, norm_edit_dis: 0.854564, reader_cost: 0.00210 s, batch_cost: 0.40391 s, samples: 25600, ips: 1267.61803
+[2021/12/27 14:49:29] root INFO: epoch: [63/500], iter: 12250, lr: 0.000963, loss: 4.122748, acc: 0.667967, norm_edit_dis: 0.848469, reader_cost: 0.00162 s, batch_cost: 0.39449 s, samples: 25600, ips: 1297.86537
+[2021/12/27 14:50:15] root INFO: epoch: [63/500], iter: 12284, lr: 0.000963, loss: 3.905445, acc: 0.673827, norm_edit_dis: 0.848630, reader_cost: 0.00365 s, batch_cost: 0.24403 s, samples: 17408, ips: 1426.72696
+[2021/12/27 14:50:15] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 14:50:15] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 14:51:00] root INFO: epoch: [64/500], iter: 12300, lr: 0.000963, loss: 3.904048, acc: 0.686522, norm_edit_dis: 0.857510, reader_cost: 0.29113 s, batch_cost: 0.42043 s, samples: 8192, ips: 389.69683
+[2021/12/27 14:52:31] root INFO: epoch: [64/500], iter: 12350, lr: 0.000962, loss: 4.059722, acc: 0.674803, norm_edit_dis: 0.850889, reader_cost: 0.00295 s, batch_cost: 0.39390 s, samples: 25600, ips: 1299.82009
+[2021/12/27 14:53:59] root INFO: epoch: [64/500], iter: 12400, lr: 0.000962, loss: 4.013605, acc: 0.663085, norm_edit_dis: 0.848630, reader_cost: 0.00327 s, batch_cost: 0.39276 s, samples: 25600, ips: 1303.59176
+[2021/12/27 14:55:25] root INFO: epoch: [64/500], iter: 12450, lr: 0.000962, loss: 4.332998, acc: 0.659178, norm_edit_dis: 0.845546, reader_cost: 0.00312 s, batch_cost: 0.39721 s, samples: 25600, ips: 1288.98235
+[2021/12/27 14:56:05] root INFO: epoch: [64/500], iter: 12479, lr: 0.000961, loss: 4.181486, acc: 0.666991, norm_edit_dis: 0.845663, reader_cost: 0.00170 s, batch_cost: 0.20973 s, samples: 14848, ips: 1415.88347
+[2021/12/27 14:56:05] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 14:56:05] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 14:57:00] root INFO: epoch: [65/500], iter: 12500, lr: 0.000961, loss: 3.874102, acc: 0.673827, norm_edit_dis: 0.859979, reader_cost: 0.31377 s, batch_cost: 0.48321 s, samples: 10752, ips: 445.02756
+[2021/12/27 14:58:30] root INFO: epoch: [65/500], iter: 12550, lr: 0.000961, loss: 3.998726, acc: 0.669921, norm_edit_dis: 0.852315, reader_cost: 0.00186 s, batch_cost: 0.40273 s, samples: 25600, ips: 1271.33473
+[2021/12/27 14:59:57] root INFO: epoch: [65/500], iter: 12600, lr: 0.000961, loss: 4.261810, acc: 0.665038, norm_edit_dis: 0.848869, reader_cost: 0.00277 s, batch_cost: 0.38994 s, samples: 25600, ips: 1313.02685
+[2021/12/27 15:01:22] root INFO: epoch: [65/500], iter: 12650, lr: 0.000960, loss: 4.119895, acc: 0.659178, norm_edit_dis: 0.843818, reader_cost: 0.00059 s, batch_cost: 0.40365 s, samples: 25600, ips: 1268.43330
+[2021/12/27 15:01:51] root INFO: epoch: [65/500], iter: 12674, lr: 0.000960, loss: 4.178438, acc: 0.657225, norm_edit_dis: 0.845165, reader_cost: 0.00125 s, batch_cost: 0.16492 s, samples: 12288, ips: 1490.21246
+[2021/12/27 15:01:52] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 15:01:52] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 15:02:55] root INFO: epoch: [66/500], iter: 12700, lr: 0.000960, loss: 4.053630, acc: 0.681639, norm_edit_dis: 0.857733, reader_cost: 0.34745 s, batch_cost: 0.55979 s, samples: 13312, ips: 475.61071
+[2021/12/27 15:04:24] root INFO: epoch: [66/500], iter: 12750, lr: 0.000960, loss: 4.000435, acc: 0.691405, norm_edit_dis: 0.858888, reader_cost: 0.01293 s, batch_cost: 0.40422 s, samples: 25600, ips: 1266.64006
+[2021/12/27 15:05:51] root INFO: epoch: [66/500], iter: 12800, lr: 0.000959, loss: 4.092836, acc: 0.668944, norm_edit_dis: 0.847530, reader_cost: 0.00297 s, batch_cost: 0.39937 s, samples: 25600, ips: 1282.02999
+[2021/12/27 15:07:16] root INFO: epoch: [66/500], iter: 12850, lr: 0.000959, loss: 3.853758, acc: 0.676756, norm_edit_dis: 0.856042, reader_cost: 0.00602 s, batch_cost: 0.38938 s, samples: 25600, ips: 1314.90170
+[2021/12/27 15:07:38] root INFO: epoch: [66/500], iter: 12869, lr: 0.000959, loss: 4.268195, acc: 0.659178, norm_edit_dis: 0.847214, reader_cost: 0.00025 s, batch_cost: 0.12964 s, samples: 9728, ips: 1500.76378
+[2021/12/27 15:07:39] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 15:07:39] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 15:08:49] root INFO: epoch: [67/500], iter: 12900, lr: 0.000959, loss: 3.823074, acc: 0.684569, norm_edit_dis: 0.858709, reader_cost: 0.30817 s, batch_cost: 0.56356 s, samples: 15872, ips: 563.27637
+[2021/12/27 15:10:18] root INFO: epoch: [67/500], iter: 12950, lr: 0.000958, loss: 3.826876, acc: 0.671874, norm_edit_dis: 0.852453, reader_cost: 0.04882 s, batch_cost: 0.44219 s, samples: 25600, ips: 1157.87780
+[2021/12/27 15:11:45] root INFO: epoch: [67/500], iter: 13000, lr: 0.000958, loss: 4.074989, acc: 0.676756, norm_edit_dis: 0.854425, reader_cost: 0.00277 s, batch_cost: 0.39776 s, samples: 25600, ips: 1287.20320
+[2021/12/27 15:11:54] root INFO: cur metric, acc: 0.6263331245556251, norm_edit_dis: 0.8147780302757759, fps: 3626.388581075843
+[2021/12/27 15:11:54] root INFO: save best model is to ./output/rec/class_demo/best_accuracy
+[2021/12/27 15:11:54] root INFO: best metric, acc: 0.6263331245556251, norm_edit_dis: 0.8147780302757759, fps: 3626.388581075843, best_epoch: 67
+[2021/12/27 15:13:16] root INFO: epoch: [67/500], iter: 13050, lr: 0.000958, loss: 4.075084, acc: 0.672850, norm_edit_dis: 0.846037, reader_cost: 0.00169 s, batch_cost: 0.38498 s, samples: 25600, ips: 1329.92299
+[2021/12/27 15:13:29] root INFO: epoch: [67/500], iter: 13064, lr: 0.000958, loss: 4.100887, acc: 0.676756, norm_edit_dis: 0.849629, reader_cost: 0.00007 s, batch_cost: 0.08898 s, samples: 7168, ips: 1611.21216
+[2021/12/27 15:13:29] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 15:13:29] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 15:14:50] root INFO: epoch: [68/500], iter: 13100, lr: 0.000957, loss: 3.775488, acc: 0.708006, norm_edit_dis: 0.869722, reader_cost: 0.34646 s, batch_cost: 0.63689 s, samples: 18432, ips: 578.80848
+[2021/12/27 15:16:17] root INFO: epoch: [68/500], iter: 13150, lr: 0.000957, loss: 3.885044, acc: 0.685546, norm_edit_dis: 0.857190, reader_cost: 0.00199 s, batch_cost: 0.39593 s, samples: 25600, ips: 1293.16622
+[2021/12/27 15:17:45] root INFO: epoch: [68/500], iter: 13200, lr: 0.000957, loss: 3.848718, acc: 0.680663, norm_edit_dis: 0.855155, reader_cost: 0.00779 s, batch_cost: 0.39577 s, samples: 25600, ips: 1293.69216
+[2021/12/27 15:19:08] root INFO: epoch: [68/500], iter: 13250, lr: 0.000956, loss: 3.940116, acc: 0.682616, norm_edit_dis: 0.862604, reader_cost: 0.00307 s, batch_cost: 0.38795 s, samples: 25600, ips: 1319.74305
+[2021/12/27 15:19:16] root INFO: epoch: [68/500], iter: 13259, lr: 0.000956, loss: 3.808009, acc: 0.677733, norm_edit_dis: 0.861952, reader_cost: 0.00005 s, batch_cost: 0.05664 s, samples: 4608, ips: 1627.21343
+[2021/12/27 15:19:16] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 15:19:16] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 15:20:47] root INFO: epoch: [69/500], iter: 13300, lr: 0.000956, loss: 3.640075, acc: 0.707030, norm_edit_dis: 0.869400, reader_cost: 0.33130 s, batch_cost: 0.65635 s, samples: 20992, ips: 639.65661
+[2021/12/27 15:22:14] root INFO: epoch: [69/500], iter: 13350, lr: 0.000956, loss: 3.622190, acc: 0.697264, norm_edit_dis: 0.867359, reader_cost: 0.00882 s, batch_cost: 0.39317 s, samples: 25600, ips: 1302.22998
+[2021/12/27 15:23:43] root INFO: epoch: [69/500], iter: 13400, lr: 0.000955, loss: 3.946318, acc: 0.671874, norm_edit_dis: 0.854701, reader_cost: 0.00312 s, batch_cost: 0.40037 s, samples: 25600, ips: 1278.81483
+[2021/12/27 15:25:00] root INFO: epoch: [69/500], iter: 13450, lr: 0.000955, loss: 3.901797, acc: 0.683592, norm_edit_dis: 0.861170, reader_cost: 0.00066 s, batch_cost: 0.37743 s, samples: 25600, ips: 1356.54494
+[2021/12/27 15:25:03] root INFO: epoch: [69/500], iter: 13454, lr: 0.000955, loss: 3.794236, acc: 0.686522, norm_edit_dis: 0.862407, reader_cost: 0.00002 s, batch_cost: 0.02511 s, samples: 2048, ips: 1631.39198
+[2021/12/27 15:25:04] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 15:25:04] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 15:26:43] root INFO: epoch: [70/500], iter: 13500, lr: 0.000955, loss: 3.596192, acc: 0.706053, norm_edit_dis: 0.872142, reader_cost: 0.36681 s, batch_cost: 0.75031 s, samples: 23552, ips: 627.79410
+[2021/12/27 15:28:10] root INFO: epoch: [70/500], iter: 13550, lr: 0.000954, loss: 3.711107, acc: 0.699217, norm_edit_dis: 0.866002, reader_cost: 0.00537 s, batch_cost: 0.39535 s, samples: 25600, ips: 1295.04607
+[2021/12/27 15:29:35] root INFO: epoch: [70/500], iter: 13600, lr: 0.000954, loss: 3.821105, acc: 0.696288, norm_edit_dis: 0.863574, reader_cost: 0.00203 s, batch_cost: 0.39691 s, samples: 25600, ips: 1289.97711
+[2021/12/27 15:30:50] root INFO: epoch: [70/500], iter: 13649, lr: 0.000954, loss: 3.640969, acc: 0.697264, norm_edit_dis: 0.860392, reader_cost: 0.00188 s, batch_cost: 0.37604 s, samples: 25088, ips: 1334.30909
+[2021/12/27 15:30:51] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 15:30:51] root INFO: save model in ./output/rec/class_demo/iter_epoch_70
+[2021/12/27 15:30:51] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 15:31:08] root INFO: epoch: [71/500], iter: 13650, lr: 0.000954, loss: 3.672857, acc: 0.697264, norm_edit_dis: 0.857991, reader_cost: 0.30495 s, batch_cost: 0.31421 s, samples: 512, ips: 32.58922
+[2021/12/27 15:32:40] root INFO: epoch: [71/500], iter: 13700, lr: 0.000953, loss: 3.496661, acc: 0.713866, norm_edit_dis: 0.875075, reader_cost: 0.01808 s, batch_cost: 0.41760 s, samples: 25600, ips: 1226.04829
+[2021/12/27 15:34:09] root INFO: epoch: [71/500], iter: 13750, lr: 0.000953, loss: 3.698079, acc: 0.696288, norm_edit_dis: 0.865372, reader_cost: 0.00162 s, batch_cost: 0.39756 s, samples: 25600, ips: 1287.84335
+[2021/12/27 15:35:37] root INFO: epoch: [71/500], iter: 13800, lr: 0.000953, loss: 3.655506, acc: 0.703124, norm_edit_dis: 0.868569, reader_cost: 0.00276 s, batch_cost: 0.40363 s, samples: 25600, ips: 1268.47498
+[2021/12/27 15:36:41] root INFO: epoch: [71/500], iter: 13844, lr: 0.000952, loss: 3.624109, acc: 0.685546, norm_edit_dis: 0.856644, reader_cost: 0.00049 s, batch_cost: 0.33053 s, samples: 22528, ips: 1363.16420
+[2021/12/27 15:36:42] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 15:36:42] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 15:37:09] root INFO: epoch: [72/500], iter: 13850, lr: 0.000952, loss: 3.589833, acc: 0.702147, norm_edit_dis: 0.865296, reader_cost: 0.30786 s, batch_cost: 0.36734 s, samples: 3072, ips: 167.25629
+[2021/12/27 15:38:37] root INFO: epoch: [72/500], iter: 13900, lr: 0.000952, loss: 3.512617, acc: 0.716795, norm_edit_dis: 0.877235, reader_cost: 0.03263 s, batch_cost: 0.42698 s, samples: 25600, ips: 1199.13335
+[2021/12/27 15:40:04] root INFO: epoch: [72/500], iter: 13950, lr: 0.000952, loss: 3.886225, acc: 0.680663, norm_edit_dis: 0.853344, reader_cost: 0.00406 s, batch_cost: 0.39537 s, samples: 25600, ips: 1295.00077
+[2021/12/27 15:41:32] root INFO: epoch: [72/500], iter: 14000, lr: 0.000951, loss: 3.572462, acc: 0.692381, norm_edit_dis: 0.865695, reader_cost: 0.00242 s, batch_cost: 0.39517 s, samples: 25600, ips: 1295.64672
+[2021/12/27 15:41:40] root INFO: cur metric, acc: 0.6229997923334025, norm_edit_dis: 0.8134722542141084, fps: 4202.942447710861
+[2021/12/27 15:41:40] root INFO: best metric, acc: 0.6263331245556251, norm_edit_dis: 0.8147780302757759, fps: 3626.388581075843, best_epoch: 67
+[2021/12/27 15:42:33] root INFO: epoch: [72/500], iter: 14039, lr: 0.000951, loss: 3.626718, acc: 0.684569, norm_edit_dis: 0.857044, reader_cost: 0.00048 s, batch_cost: 0.26829 s, samples: 19968, ips: 1488.52090
+[2021/12/27 15:42:33] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 15:42:33] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 15:43:08] root INFO: epoch: [73/500], iter: 14050, lr: 0.000951, loss: 3.593833, acc: 0.698241, norm_edit_dis: 0.867693, reader_cost: 0.26198 s, batch_cost: 0.35618 s, samples: 5632, ips: 316.24882
+[2021/12/27 15:44:39] root INFO: epoch: [73/500], iter: 14100, lr: 0.000951, loss: 3.548900, acc: 0.695311, norm_edit_dis: 0.869921, reader_cost: 0.00178 s, batch_cost: 0.39302 s, samples: 25600, ips: 1302.73852
+[2021/12/27 15:46:07] root INFO: epoch: [73/500], iter: 14150, lr: 0.000950, loss: 3.649789, acc: 0.698241, norm_edit_dis: 0.865919, reader_cost: 0.00269 s, batch_cost: 0.37667 s, samples: 25600, ips: 1359.28989
+[2021/12/27 15:47:34] root INFO: epoch: [73/500], iter: 14200, lr: 0.000950, loss: 3.573286, acc: 0.695311, norm_edit_dis: 0.866954, reader_cost: 0.00715 s, batch_cost: 0.39134 s, samples: 25600, ips: 1308.32593
+[2021/12/27 15:48:23] root INFO: epoch: [73/500], iter: 14234, lr: 0.000950, loss: 3.438909, acc: 0.693358, norm_edit_dis: 0.866469, reader_cost: 0.00039 s, batch_cost: 0.24459 s, samples: 17408, ips: 1423.44888
+[2021/12/27 15:48:23] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 15:48:23] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 15:49:11] root INFO: epoch: [74/500], iter: 14250, lr: 0.000950, loss: 3.403002, acc: 0.707030, norm_edit_dis: 0.875634, reader_cost: 0.28567 s, batch_cost: 0.42658 s, samples: 8192, ips: 384.07453
+[2021/12/27 15:50:44] root INFO: epoch: [74/500], iter: 14300, lr: 0.000949, loss: 3.469818, acc: 0.708983, norm_edit_dis: 0.874277, reader_cost: 0.01355 s, batch_cost: 0.42294 s, samples: 25600, ips: 1210.57540
+[2021/12/27 15:52:18] root INFO: epoch: [74/500], iter: 14350, lr: 0.000949, loss: 3.769261, acc: 0.694335, norm_edit_dis: 0.864453, reader_cost: 0.36954 s, batch_cost: 0.74268 s, samples: 25600, ips: 689.39668
+[2021/12/27 15:53:55] root INFO: epoch: [74/500], iter: 14400, lr: 0.000949, loss: 3.349378, acc: 0.708006, norm_edit_dis: 0.873424, reader_cost: 0.45715 s, batch_cost: 0.82597 s, samples: 25600, ips: 619.87437
+[2021/12/27 15:54:33] root INFO: epoch: [74/500], iter: 14429, lr: 0.000948, loss: 3.570700, acc: 0.693358, norm_edit_dis: 0.863874, reader_cost: 0.09636 s, batch_cost: 0.28939 s, samples: 14848, ips: 1026.17390
+[2021/12/27 15:54:33] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 15:54:33] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 15:55:30] root INFO: epoch: [75/500], iter: 14450, lr: 0.000948, loss: 3.478279, acc: 0.702147, norm_edit_dis: 0.875397, reader_cost: 0.31273 s, batch_cost: 0.49501 s, samples: 10752, ips: 434.41893
+[2021/12/27 15:57:00] root INFO: epoch: [75/500], iter: 14500, lr: 0.000948, loss: 3.538293, acc: 0.703124, norm_edit_dis: 0.870943, reader_cost: 0.00431 s, batch_cost: 0.40018 s, samples: 25600, ips: 1279.43147
+[2021/12/27 15:58:28] root INFO: epoch: [75/500], iter: 14550, lr: 0.000948, loss: 3.492884, acc: 0.688475, norm_edit_dis: 0.864474, reader_cost: 0.00910 s, batch_cost: 0.39984 s, samples: 25600, ips: 1280.51560
+[2021/12/27 15:59:59] root INFO: epoch: [75/500], iter: 14600, lr: 0.000947, loss: 3.855622, acc: 0.685546, norm_edit_dis: 0.859420, reader_cost: 0.08225 s, batch_cost: 0.47442 s, samples: 25600, ips: 1079.20214
+[2021/12/27 16:00:30] root INFO: epoch: [75/500], iter: 14624, lr: 0.000947, loss: 3.945843, acc: 0.671874, norm_edit_dis: 0.851052, reader_cost: 0.01786 s, batch_cost: 0.18665 s, samples: 12288, ips: 1316.66525
+[2021/12/27 16:00:31] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 16:00:31] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 16:01:45] root INFO: epoch: [76/500], iter: 14650, lr: 0.000947, loss: 3.371547, acc: 0.687499, norm_edit_dis: 0.861409, reader_cost: 0.52431 s, batch_cost: 0.73337 s, samples: 13312, ips: 363.03485
+[2021/12/27 16:03:09] root INFO: epoch: [76/500], iter: 14700, lr: 0.000946, loss: 3.837848, acc: 0.671874, norm_edit_dis: 0.853373, reader_cost: 0.00175 s, batch_cost: 0.38776 s, samples: 25600, ips: 1320.39405
+[2021/12/27 16:04:41] root INFO: epoch: [76/500], iter: 14750, lr: 0.000946, loss: 3.753850, acc: 0.675780, norm_edit_dis: 0.857374, reader_cost: 0.26254 s, batch_cost: 0.64996 s, samples: 25600, ips: 787.74453
+[2021/12/27 16:06:09] root INFO: epoch: [76/500], iter: 14800, lr: 0.000946, loss: 3.746532, acc: 0.694335, norm_edit_dis: 0.865281, reader_cost: 0.00412 s, batch_cost: 0.39804 s, samples: 25600, ips: 1286.28771
+[2021/12/27 16:06:30] root INFO: epoch: [76/500], iter: 14819, lr: 0.000946, loss: 3.738709, acc: 0.690428, norm_edit_dis: 0.862109, reader_cost: 0.00020 s, batch_cost: 0.12913 s, samples: 9728, ips: 1506.74173
+[2021/12/27 16:06:31] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 16:06:31] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 16:07:43] root INFO: epoch: [77/500], iter: 14850, lr: 0.000945, loss: 3.388618, acc: 0.708006, norm_edit_dis: 0.874858, reader_cost: 0.36885 s, batch_cost: 0.61485 s, samples: 15872, ips: 516.29049
+[2021/12/27 16:09:10] root INFO: epoch: [77/500], iter: 14900, lr: 0.000945, loss: 3.507789, acc: 0.707030, norm_edit_dis: 0.871637, reader_cost: 0.03013 s, batch_cost: 0.42635 s, samples: 25600, ips: 1200.89601
+[2021/12/27 16:10:36] root INFO: epoch: [77/500], iter: 14950, lr: 0.000945, loss: 3.622682, acc: 0.691405, norm_edit_dis: 0.863582, reader_cost: 0.00178 s, batch_cost: 0.39534 s, samples: 25600, ips: 1295.08071
+[2021/12/27 16:12:02] root INFO: epoch: [77/500], iter: 15000, lr: 0.000944, loss: 3.334669, acc: 0.694335, norm_edit_dis: 0.864656, reader_cost: 0.00313 s, batch_cost: 0.39540 s, samples: 25600, ips: 1294.89718
+[2021/12/27 16:12:10] root INFO: cur metric, acc: 0.6369997876667374, norm_edit_dis: 0.8247733612722791, fps: 5051.611263690492
+[2021/12/27 16:12:10] root INFO: save best model is to ./output/rec/class_demo/best_accuracy
+[2021/12/27 16:12:10] root INFO: best metric, acc: 0.6369997876667374, norm_edit_dis: 0.8247733612722791, fps: 5051.611263690492, best_epoch: 77
+[2021/12/27 16:12:22] root INFO: epoch: [77/500], iter: 15014, lr: 0.000944, loss: 3.618160, acc: 0.693358, norm_edit_dis: 0.868496, reader_cost: 0.00007 s, batch_cost: 0.08793 s, samples: 7168, ips: 1630.42101
+[2021/12/27 16:12:23] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 16:12:23] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 16:13:44] root INFO: epoch: [78/500], iter: 15050, lr: 0.000944, loss: 3.463284, acc: 0.713866, norm_edit_dis: 0.880070, reader_cost: 0.29774 s, batch_cost: 0.59000 s, samples: 18432, ips: 624.80864
+[2021/12/27 16:15:14] root INFO: epoch: [78/500], iter: 15100, lr: 0.000944, loss: 3.429092, acc: 0.718749, norm_edit_dis: 0.876594, reader_cost: 0.00284 s, batch_cost: 0.40131 s, samples: 25600, ips: 1275.82337
+[2021/12/27 16:16:40] root INFO: epoch: [78/500], iter: 15150, lr: 0.000943, loss: 3.561550, acc: 0.699217, norm_edit_dis: 0.867660, reader_cost: 0.00290 s, batch_cost: 0.39836 s, samples: 25600, ips: 1285.26713
+[2021/12/27 16:18:03] root INFO: epoch: [78/500], iter: 15200, lr: 0.000943, loss: 3.268141, acc: 0.718749, norm_edit_dis: 0.879550, reader_cost: 0.00231 s, batch_cost: 0.39707 s, samples: 25600, ips: 1289.45608
+[2021/12/27 16:18:11] root INFO: epoch: [78/500], iter: 15209, lr: 0.000943, loss: 3.377564, acc: 0.716795, norm_edit_dis: 0.878592, reader_cost: 0.00005 s, batch_cost: 0.05658 s, samples: 4608, ips: 1628.91797
+[2021/12/27 16:18:12] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 16:18:12] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 16:19:40] root INFO: epoch: [79/500], iter: 15250, lr: 0.000942, loss: 3.392757, acc: 0.710936, norm_edit_dis: 0.876870, reader_cost: 0.28580 s, batch_cost: 0.60875 s, samples: 20992, ips: 689.67289
+[2021/12/27 16:21:08] root INFO: epoch: [79/500], iter: 15300, lr: 0.000942, loss: 3.280627, acc: 0.714842, norm_edit_dis: 0.874870, reader_cost: 0.00661 s, batch_cost: 0.39767 s, samples: 25600, ips: 1287.50812
+[2021/12/27 16:22:39] root INFO: epoch: [79/500], iter: 15350, lr: 0.000942, loss: 3.164580, acc: 0.718749, norm_edit_dis: 0.879007, reader_cost: 0.02573 s, batch_cost: 0.43622 s, samples: 25600, ips: 1173.71050
+[2021/12/27 16:23:57] root INFO: epoch: [79/500], iter: 15400, lr: 0.000941, loss: 3.402487, acc: 0.696288, norm_edit_dis: 0.869500, reader_cost: 0.00202 s, batch_cost: 0.38007 s, samples: 25600, ips: 1347.10802
+[2021/12/27 16:24:01] root INFO: epoch: [79/500], iter: 15404, lr: 0.000941, loss: 3.391948, acc: 0.696288, norm_edit_dis: 0.869589, reader_cost: 0.00002 s, batch_cost: 0.02510 s, samples: 2048, ips: 1631.65600
+[2021/12/27 16:24:01] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 16:24:01] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 16:25:39] root INFO: epoch: [80/500], iter: 15450, lr: 0.000941, loss: 3.272286, acc: 0.727538, norm_edit_dis: 0.881348, reader_cost: 0.29825 s, batch_cost: 0.66148 s, samples: 23552, ips: 712.10171
+[2021/12/27 16:27:14] root INFO: epoch: [80/500], iter: 15500, lr: 0.000940, loss: 3.330987, acc: 0.716795, norm_edit_dis: 0.880144, reader_cost: 0.24119 s, batch_cost: 0.62961 s, samples: 25600, ips: 813.19719
+[2021/12/27 16:28:43] root INFO: epoch: [80/500], iter: 15550, lr: 0.000940, loss: 3.566836, acc: 0.706053, norm_edit_dis: 0.871163, reader_cost: 0.00352 s, batch_cost: 0.40716 s, samples: 25600, ips: 1257.49779
+[2021/12/27 16:30:07] root INFO: epoch: [80/500], iter: 15599, lr: 0.000940, loss: 3.296735, acc: 0.706053, norm_edit_dis: 0.872723, reader_cost: 0.28666 s, batch_cost: 0.64116 s, samples: 25088, ips: 782.57754
+[2021/12/27 16:30:08] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 16:30:08] root INFO: save model in ./output/rec/class_demo/iter_epoch_80
+[2021/12/27 16:30:08] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 16:30:24] root INFO: epoch: [81/500], iter: 15600, lr: 0.000940, loss: 3.368792, acc: 0.704100, norm_edit_dis: 0.872090, reader_cost: 0.27350 s, batch_cost: 0.28199 s, samples: 512, ips: 36.31280
+[2021/12/27 16:32:01] root INFO: epoch: [81/500], iter: 15650, lr: 0.000939, loss: 3.264746, acc: 0.713866, norm_edit_dis: 0.876875, reader_cost: 0.29708 s, batch_cost: 0.69454 s, samples: 25600, ips: 737.17810
+[2021/12/27 16:33:35] root INFO: epoch: [81/500], iter: 15700, lr: 0.000939, loss: 3.481518, acc: 0.719725, norm_edit_dis: 0.878368, reader_cost: 0.17312 s, batch_cost: 0.56744 s, samples: 25600, ips: 902.29154
+[2021/12/27 16:35:01] root INFO: epoch: [81/500], iter: 15750, lr: 0.000939, loss: 3.469765, acc: 0.705077, norm_edit_dis: 0.874735, reader_cost: 0.04735 s, batch_cost: 0.44650 s, samples: 25600, ips: 1146.70345
+[2021/12/27 16:36:05] root INFO: epoch: [81/500], iter: 15794, lr: 0.000938, loss: 3.309102, acc: 0.701171, norm_edit_dis: 0.870111, reader_cost: 0.00195 s, batch_cost: 0.32817 s, samples: 22528, ips: 1372.96413
+[2021/12/27 16:36:06] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 16:36:06] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 16:36:33] root INFO: epoch: [82/500], iter: 15800, lr: 0.000938, loss: 3.309141, acc: 0.691405, norm_edit_dis: 0.868464, reader_cost: 0.29688 s, batch_cost: 0.35469 s, samples: 3072, ips: 173.22112
+[2021/12/27 16:38:02] root INFO: epoch: [82/500], iter: 15850, lr: 0.000938, loss: 3.173345, acc: 0.718749, norm_edit_dis: 0.881550, reader_cost: 0.00631 s, batch_cost: 0.40330 s, samples: 25600, ips: 1269.51941
+[2021/12/27 16:39:27] root INFO: epoch: [82/500], iter: 15900, lr: 0.000937, loss: 3.228091, acc: 0.711913, norm_edit_dis: 0.876906, reader_cost: 0.00180 s, batch_cost: 0.39482 s, samples: 25600, ips: 1296.79061
+[2021/12/27 16:40:52] root INFO: epoch: [82/500], iter: 15950, lr: 0.000937, loss: 3.461951, acc: 0.706053, norm_edit_dis: 0.876025, reader_cost: 0.00297 s, batch_cost: 0.39804 s, samples: 25600, ips: 1286.30731
+[2021/12/27 16:41:51] root INFO: epoch: [82/500], iter: 15989, lr: 0.000937, loss: 3.366876, acc: 0.698241, norm_edit_dis: 0.870821, reader_cost: 0.00290 s, batch_cost: 0.29059 s, samples: 19968, ips: 1374.30284
+[2021/12/27 16:41:51] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 16:41:51] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 16:42:28] root INFO: epoch: [83/500], iter: 16000, lr: 0.000937, loss: 3.380578, acc: 0.711913, norm_edit_dis: 0.875383, reader_cost: 0.28689 s, batch_cost: 0.39952 s, samples: 5632, ips: 281.93502
+[2021/12/27 16:42:37] root INFO: cur metric, acc: 0.6259997913334029, norm_edit_dis: 0.8166441902155773, fps: 4306.818189597163
+[2021/12/27 16:42:37] root INFO: best metric, acc: 0.6369997876667374, norm_edit_dis: 0.8247733612722791, fps: 5051.611263690492, best_epoch: 77
+[2021/12/27 16:44:00] root INFO: epoch: [83/500], iter: 16050, lr: 0.000936, loss: 3.516276, acc: 0.700194, norm_edit_dis: 0.872614, reader_cost: 0.00163 s, batch_cost: 0.37825 s, samples: 25600, ips: 1353.61326
+[2021/12/27 16:45:27] root INFO: epoch: [83/500], iter: 16100, lr: 0.000936, loss: 3.341072, acc: 0.700194, norm_edit_dis: 0.866845, reader_cost: 0.00648 s, batch_cost: 0.39786 s, samples: 25600, ips: 1286.87386
+[2021/12/27 16:46:52] root INFO: epoch: [83/500], iter: 16150, lr: 0.000935, loss: 3.000996, acc: 0.715819, norm_edit_dis: 0.880390, reader_cost: 0.00289 s, batch_cost: 0.39152 s, samples: 25600, ips: 1307.72249
+[2021/12/27 16:47:40] root INFO: epoch: [83/500], iter: 16184, lr: 0.000935, loss: 3.227383, acc: 0.718749, norm_edit_dis: 0.880566, reader_cost: 0.00139 s, batch_cost: 0.25179 s, samples: 17408, ips: 1382.71741
+[2021/12/27 16:47:40] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 16:47:40] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 16:48:23] root INFO: epoch: [84/500], iter: 16200, lr: 0.000935, loss: 3.129132, acc: 0.725585, norm_edit_dis: 0.886257, reader_cost: 0.26834 s, batch_cost: 0.40000 s, samples: 8192, ips: 409.60486
+[2021/12/27 16:49:55] root INFO: epoch: [84/500], iter: 16250, lr: 0.000935, loss: 3.360014, acc: 0.719725, norm_edit_dis: 0.879786, reader_cost: 0.01819 s, batch_cost: 0.41670 s, samples: 25600, ips: 1228.69986
+[2021/12/27 16:51:24] root INFO: epoch: [84/500], iter: 16300, lr: 0.000934, loss: 3.442549, acc: 0.692381, norm_edit_dis: 0.866612, reader_cost: 0.06695 s, batch_cost: 0.47440 s, samples: 25600, ips: 1079.24758
+[2021/12/27 16:52:56] root INFO: epoch: [84/500], iter: 16350, lr: 0.000934, loss: 3.174376, acc: 0.714842, norm_edit_dis: 0.874882, reader_cost: 0.08446 s, batch_cost: 0.48512 s, samples: 25600, ips: 1055.40565
+[2021/12/27 16:53:39] root INFO: epoch: [84/500], iter: 16379, lr: 0.000934, loss: 3.373986, acc: 0.707030, norm_edit_dis: 0.877852, reader_cost: 0.00144 s, batch_cost: 0.21907 s, samples: 14848, ips: 1355.53736
+[2021/12/27 16:53:40] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 16:53:40] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 16:54:37] root INFO: epoch: [85/500], iter: 16400, lr: 0.000933, loss: 3.029696, acc: 0.737303, norm_edit_dis: 0.889906, reader_cost: 0.33464 s, batch_cost: 0.50918 s, samples: 10752, ips: 422.32260
+[2021/12/27 16:56:11] root INFO: epoch: [85/500], iter: 16450, lr: 0.000933, loss: 3.095851, acc: 0.725585, norm_edit_dis: 0.889486, reader_cost: 0.00125 s, batch_cost: 0.40374 s, samples: 25600, ips: 1268.15305
+[2021/12/27 16:57:38] root INFO: epoch: [85/500], iter: 16500, lr: 0.000933, loss: 3.205043, acc: 0.716795, norm_edit_dis: 0.883507, reader_cost: 0.00264 s, batch_cost: 0.40267 s, samples: 25600, ips: 1271.52441
+[2021/12/27 16:59:08] root INFO: epoch: [85/500], iter: 16550, lr: 0.000932, loss: 3.336865, acc: 0.692381, norm_edit_dis: 0.864242, reader_cost: 0.00444 s, batch_cost: 0.40844 s, samples: 25600, ips: 1253.54078
+[2021/12/27 16:59:39] root INFO: epoch: [85/500], iter: 16574, lr: 0.000932, loss: 3.740679, acc: 0.686522, norm_edit_dis: 0.859828, reader_cost: 0.00027 s, batch_cost: 0.16661 s, samples: 12288, ips: 1475.02768
+[2021/12/27 16:59:40] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 16:59:40] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 17:00:46] root INFO: epoch: [86/500], iter: 16600, lr: 0.000932, loss: 3.166565, acc: 0.700194, norm_edit_dis: 0.873235, reader_cost: 0.33006 s, batch_cost: 0.55198 s, samples: 13312, ips: 482.33918
+[2021/12/27 17:02:17] root INFO: epoch: [86/500], iter: 16650, lr: 0.000931, loss: 3.145372, acc: 0.721678, norm_edit_dis: 0.883053, reader_cost: 0.00556 s, batch_cost: 0.39717 s, samples: 25600, ips: 1289.12746
+[2021/12/27 17:03:46] root INFO: epoch: [86/500], iter: 16700, lr: 0.000931, loss: 3.193276, acc: 0.714842, norm_edit_dis: 0.879697, reader_cost: 0.00511 s, batch_cost: 0.40110 s, samples: 25600, ips: 1276.47868
+[2021/12/27 17:05:18] root INFO: epoch: [86/500], iter: 16750, lr: 0.000931, loss: 3.062587, acc: 0.720702, norm_edit_dis: 0.883747, reader_cost: 0.02323 s, batch_cost: 0.42203 s, samples: 25600, ips: 1213.19075
+[2021/12/27 17:05:40] root INFO: epoch: [86/500], iter: 16769, lr: 0.000930, loss: 3.252333, acc: 0.718749, norm_edit_dis: 0.880005, reader_cost: 0.00020 s, batch_cost: 0.13119 s, samples: 9728, ips: 1482.98387
+[2021/12/27 17:05:41] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 17:05:41] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 17:06:55] root INFO: epoch: [87/500], iter: 16800, lr: 0.000930, loss: 3.234889, acc: 0.721678, norm_edit_dis: 0.880866, reader_cost: 0.31228 s, batch_cost: 0.57286 s, samples: 15872, ips: 554.13553
+[2021/12/27 17:08:23] root INFO: epoch: [87/500], iter: 16850, lr: 0.000930, loss: 3.201412, acc: 0.724608, norm_edit_dis: 0.883656, reader_cost: 0.00061 s, batch_cost: 0.39791 s, samples: 25600, ips: 1286.72349
+[2021/12/27 17:09:57] root INFO: epoch: [87/500], iter: 16900, lr: 0.000929, loss: 3.395052, acc: 0.708983, norm_edit_dis: 0.878605, reader_cost: 0.20791 s, batch_cost: 0.60262 s, samples: 25600, ips: 849.62455
+[2021/12/27 17:11:24] root INFO: epoch: [87/500], iter: 16950, lr: 0.000929, loss: 2.961803, acc: 0.731444, norm_edit_dis: 0.887380, reader_cost: 0.00324 s, batch_cost: 0.39733 s, samples: 25600, ips: 1288.58874
+[2021/12/27 17:11:37] root INFO: epoch: [87/500], iter: 16964, lr: 0.000929, loss: 3.002364, acc: 0.730467, norm_edit_dis: 0.885898, reader_cost: 0.00007 s, batch_cost: 0.09188 s, samples: 7168, ips: 1560.21835
+[2021/12/27 17:11:38] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 17:11:38] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 17:12:58] root INFO: epoch: [88/500], iter: 17000, lr: 0.000929, loss: 2.789971, acc: 0.748045, norm_edit_dis: 0.894893, reader_cost: 0.30098 s, batch_cost: 0.59660 s, samples: 18432, ips: 617.90493
+[2021/12/27 17:13:08] root INFO: cur metric, acc: 0.6369997876667374, norm_edit_dis: 0.8269703123044272, fps: 3708.1342293271473
+[2021/12/27 17:13:08] root INFO: save best model is to ./output/rec/class_demo/best_accuracy
+[2021/12/27 17:13:08] root INFO: best metric, acc: 0.6369997876667374, norm_edit_dis: 0.8269703123044272, fps: 3708.1342293271473, best_epoch: 88
+[2021/12/27 17:14:30] root INFO: epoch: [88/500], iter: 17050, lr: 0.000928, loss: 3.048920, acc: 0.737303, norm_edit_dis: 0.891117, reader_cost: 0.00067 s, batch_cost: 0.38539 s, samples: 25600, ips: 1328.52693
+[2021/12/27 17:15:57] root INFO: epoch: [88/500], iter: 17100, lr: 0.000928, loss: 2.879593, acc: 0.746092, norm_edit_dis: 0.896353, reader_cost: 0.00156 s, batch_cost: 0.39332 s, samples: 25600, ips: 1301.75513
+[2021/12/27 17:17:19] root INFO: epoch: [88/500], iter: 17150, lr: 0.000927, loss: 2.909405, acc: 0.740233, norm_edit_dis: 0.893321, reader_cost: 0.00510 s, batch_cost: 0.38639 s, samples: 25600, ips: 1325.08579
+[2021/12/27 17:17:26] root INFO: epoch: [88/500], iter: 17159, lr: 0.000927, loss: 2.976782, acc: 0.740233, norm_edit_dis: 0.893606, reader_cost: 0.00005 s, batch_cost: 0.05674 s, samples: 4608, ips: 1624.18456
+[2021/12/27 17:17:27] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 17:17:27] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 17:18:57] root INFO: epoch: [89/500], iter: 17200, lr: 0.000927, loss: 2.882811, acc: 0.745116, norm_edit_dis: 0.896868, reader_cost: 0.27298 s, batch_cost: 0.59558 s, samples: 20992, ips: 704.92794
+[2021/12/27 17:20:28] root INFO: epoch: [89/500], iter: 17250, lr: 0.000926, loss: 2.703312, acc: 0.749999, norm_edit_dis: 0.901492, reader_cost: 0.00406 s, batch_cost: 0.41155 s, samples: 25600, ips: 1244.06812
+[2021/12/27 17:21:54] root INFO: epoch: [89/500], iter: 17300, lr: 0.000926, loss: 2.869206, acc: 0.741209, norm_edit_dis: 0.895747, reader_cost: 0.00060 s, batch_cost: 0.40399 s, samples: 25600, ips: 1267.35270
+[2021/12/27 17:23:14] root INFO: epoch: [89/500], iter: 17350, lr: 0.000926, loss: 3.046844, acc: 0.736327, norm_edit_dis: 0.893377, reader_cost: 0.00690 s, batch_cost: 0.37732 s, samples: 25600, ips: 1356.94947
+[2021/12/27 17:23:17] root INFO: epoch: [89/500], iter: 17354, lr: 0.000926, loss: 2.843181, acc: 0.734374, norm_edit_dis: 0.893377, reader_cost: 0.00002 s, batch_cost: 0.02511 s, samples: 2048, ips: 1631.09243
+[2021/12/27 17:23:18] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 17:23:18] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 17:24:56] root INFO: epoch: [90/500], iter: 17400, lr: 0.000925, loss: 2.907240, acc: 0.749999, norm_edit_dis: 0.897888, reader_cost: 0.26296 s, batch_cost: 0.62794 s, samples: 23552, ips: 750.13646
+[2021/12/27 17:26:24] root INFO: epoch: [90/500], iter: 17450, lr: 0.000925, loss: 3.104796, acc: 0.735350, norm_edit_dis: 0.891174, reader_cost: 0.00406 s, batch_cost: 0.40769 s, samples: 25600, ips: 1255.85964
+[2021/12/27 17:27:53] root INFO: epoch: [90/500], iter: 17500, lr: 0.000924, loss: 2.849244, acc: 0.741209, norm_edit_dis: 0.894477, reader_cost: 0.00422 s, batch_cost: 0.40355 s, samples: 25600, ips: 1268.73076
+[2021/12/27 17:29:07] root INFO: epoch: [90/500], iter: 17549, lr: 0.000924, loss: 3.012516, acc: 0.735350, norm_edit_dis: 0.885904, reader_cost: 0.00312 s, batch_cost: 0.37509 s, samples: 25088, ips: 1337.71076
+[2021/12/27 17:29:07] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 17:29:07] root INFO: save model in ./output/rec/class_demo/iter_epoch_90
+[2021/12/27 17:29:07] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 17:29:22] root INFO: epoch: [91/500], iter: 17550, lr: 0.000924, loss: 3.043326, acc: 0.737303, norm_edit_dis: 0.886605, reader_cost: 0.25756 s, batch_cost: 0.26560 s, samples: 512, ips: 38.55408
+[2021/12/27 17:30:55] root INFO: epoch: [91/500], iter: 17600, lr: 0.000923, loss: 2.804097, acc: 0.749999, norm_edit_dis: 0.902896, reader_cost: 0.04386 s, batch_cost: 0.44172 s, samples: 25600, ips: 1159.11796
+[2021/12/27 17:32:24] root INFO: epoch: [91/500], iter: 17650, lr: 0.000923, loss: 2.883251, acc: 0.745116, norm_edit_dis: 0.894430, reader_cost: 0.00297 s, batch_cost: 0.39615 s, samples: 25600, ips: 1292.44627
+[2021/12/27 17:33:51] root INFO: epoch: [91/500], iter: 17700, lr: 0.000923, loss: 2.755725, acc: 0.750975, norm_edit_dis: 0.896053, reader_cost: 0.00190 s, batch_cost: 0.40411 s, samples: 25600, ips: 1266.99217
+[2021/12/27 17:34:55] root INFO: epoch: [91/500], iter: 17744, lr: 0.000922, loss: 3.013373, acc: 0.725585, norm_edit_dis: 0.882368, reader_cost: 0.00262 s, batch_cost: 0.32274 s, samples: 22528, ips: 1396.05532
+[2021/12/27 17:34:56] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 17:34:56] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 17:35:21] root INFO: epoch: [92/500], iter: 17750, lr: 0.000922, loss: 2.980603, acc: 0.735350, norm_edit_dis: 0.889917, reader_cost: 0.27318 s, batch_cost: 0.32635 s, samples: 3072, ips: 188.26436
+[2021/12/27 17:36:55] root INFO: epoch: [92/500], iter: 17800, lr: 0.000922, loss: 2.871871, acc: 0.749999, norm_edit_dis: 0.903349, reader_cost: 0.02752 s, batch_cost: 0.43239 s, samples: 25600, ips: 1184.10252
+[2021/12/27 17:38:34] root INFO: epoch: [92/500], iter: 17850, lr: 0.000921, loss: 2.827754, acc: 0.742186, norm_edit_dis: 0.891840, reader_cost: 0.25769 s, batch_cost: 0.66072 s, samples: 25600, ips: 774.91670
+[2021/12/27 17:40:01] root INFO: epoch: [92/500], iter: 17900, lr: 0.000921, loss: 2.777199, acc: 0.741209, norm_edit_dis: 0.896100, reader_cost: 0.12247 s, batch_cost: 0.51115 s, samples: 25600, ips: 1001.66764
+[2021/12/27 17:41:08] root INFO: epoch: [92/500], iter: 17939, lr: 0.000921, loss: 3.159072, acc: 0.714842, norm_edit_dis: 0.881668, reader_cost: 0.34953 s, batch_cost: 0.62368 s, samples: 19968, ips: 640.32489
+[2021/12/27 17:41:08] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 17:41:08] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 17:41:48] root INFO: epoch: [93/500], iter: 17950, lr: 0.000920, loss: 3.157136, acc: 0.726561, norm_edit_dis: 0.885981, reader_cost: 0.40927 s, batch_cost: 0.50828 s, samples: 5632, ips: 221.60820
+[2021/12/27 17:43:17] root INFO: epoch: [93/500], iter: 18000, lr: 0.000920, loss: 2.617698, acc: 0.746092, norm_edit_dis: 0.897276, reader_cost: 0.00170 s, batch_cost: 0.40272 s, samples: 25600, ips: 1271.34662
+[2021/12/27 17:43:27] root INFO: cur metric, acc: 0.6419997860000712, norm_edit_dis: 0.8262728930006751, fps: 4110.497800673927
+[2021/12/27 17:43:27] root INFO: save best model is to ./output/rec/class_demo/best_accuracy
+[2021/12/27 17:43:27] root INFO: best metric, acc: 0.6419997860000712, norm_edit_dis: 0.8262728930006751, fps: 4110.497800673927, best_epoch: 93
+[2021/12/27 17:44:50] root INFO: epoch: [93/500], iter: 18050, lr: 0.000920, loss: 2.770517, acc: 0.744139, norm_edit_dis: 0.899643, reader_cost: 0.00191 s, batch_cost: 0.38462 s, samples: 25600, ips: 1331.17269
+[2021/12/27 17:46:16] root INFO: epoch: [93/500], iter: 18100, lr: 0.000919, loss: 3.095460, acc: 0.724608, norm_edit_dis: 0.888001, reader_cost: 0.00294 s, batch_cost: 0.40200 s, samples: 25600, ips: 1273.62523
+[2021/12/27 17:47:04] root INFO: epoch: [93/500], iter: 18134, lr: 0.000919, loss: 2.934694, acc: 0.709960, norm_edit_dis: 0.876173, reader_cost: 0.00155 s, batch_cost: 0.24506 s, samples: 17408, ips: 1420.73812
+[2021/12/27 17:47:04] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 17:47:04] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 17:47:50] root INFO: epoch: [94/500], iter: 18150, lr: 0.000919, loss: 2.876951, acc: 0.735350, norm_edit_dis: 0.891093, reader_cost: 0.27845 s, batch_cost: 0.41560 s, samples: 8192, ips: 394.22787
+[2021/12/27 17:49:20] root INFO: epoch: [94/500], iter: 18200, lr: 0.000918, loss: 3.105782, acc: 0.718749, norm_edit_dis: 0.882057, reader_cost: 0.00420 s, batch_cost: 0.39623 s, samples: 25600, ips: 1292.16710
+[2021/12/27 17:50:52] root INFO: epoch: [94/500], iter: 18250, lr: 0.000918, loss: 3.519097, acc: 0.687499, norm_edit_dis: 0.865605, reader_cost: 0.00410 s, batch_cost: 0.40274 s, samples: 25600, ips: 1271.28219
+[2021/12/27 17:52:24] root INFO: epoch: [94/500], iter: 18300, lr: 0.000917, loss: 3.113066, acc: 0.711913, norm_edit_dis: 0.881590, reader_cost: 0.02816 s, batch_cost: 0.44198 s, samples: 25600, ips: 1158.42430
+[2021/12/27 17:53:05] root INFO: epoch: [94/500], iter: 18329, lr: 0.000917, loss: 3.401595, acc: 0.696288, norm_edit_dis: 0.873036, reader_cost: 0.07513 s, batch_cost: 0.28370 s, samples: 14848, ips: 1046.72683
+[2021/12/27 17:53:06] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 17:53:06] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 17:54:08] root INFO: epoch: [95/500], iter: 18350, lr: 0.000917, loss: 2.968638, acc: 0.731444, norm_edit_dis: 0.886992, reader_cost: 0.59640 s, batch_cost: 0.76588 s, samples: 10752, ips: 280.77458
+[2021/12/27 17:55:47] root INFO: epoch: [95/500], iter: 18400, lr: 0.000917, loss: 3.156745, acc: 0.708983, norm_edit_dis: 0.879232, reader_cost: 0.59557 s, batch_cost: 0.95916 s, samples: 25600, ips: 533.80039
+[2021/12/27 17:57:19] root INFO: epoch: [95/500], iter: 18450, lr: 0.000916, loss: 3.190657, acc: 0.713866, norm_edit_dis: 0.883686, reader_cost: 0.00176 s, batch_cost: 0.40026 s, samples: 25600, ips: 1279.17409
+[2021/12/27 17:58:48] root INFO: epoch: [95/500], iter: 18500, lr: 0.000916, loss: 2.961747, acc: 0.722655, norm_edit_dis: 0.884129, reader_cost: 0.00311 s, batch_cost: 0.40779 s, samples: 25600, ips: 1255.54637
+[2021/12/27 17:59:18] root INFO: epoch: [95/500], iter: 18524, lr: 0.000915, loss: 3.192868, acc: 0.717772, norm_edit_dis: 0.878311, reader_cost: 0.00027 s, batch_cost: 0.16997 s, samples: 12288, ips: 1445.89226
+[2021/12/27 17:59:19] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 17:59:19] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 18:00:43] root INFO: epoch: [96/500], iter: 18550, lr: 0.000915, loss: 2.751369, acc: 0.737303, norm_edit_dis: 0.892648, reader_cost: 0.92657 s, batch_cost: 1.13242 s, samples: 13312, ips: 235.10745
+[2021/12/27 18:02:11] root INFO: epoch: [96/500], iter: 18600, lr: 0.000915, loss: 2.869940, acc: 0.731444, norm_edit_dis: 0.888034, reader_cost: 0.10086 s, batch_cost: 0.49894 s, samples: 25600, ips: 1026.17029
+[2021/12/27 18:03:40] root INFO: epoch: [96/500], iter: 18650, lr: 0.000914, loss: 2.902554, acc: 0.738280, norm_edit_dis: 0.889792, reader_cost: 0.00065 s, batch_cost: 0.39980 s, samples: 25600, ips: 1280.64040
+[2021/12/27 18:05:19] root INFO: epoch: [96/500], iter: 18700, lr: 0.000914, loss: 3.060716, acc: 0.727538, norm_edit_dis: 0.886221, reader_cost: 0.36840 s, batch_cost: 0.74466 s, samples: 25600, ips: 687.55873
+[2021/12/27 18:05:38] root INFO: epoch: [96/500], iter: 18719, lr: 0.000914, loss: 3.242180, acc: 0.726561, norm_edit_dis: 0.886416, reader_cost: 0.00020 s, batch_cost: 0.12544 s, samples: 9728, ips: 1551.00824
+[2021/12/27 18:05:38] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 18:05:38] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 18:06:58] root INFO: epoch: [97/500], iter: 18750, lr: 0.000913, loss: 3.546011, acc: 0.675780, norm_edit_dis: 0.859140, reader_cost: 0.28650 s, batch_cost: 0.54745 s, samples: 15872, ips: 579.84697
+[2021/12/27 18:08:29] root INFO: epoch: [97/500], iter: 18800, lr: 0.000913, loss: 2.990960, acc: 0.708006, norm_edit_dis: 0.881009, reader_cost: 0.00416 s, batch_cost: 0.39390 s, samples: 25600, ips: 1299.83642
+[2021/12/27 18:09:59] root INFO: epoch: [97/500], iter: 18850, lr: 0.000912, loss: 2.986095, acc: 0.722655, norm_edit_dis: 0.883772, reader_cost: 0.01946 s, batch_cost: 0.42977 s, samples: 25600, ips: 1191.32684
+[2021/12/27 18:11:29] root INFO: epoch: [97/500], iter: 18900, lr: 0.000912, loss: 2.956945, acc: 0.734374, norm_edit_dis: 0.889692, reader_cost: 0.14786 s, batch_cost: 0.53538 s, samples: 25600, ips: 956.32303
+[2021/12/27 18:11:42] root INFO: epoch: [97/500], iter: 18914, lr: 0.000912, loss: 2.828821, acc: 0.745116, norm_edit_dis: 0.895990, reader_cost: 0.00008 s, batch_cost: 0.08913 s, samples: 7168, ips: 1608.39287
+[2021/12/27 18:11:43] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 18:11:43] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 18:13:09] root INFO: epoch: [98/500], iter: 18950, lr: 0.000912, loss: 2.787095, acc: 0.749999, norm_edit_dis: 0.900826, reader_cost: 0.40189 s, batch_cost: 0.69911 s, samples: 18432, ips: 527.30247
+[2021/12/27 18:14:38] root INFO: epoch: [98/500], iter: 19000, lr: 0.000911, loss: 2.654052, acc: 0.753905, norm_edit_dis: 0.898309, reader_cost: 0.05201 s, batch_cost: 0.44626 s, samples: 25600, ips: 1147.32176
+[2021/12/27 18:14:48] root INFO: cur metric, acc: 0.6373331208889597, norm_edit_dis: 0.8277906922429416, fps: 3055.793699576198
+[2021/12/27 18:14:48] root INFO: best metric, acc: 0.6419997860000712, norm_edit_dis: 0.8262728930006751, fps: 4110.497800673927, best_epoch: 93
+[2021/12/27 18:16:17] root INFO: epoch: [98/500], iter: 19050, lr: 0.000911, loss: 2.831621, acc: 0.752928, norm_edit_dis: 0.900731, reader_cost: 0.00090 s, batch_cost: 0.39172 s, samples: 25600, ips: 1307.06376
+[2021/12/27 18:17:40] root INFO: epoch: [98/500], iter: 19100, lr: 0.000910, loss: 2.753720, acc: 0.755858, norm_edit_dis: 0.898336, reader_cost: 0.14911 s, batch_cost: 0.50728 s, samples: 25600, ips: 1009.31088
+[2021/12/27 18:17:48] root INFO: epoch: [98/500], iter: 19109, lr: 0.000910, loss: 2.675480, acc: 0.753905, norm_edit_dis: 0.899398, reader_cost: 0.00004 s, batch_cost: 0.05662 s, samples: 4608, ips: 1627.65277
+[2021/12/27 18:17:49] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 18:17:49] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 18:19:21] root INFO: epoch: [99/500], iter: 19150, lr: 0.000910, loss: 2.653848, acc: 0.777342, norm_edit_dis: 0.908661, reader_cost: 0.32916 s, batch_cost: 0.67246 s, samples: 20992, ips: 624.33702
+[2021/12/27 18:20:47] root INFO: epoch: [99/500], iter: 19200, lr: 0.000909, loss: 2.589764, acc: 0.759764, norm_edit_dis: 0.906155, reader_cost: 0.00519 s, batch_cost: 0.38389 s, samples: 25600, ips: 1333.71257
+[2021/12/27 18:22:15] root INFO: epoch: [99/500], iter: 19250, lr: 0.000909, loss: 2.806234, acc: 0.746092, norm_edit_dis: 0.898936, reader_cost: 0.00293 s, batch_cost: 0.40010 s, samples: 25600, ips: 1279.68357
+[2021/12/27 18:23:34] root INFO: epoch: [99/500], iter: 19300, lr: 0.000908, loss: 2.824056, acc: 0.754881, norm_edit_dis: 0.899802, reader_cost: 0.00393 s, batch_cost: 0.37785 s, samples: 25600, ips: 1355.04022
+[2021/12/27 18:23:38] root INFO: epoch: [99/500], iter: 19304, lr: 0.000908, loss: 2.836358, acc: 0.747069, norm_edit_dis: 0.899802, reader_cost: 0.00002 s, batch_cost: 0.02515 s, samples: 2048, ips: 1628.80589
+[2021/12/27 18:23:38] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 18:23:38] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 18:25:16] root INFO: epoch: [100/500], iter: 19350, lr: 0.000908, loss: 2.906551, acc: 0.729491, norm_edit_dis: 0.889224, reader_cost: 0.29392 s, batch_cost: 0.67101 s, samples: 23552, ips: 701.98521
+[2021/12/27 18:26:54] root INFO: epoch: [100/500], iter: 19400, lr: 0.000907, loss: 2.822615, acc: 0.730467, norm_edit_dis: 0.892708, reader_cost: 0.27898 s, batch_cost: 0.66738 s, samples: 25600, ips: 767.18322
+[2021/12/27 18:28:22] root INFO: epoch: [100/500], iter: 19450, lr: 0.000907, loss: 2.793517, acc: 0.744139, norm_edit_dis: 0.896278, reader_cost: 0.03699 s, batch_cost: 0.43904 s, samples: 25600, ips: 1166.18299
+[2021/12/27 18:29:36] root INFO: epoch: [100/500], iter: 19499, lr: 0.000906, loss: 2.858739, acc: 0.749022, norm_edit_dis: 0.895447, reader_cost: 0.00325 s, batch_cost: 0.36896 s, samples: 25088, ips: 1359.93201
+[2021/12/27 18:29:37] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 18:29:37] root INFO: save model in ./output/rec/class_demo/iter_epoch_100
+[2021/12/27 18:29:37] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 18:29:53] root INFO: epoch: [101/500], iter: 19500, lr: 0.000906, loss: 2.968784, acc: 0.747069, norm_edit_dis: 0.892361, reader_cost: 0.27188 s, batch_cost: 0.28520 s, samples: 512, ips: 35.90463
+[2021/12/27 18:31:27] root INFO: epoch: [101/500], iter: 19550, lr: 0.000906, loss: 2.878902, acc: 0.737303, norm_edit_dis: 0.887946, reader_cost: 0.00228 s, batch_cost: 0.40668 s, samples: 25600, ips: 1258.96935
+[2021/12/27 18:32:53] root INFO: epoch: [101/500], iter: 19600, lr: 0.000905, loss: 2.727300, acc: 0.755858, norm_edit_dis: 0.904466, reader_cost: 0.00815 s, batch_cost: 0.39829 s, samples: 25600, ips: 1285.48480
+[2021/12/27 18:34:20] root INFO: epoch: [101/500], iter: 19650, lr: 0.000905, loss: 2.809983, acc: 0.745116, norm_edit_dis: 0.902477, reader_cost: 0.00313 s, batch_cost: 0.38517 s, samples: 25600, ips: 1329.27254
+[2021/12/27 18:35:26] root INFO: epoch: [101/500], iter: 19694, lr: 0.000905, loss: 2.824042, acc: 0.736327, norm_edit_dis: 0.892033, reader_cost: 0.00164 s, batch_cost: 0.31598 s, samples: 22528, ips: 1425.90068
+[2021/12/27 18:35:26] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 18:35:26] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 18:35:55] root INFO: epoch: [102/500], iter: 19700, lr: 0.000905, loss: 2.714922, acc: 0.741209, norm_edit_dis: 0.896671, reader_cost: 0.34125 s, batch_cost: 0.39839 s, samples: 3072, ips: 154.22175
+[2021/12/27 18:37:24] root INFO: epoch: [102/500], iter: 19750, lr: 0.000904, loss: 2.615988, acc: 0.748045, norm_edit_dis: 0.900374, reader_cost: 0.00182 s, batch_cost: 0.39167 s, samples: 25600, ips: 1307.23093
+[2021/12/27 18:38:50] root INFO: epoch: [102/500], iter: 19800, lr: 0.000904, loss: 2.562964, acc: 0.763670, norm_edit_dis: 0.903863, reader_cost: 0.00289 s, batch_cost: 0.40789 s, samples: 25600, ips: 1255.23980
+[2021/12/27 18:40:17] root INFO: epoch: [102/500], iter: 19850, lr: 0.000903, loss: 2.433307, acc: 0.761717, norm_edit_dis: 0.906676, reader_cost: 0.00183 s, batch_cost: 0.39579 s, samples: 25600, ips: 1293.62524
+[2021/12/27 18:41:13] root INFO: epoch: [102/500], iter: 19889, lr: 0.000903, loss: 3.205332, acc: 0.688475, norm_edit_dis: 0.860300, reader_cost: 0.00172 s, batch_cost: 0.29004 s, samples: 19968, ips: 1376.91366
+[2021/12/27 18:41:14] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 18:41:14] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 18:41:49] root INFO: epoch: [103/500], iter: 19900, lr: 0.000903, loss: 3.384896, acc: 0.704100, norm_edit_dis: 0.866276, reader_cost: 0.26297 s, batch_cost: 0.35932 s, samples: 5632, ips: 313.48433
+[2021/12/27 18:43:22] root INFO: epoch: [103/500], iter: 19950, lr: 0.000902, loss: 2.771749, acc: 0.747069, norm_edit_dis: 0.897508, reader_cost: 0.05131 s, batch_cost: 0.44913 s, samples: 25600, ips: 1139.98595
+[2021/12/27 18:44:49] root INFO: epoch: [103/500], iter: 20000, lr: 0.000902, loss: 2.741173, acc: 0.760741, norm_edit_dis: 0.902516, reader_cost: 0.00160 s, batch_cost: 0.39180 s, samples: 25600, ips: 1306.80022
+[2021/12/27 18:44:57] root INFO: cur metric, acc: 0.64033311988896, norm_edit_dis: 0.8286388419360748, fps: 4457.12269694825
+[2021/12/27 18:44:57] root INFO: best metric, acc: 0.6419997860000712, norm_edit_dis: 0.8262728930006751, fps: 4110.497800673927, best_epoch: 93
+[2021/12/27 18:46:19] root INFO: epoch: [103/500], iter: 20050, lr: 0.000901, loss: 2.550176, acc: 0.765624, norm_edit_dis: 0.905497, reader_cost: 0.00292 s, batch_cost: 0.39137 s, samples: 25600, ips: 1308.23321
+[2021/12/27 18:47:07] root INFO: epoch: [103/500], iter: 20084, lr: 0.000901, loss: 2.701871, acc: 0.763670, norm_edit_dis: 0.905035, reader_cost: 0.00054 s, batch_cost: 0.24583 s, samples: 17408, ips: 1416.25134
+[2021/12/27 18:47:09] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 18:47:09] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 18:47:53] root INFO: epoch: [104/500], iter: 20100, lr: 0.000901, loss: 2.365825, acc: 0.771483, norm_edit_dis: 0.910970, reader_cost: 0.26695 s, batch_cost: 0.39156 s, samples: 8192, ips: 418.43251
+[2021/12/27 18:49:30] root INFO: epoch: [104/500], iter: 20150, lr: 0.000900, loss: 2.515487, acc: 0.769530, norm_edit_dis: 0.911702, reader_cost: 0.16986 s, batch_cost: 0.55979 s, samples: 25600, ips: 914.63252
+[2021/12/27 18:51:00] root INFO: epoch: [104/500], iter: 20200, lr: 0.000900, loss: 2.417338, acc: 0.767577, norm_edit_dis: 0.910276, reader_cost: 0.25235 s, batch_cost: 0.64469 s, samples: 25600, ips: 794.17796
+[2021/12/27 18:52:30] root INFO: epoch: [104/500], iter: 20250, lr: 0.000899, loss: 2.713564, acc: 0.761717, norm_edit_dis: 0.901683, reader_cost: 0.04744 s, batch_cost: 0.46060 s, samples: 25600, ips: 1111.58970
+[2021/12/27 18:53:14] root INFO: epoch: [104/500], iter: 20279, lr: 0.000899, loss: 2.653617, acc: 0.759764, norm_edit_dis: 0.902561, reader_cost: 0.00161 s, batch_cost: 0.21487 s, samples: 14848, ips: 1382.07014
+[2021/12/27 18:53:15] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 18:53:15] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 18:54:15] root INFO: epoch: [105/500], iter: 20300, lr: 0.000899, loss: 2.353996, acc: 0.779295, norm_edit_dis: 0.912898, reader_cost: 0.32682 s, batch_cost: 0.51822 s, samples: 10752, ips: 414.96006
+[2021/12/27 18:55:45] root INFO: epoch: [105/500], iter: 20350, lr: 0.000898, loss: 2.484943, acc: 0.765624, norm_edit_dis: 0.910117, reader_cost: 0.00413 s, batch_cost: 0.40425 s, samples: 25600, ips: 1266.53241
+[2021/12/27 18:57:12] root INFO: epoch: [105/500], iter: 20400, lr: 0.000898, loss: 2.722542, acc: 0.773436, norm_edit_dis: 0.907368, reader_cost: 0.00518 s, batch_cost: 0.39551 s, samples: 25600, ips: 1294.54681
+[2021/12/27 18:58:39] root INFO: epoch: [105/500], iter: 20450, lr: 0.000897, loss: 2.701992, acc: 0.764647, norm_edit_dis: 0.904465, reader_cost: 0.00062 s, batch_cost: 0.40278 s, samples: 25600, ips: 1271.15030
+[2021/12/27 18:59:09] root INFO: epoch: [105/500], iter: 20474, lr: 0.000897, loss: 2.489139, acc: 0.762694, norm_edit_dis: 0.902966, reader_cost: 0.00046 s, batch_cost: 0.16874 s, samples: 12288, ips: 1456.42704
+[2021/12/27 18:59:10] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 18:59:10] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 19:00:13] root INFO: epoch: [106/500], iter: 20500, lr: 0.000897, loss: 2.450919, acc: 0.772459, norm_edit_dis: 0.908251, reader_cost: 0.30629 s, batch_cost: 0.52287 s, samples: 13312, ips: 509.19301
+[2021/12/27 19:01:41] root INFO: epoch: [106/500], iter: 20550, lr: 0.000896, loss: 2.705063, acc: 0.756834, norm_edit_dis: 0.898693, reader_cost: 0.00478 s, batch_cost: 0.39531 s, samples: 25600, ips: 1295.19460
+[2021/12/27 19:03:09] root INFO: epoch: [106/500], iter: 20600, lr: 0.000896, loss: 2.744436, acc: 0.760741, norm_edit_dis: 0.903786, reader_cost: 0.00411 s, batch_cost: 0.39835 s, samples: 25600, ips: 1285.29587
+[2021/12/27 19:04:36] root INFO: epoch: [106/500], iter: 20650, lr: 0.000895, loss: 2.694713, acc: 0.753905, norm_edit_dis: 0.901975, reader_cost: 0.00598 s, batch_cost: 0.38687 s, samples: 25600, ips: 1323.44000
+[2021/12/27 19:04:57] root INFO: epoch: [106/500], iter: 20669, lr: 0.000895, loss: 2.649118, acc: 0.756834, norm_edit_dis: 0.898704, reader_cost: 0.00020 s, batch_cost: 0.12740 s, samples: 9728, ips: 1527.11263
+[2021/12/27 19:04:57] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 19:04:57] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 19:06:08] root INFO: epoch: [107/500], iter: 20700, lr: 0.000895, loss: 3.141034, acc: 0.723631, norm_edit_dis: 0.881803, reader_cost: 0.28041 s, batch_cost: 0.53184 s, samples: 15872, ips: 596.87410
+[2021/12/27 19:07:40] root INFO: epoch: [107/500], iter: 20750, lr: 0.000894, loss: 2.665772, acc: 0.756834, norm_edit_dis: 0.904682, reader_cost: 0.00533 s, batch_cost: 0.40443 s, samples: 25600, ips: 1265.96907
+[2021/12/27 19:09:07] root INFO: epoch: [107/500], iter: 20800, lr: 0.000894, loss: 2.594396, acc: 0.743163, norm_edit_dis: 0.901382, reader_cost: 0.00189 s, batch_cost: 0.39575 s, samples: 25600, ips: 1293.74503
+[2021/12/27 19:10:38] root INFO: epoch: [107/500], iter: 20850, lr: 0.000893, loss: 2.754978, acc: 0.739256, norm_edit_dis: 0.895727, reader_cost: 0.00551 s, batch_cost: 0.40044 s, samples: 25600, ips: 1278.58613
+[2021/12/27 19:10:53] root INFO: epoch: [107/500], iter: 20864, lr: 0.000893, loss: 2.652390, acc: 0.744139, norm_edit_dis: 0.898880, reader_cost: 0.00008 s, batch_cost: 0.09310 s, samples: 7168, ips: 1539.90224
+[2021/12/27 19:10:53] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 19:10:53] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 19:12:22] root INFO: epoch: [108/500], iter: 20900, lr: 0.000893, loss: 2.460066, acc: 0.754881, norm_edit_dis: 0.908347, reader_cost: 0.34499 s, batch_cost: 0.63982 s, samples: 18432, ips: 576.15805
+[2021/12/27 19:13:49] root INFO: epoch: [108/500], iter: 20950, lr: 0.000892, loss: 2.450230, acc: 0.761717, norm_edit_dis: 0.909026, reader_cost: 0.00198 s, batch_cost: 0.39197 s, samples: 25600, ips: 1306.22364
+[2021/12/27 19:15:27] root INFO: epoch: [108/500], iter: 21000, lr: 0.000892, loss: 3.001532, acc: 0.725585, norm_edit_dis: 0.885644, reader_cost: 0.45650 s, batch_cost: 0.83552 s, samples: 25600, ips: 612.79341
+[2021/12/27 19:15:35] root INFO: cur metric, acc: 0.6303331232222922, norm_edit_dis: 0.8197389519130225, fps: 5215.632665682364
+[2021/12/27 19:15:35] root INFO: best metric, acc: 0.6419997860000712, norm_edit_dis: 0.8262728930006751, fps: 4110.497800673927, best_epoch: 93
+[2021/12/27 19:16:58] root INFO: epoch: [108/500], iter: 21050, lr: 0.000891, loss: 2.846399, acc: 0.734374, norm_edit_dis: 0.895507, reader_cost: 0.00588 s, batch_cost: 0.39201 s, samples: 25600, ips: 1306.09151
+[2021/12/27 19:17:06] root INFO: epoch: [108/500], iter: 21059, lr: 0.000891, loss: 2.942528, acc: 0.735350, norm_edit_dis: 0.895507, reader_cost: 0.00005 s, batch_cost: 0.05654 s, samples: 4608, ips: 1630.09578
+[2021/12/27 19:17:06] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 19:17:06] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 19:18:46] root INFO: epoch: [109/500], iter: 21100, lr: 0.000891, loss: 2.722973, acc: 0.752928, norm_edit_dis: 0.898484, reader_cost: 0.49867 s, batch_cost: 0.84046 s, samples: 20992, ips: 499.53502
+[2021/12/27 19:20:19] root INFO: epoch: [109/500], iter: 21150, lr: 0.000890, loss: 2.699941, acc: 0.755858, norm_edit_dis: 0.899308, reader_cost: 0.13130 s, batch_cost: 0.51271 s, samples: 25600, ips: 998.61116
+[2021/12/27 19:22:00] root INFO: epoch: [109/500], iter: 21200, lr: 0.000890, loss: 2.476046, acc: 0.746092, norm_edit_dis: 0.899844, reader_cost: 0.51064 s, batch_cost: 0.87462 s, samples: 25600, ips: 585.40004
+[2021/12/27 19:23:29] root INFO: epoch: [109/500], iter: 21250, lr: 0.000889, loss: 2.658632, acc: 0.754881, norm_edit_dis: 0.906137, reader_cost: 0.22891 s, batch_cost: 0.60640 s, samples: 25600, ips: 844.33017
+[2021/12/27 19:23:33] root INFO: epoch: [109/500], iter: 21254, lr: 0.000889, loss: 2.617711, acc: 0.764647, norm_edit_dis: 0.906844, reader_cost: 0.00002 s, batch_cost: 0.02548 s, samples: 2048, ips: 1607.63379
+[2021/12/27 19:23:34] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 19:23:34] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 19:25:20] root INFO: epoch: [110/500], iter: 21300, lr: 0.000889, loss: 2.758388, acc: 0.767577, norm_edit_dis: 0.910733, reader_cost: 0.45931 s, batch_cost: 0.82887 s, samples: 23552, ips: 568.29167
+[2021/12/27 19:26:50] root INFO: epoch: [110/500], iter: 21350, lr: 0.000888, loss: 2.543076, acc: 0.749022, norm_edit_dis: 0.903694, reader_cost: 0.01671 s, batch_cost: 0.40918 s, samples: 25600, ips: 1251.29188
+[2021/12/27 19:28:24] root INFO: epoch: [110/500], iter: 21400, lr: 0.000888, loss: 2.848793, acc: 0.749022, norm_edit_dis: 0.899225, reader_cost: 0.23309 s, batch_cost: 0.62080 s, samples: 25600, ips: 824.74425
+[2021/12/27 19:29:42] root INFO: epoch: [110/500], iter: 21449, lr: 0.000887, loss: 3.067496, acc: 0.715819, norm_edit_dis: 0.881803, reader_cost: 0.08655 s, batch_cost: 0.45212 s, samples: 25088, ips: 1109.78623
+[2021/12/27 19:29:43] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 19:29:43] root INFO: save model in ./output/rec/class_demo/iter_epoch_110
+[2021/12/27 19:29:43] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 19:29:59] root INFO: epoch: [111/500], iter: 21450, lr: 0.000887, loss: 3.042275, acc: 0.715819, norm_edit_dis: 0.881803, reader_cost: 0.27192 s, batch_cost: 0.27984 s, samples: 512, ips: 36.59242
+[2021/12/27 19:31:40] root INFO: epoch: [111/500], iter: 21500, lr: 0.000887, loss: 2.544022, acc: 0.753905, norm_edit_dis: 0.903611, reader_cost: 0.08313 s, batch_cost: 0.51237 s, samples: 25600, ips: 999.26963
+[2021/12/27 19:33:12] root INFO: epoch: [111/500], iter: 21550, lr: 0.000886, loss: 2.567148, acc: 0.768553, norm_edit_dis: 0.905702, reader_cost: 0.06568 s, batch_cost: 0.47058 s, samples: 25600, ips: 1088.01419
+[2021/12/27 19:34:42] root INFO: epoch: [111/500], iter: 21600, lr: 0.000886, loss: 2.509878, acc: 0.763670, norm_edit_dis: 0.906734, reader_cost: 0.03477 s, batch_cost: 0.43972 s, samples: 25600, ips: 1164.37004
+[2021/12/27 19:35:48] root INFO: epoch: [111/500], iter: 21644, lr: 0.000885, loss: 3.026660, acc: 0.716795, norm_edit_dis: 0.882402, reader_cost: 0.00569 s, batch_cost: 0.35011 s, samples: 22528, ips: 1286.90593
+[2021/12/27 19:35:49] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 19:35:49] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 19:36:15] root INFO: epoch: [112/500], iter: 21650, lr: 0.000885, loss: 3.062266, acc: 0.714842, norm_edit_dis: 0.882402, reader_cost: 0.27676 s, batch_cost: 0.33315 s, samples: 3072, ips: 184.42106
+[2021/12/27 19:37:45] root INFO: epoch: [112/500], iter: 21700, lr: 0.000885, loss: 2.621867, acc: 0.752928, norm_edit_dis: 0.903346, reader_cost: 0.16001 s, batch_cost: 0.54990 s, samples: 25600, ips: 931.07563
+[2021/12/27 19:39:13] root INFO: epoch: [112/500], iter: 21750, lr: 0.000884, loss: 2.734531, acc: 0.745116, norm_edit_dis: 0.898762, reader_cost: 0.00526 s, batch_cost: 0.39593 s, samples: 25600, ips: 1293.14189
+[2021/12/27 19:40:40] root INFO: epoch: [112/500], iter: 21800, lr: 0.000884, loss: 3.759256, acc: 0.654296, norm_edit_dis: 0.847857, reader_cost: 0.00403 s, batch_cost: 0.40721 s, samples: 25600, ips: 1257.32512
+[2021/12/27 19:41:39] root INFO: epoch: [112/500], iter: 21839, lr: 0.000883, loss: 2.959216, acc: 0.720702, norm_edit_dis: 0.883798, reader_cost: 0.00166 s, batch_cost: 0.29613 s, samples: 19968, ips: 1348.61584
+[2021/12/27 19:41:40] root INFO: save model in ./output/rec/class_demo/latest
+[2021/12/27 19:41:40] root INFO: Initialize indexs of datasets:['./train_data/rec_data_lesson_demo/train.txt']
+[2021/12/27 19:42:23] root INFO: epoch: [113/500], iter: 21850, lr: 0.000883, loss: 2.927453, acc: 0.729491, norm_edit_dis: 0.892584, reader_cost: 0.39647 s, batch_cost: 0.49761 s, samples: 5632, ips: 226.36109
+[2021/12/27 19:43:57] root INFO: epoch: [113/500], iter: 21900, lr: 0.000883, loss: 2.769782, acc: 0.749022, norm_edit_dis: 0.902476, reader_cost: 0.29903 s, batch_cost: 0.68816 s, samples: 25600, ips: 744.01203
