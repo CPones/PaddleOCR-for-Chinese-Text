@@ -77,7 +77,7 @@ PaddleOCR有两种配置文件方式
 #DB
 !python tools/train.py -c configs/det/det_r50_vd_db.yml \
     -o Global.use_visualdl=True \
-    Global.epoch_num=100    \
+    Global.epoch_num=500    \
     Global.save_epoch_step=10   \
     Global.eval_batch_step=[0,200]   \
     Global.print_batch_step=20  \
